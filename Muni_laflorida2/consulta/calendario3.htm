@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ejemplos de formularios emergentes con JavaScript</title>
+    <meta name="description" content="Se exponen ejemplos de aplicación para un formulario emergente hecho con JavaScript." />
+    <meta name="keywords" content="javascript, formulario emergente, mensaje emergente, ventana emergente, popup, pop-up, objeto calendario con javascript, calendar.js, enviar datos al servidor con formulario, action, method, acción de envío, método de envío, php para enviar formulario, calculadora con javascript, bloc de notas emergente, menú contextual, contextual, context menu, shortcut, pop-up menu, menú de acciones, getelementsbyclassname, objeto evento, analizador dom" />
+    <meta name="author" content="Andrés de la Paz" />
+    <meta name="copyright" content="© 2010" />
+    <link rel="icon" href="/icon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/icon.ico" type="image/x-icon"  />
+    <link rel="stylesheet" href="/res/sty/base.css" />
+    <noscript>
+        <link rel="stylesheet" href="/res/sty/base-nojs.css" />
+    </noscript>
+    <link rel="stylesheet" type="text/css" href="/res/sty/form-emerge.css" />
+    <style type="text/css">
+        /* ESTILO DEL CALENDARIO ---------------------------------------------
+           bloque div previo al calendario con 2 botones y un cuadro de texto
+           para cambiar de mes y año */
+        div.previo-cal {
+            text-align: center;
+            }
+        div.previo-cal input {
+            font: 0.85em 'Courier New';
+            text-align: center;
+            }
+        /* El div donde ubicaremos la tabla del calendario */
+        div#ubica-calendario{
+            text-align: center;
+            padding: 0.3em;
+            }
+        /* La propia tabla del calendario con sus celdas */
+        div#ubica-calendario table {
+            font: 0.9em Courier New;
+            border-collapse: collapse;
+            display: inline; /* para poder centrar la tabla en el div */
+            }
+        div#ubica-calendario table th {
+            color: black;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            }
+        div#ubica-calendario table td {
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            border: gray solid 1px;
+            }
+
+
+    </style>
+    <script src="/res/inc/general.js" async></script>
+    <script src="/res/inc/form-emerge.js" async></script>
+    <script src="/res/inc/calendar.js" async></script>
+    <script src="/res/inc/dom.js"  async></script>
+
+</head>
+<body>
+
+
+
+    <div id="contenido">
+    <noscript class="activar-js"></noscript>
+    <article>
+
+    <h2 class="num" id="calendario-emergente">Usando un emergente para un calendario</h2>
+
+    <p>En primer lugar incorporamos un calendario dentro de un formulario emergente
+    con la clase <code>calendar</code>. La información sobre este clase está en
+    <a href="/como-se-hace/objetos-javascript-calendario/aplicacion.html">el calendario
+    con objetos de JavaScript</a>.
+    </p>
+
+    <p>Disponemos de un cuadro de texto donde el usuario puede introducir una fecha,
+    o bien usar el botón para seleccionarla desde el calendario:
+    </p>
+
+    <section><div class="ejemplo-linea"><h4>Ejemplo<span>:</span></h4>
+        <label>Introduzca fecha con el botón:
+           <input type="text" value="" id="cuadro-fecha" />
+        </label>
+        <input type="button" value="..."
+        onclick="emergeCalendario.abrir('','',this.offsetLeft,this.offsetTop+this.offsetHeight)" />
+    </div></section>
+    
+    </article>
+	    <p>Aqui seguimos con el dialogo completo de la aplicacion</p>
+		<br /><br /><br /><br /><br /><br /><br /><br />
+    </div><!-- fin contenido -->
+
+<script>
+
+    var wxG;
+
+    //Una instancia de un calendario para usar en el ejemplo
+    var miCalendario = null;
+    //Una instancia de un emergente para el ejemplo
+    var emergeCalendario = null;
+    //Una instancia para el formulario de envío de datos
+    var miForm = null;
+
+    var emergeMensaje = null;
+
+    //Carga de la página, donde creamos formularios emergentes
+    window.onload = function() {
+
+        wxG = Wextensible.general;
+        wxG.adjudicarEventosGenerales();
+
+        wxG.cargarModulos(["form-emerge.js", "calendar.js", "dom.js"]);
+
+
+        // EJEMPLO DEL CALENDARIO --------------------------------------------------------
+        miCalendario = new Wextensible.Calendar("miCalendario", "ubica-calendario",
+                "ubica-titulo", fechaHoy, true);
+        //Creamos el primer emergente para el calendario
+        emergeCalendario = new Wextensible.FormEmerge("emergeCalendario", "Calendario",
+                true, 2, "marco");
+        //Componemos un interior para ubicar el calendario
+        var html = "<div class='previo-cal'>" +
+        "<input type='button' value='&lt;' " +
+        "onclick = 'miCalendario.mueveCalendar(-1)' />" +
+        "<input type='text' id='ubica-titulo' value='' size='8' " +
+        "onfocus = 'miCalendario.entraFecha(this)' " +
+        "onblur = 'miCalendario.mueveMesAnyo(this)' />" +
+        "<input type='button' value='&gt;' " +
+        "onclick = 'miCalendario.mueveCalendar(1)' />" +
+        "</div>" +
+        "<div id='ubica-calendario'></div>";
+        //Ponemos esa composición en el interior del emergente
+        emergeCalendario.nuevoInterior(html);
+        //Establecemos el cuadro de fecha como objeto respuesta.
+        emergeCalendario.idObjetoRespuesta = "cuadro-fecha";
+        //Cuando se abra el calendario, situamos la fecha del cuadro
+        emergeCalendario.eventoAbrir = true;
+        emergeCalendario.ejecutaEventoAbrir = function (){
+            //Construimos la hoja del calendario según la fecha del objeto
+            //respuesta. Si no es válida o está en blanco ponemos la fecha
+            //actual. compruebaFecha() y fechaActual() son dos funciones
+            //globales de calendar.js
+            var fecha = "";
+            var arrFecha = wxG.compruebaFecha(emergeCalendario.respuesta);
+            if (arrFecha == null) {
+                fecha = wxG.fechaActual()[4];
+                emergeCalendario.respuesta = fecha;
+            } else {
+                fecha = arrFecha[3];
+            }
+            miCalendario.situaFecha(fecha);
+        };
+        //Cuando pulsemos aceptar extraemos la fecha del calendario
+        emergeCalendario.eventoAceptar = true;
+        emergeCalendario.ejecutaEventoAceptar = function(){
+             emergeCalendario.respuesta = miCalendario.devuelveFecha("fecha-larga");
+        };
+        //Creamos un objeto calendario, pero no construimos inicialmente
+        //ninguna hoja de calendario, pues esto se hará con el evento abrir
+        //del emergente que llama al método situaFecha() del calendario que
+        //creará la hoja de ese mes y fecha. fechaActual() está en el módulo calendar.
+        var hoy = wxG.fechaActual();
+        var fechaHoy = hoy[1]+"/"+hoy[2]+"/"+hoy[3];
+
+    };
+    //fin del window.onload
+
+</script>
+</body>
+</html> 

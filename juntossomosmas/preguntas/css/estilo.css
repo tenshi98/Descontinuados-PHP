@@ -1,0 +1,287 @@
+body, html {
+	height: 100%;
+	width: 100%;
+}
+h1{
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	text-align: center;
+	height: 32px;
+	color: #666;
+	line-height: 30px;
+	font-family: Arial,Helvetica,sans-serif;
+	margin-bottom: 20px;
+	padding-bottom: 5px;
+}
+.fleft{
+	float: left;	
+}
+.fright{
+	float: right;	
+}
+.fcenter{
+	margin-right: auto !important;
+	margin-left: auto !important;
+	float:none;	
+}
+.clear {
+	clear: both;
+}
+.table_form {
+	width: 150px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.table_form .puu_back {
+	background-image: url(../img/patente.png);
+	background-repeat: no-repeat;
+	height: 54px;
+	background-position: center;
+}
+.table_form .puu_back .puu {
+	width: 128px;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 0px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	border: 1px solid #FFF;
+	text-align: center;
+	height: 32px;
+	color: #666;
+	line-height: 30px;
+	font-family: Arial,Helvetica,sans-serif;
+	margin-top: 4px;
+	margin-right: 25px;
+	margin-bottom: 0px;
+	margin-left: 25px;
+}
+
+
+.table_form .input_text{
+	display: block;
+	margin: 0.25em 0px;
+	padding: 0.5em 0.6em;
+	border: 1px solid #CCC;
+	box-shadow: 0px 1px 3px #DDD inset;
+	border-radius: 4px;
+	box-sizing: border-box;
+	line-height: normal;
+	vertical-align: baseline;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: auto;
+	color: #777;
+	width:100%;
+}
+.table_form .input_text:hover{
+	outline: 0px none;
+	border-color: #129FEA;
+}
+.table_form img{
+	height:40px !important;
+	
+}
+
+.alert {
+	padding: 11px;
+	margin-bottom: 10px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	width: 90%;
+	margin-top: 10px;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+.alert-success {
+    color: #3C763D;
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+}
+.alert-info {
+    color: #31708F;
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+}
+.alert-warning {
+    color: #8A6D3B;
+    background-color: #FCF8E3;
+    border-color: #FAEBCC;
+}
+.alert-danger {
+    color: #A94442;
+    background-color: #F2DEDE;
+    border-color: #EBCCD1;
+}
+
+.button {
+	font-family: inherit;
+font-size: 100%;
+padding: .5em 1em;
+color: #444;
+color: rgba(0,0,0,.8);
+border: 1px solid #999;
+border: 0 rgba(0,0,0,0);
+background-color: #E6E6E6;
+text-decoration: none;
+border-radius: 2px;
+display: inline-block;
+zoom: 1;
+line-height: normal;
+white-space: nowrap;
+vertical-align: baseline;
+text-align: center;
+cursor: pointer;
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+width:100%;
+}
+.button-1{
+	background-color: #0078e7;
+color: #fff;	
+}
+.button-1:hover{
+	color: #FFF;
+	background-color: #3071A9;
+	border-color: #285E8E;	
+}
+
+table {
+    *border-collapse: collapse; /* IE7 and lower */
+	border-spacing: 0;
+	width: 100%;
+	
+}
+
+.bordered {
+	border: solid #ccc 1px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 1px 1px #ccc;
+	-moz-box-shadow: 0 1px 1px #ccc;
+	box-shadow: 0 1px 1px #ccc;
+	margin-bottom: 20px;
+}
+.bordered h2{
+	font-size: 18px;
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: #666;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;     
+}    
+    
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;    
+}
+
+.bordered th {
+	background-color: #dce9f9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+	background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+	background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+	background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+	background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+	background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+	-moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+	box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+	border-top: none;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+.subtitle {
+	background-color: #CCC;
+	font-weight: bolder;
+}
+.subtitle:hover {
+	background-color: #eaeaea !important;
+}
+.display_none{
+	display:none !important;
+}
+.rv_tecnicas {
+    border-spacing: 0px;
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.rv_tecnicas .minimaltd td{
+	padding-top: 2px !important;
+	padding-right: 10px !important;
+	padding-bottom: 2px !important;
+	padding-left: 10px !important;
+}
+.no_padding{
+	padding:0 !important;	
+}
+.padding10{
+	padding:10px !important;	
+}
+.btn_volver {
+	clear: both;
+	float: left;
+	width: 200px !important;	
+	margin-left: 5%;
+}
+.centrarimagen{
+display: block;
+margin: 0 auto;
+}
+.enlace_aqui{
+	font-weight: bolder;
+	text-decoration: none;	
+	
+}

@@ -1,0 +1,35 @@
+      <table width="984" border="0" cellpadding="0" cellspacing="0" class="top_fondo">
+      <tr>
+        <td width="188" align="center" valign="bottom">
+        <a href="http://<?=$nombreurl?>/"><img src="http://<?=$nombreurl?>/images/logo.png"  border=0 /></a></td>
+        <td width="303" align="left" valign="middle">
+       
+	<table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center" valign="bottom">
+	    <a href="http://<?=$nombreurl?>/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Imagen12','','http://<?=$nombreurl?>/images/home_bot_up.png',1)">
+	    <img src="http://<?=$nombreurl?>/images/home_bot.png" name="Imagen12" width="46" height="46" border="0" id="Imagen12" /></a></td>
+            <td align="center" valign="bottom">
+	    <a href="http://www.municipalidadmaipu.cl" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Imagen13','','http://<?=$nombreurl?>/images/muni_icon_up.png',1)" target=_blank >
+	    <img src="http://<?=$nombreurl?>/images/muni_icon.png" name="Imagen13" width="46" height="46" border="0" id="Imagen13" /></a></td>
+            <td align="center" valign="bottom">
+	    <a href="http://<?=$nombreurl?>/contacto/contacto.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Imagen14','','http://<?=$nombreurl?>/images/contacto_bot_up.png',0)"   rel=shadowbox;width=620;height=500>
+	    <img src="http://<?=$nombreurl?>/images/contacto_bot.png" name="Imagen14" width="46" height="46" border="0" id="Imagen14" /></a></td>
+
+
+            </tr>
+          <tr>
+            <td width="70" height="20" align="center" valign="bottom" class="arial_tit_gris3">Home</td>
+            <td width="80" height="20" align="center" valign="bottom" class="arial_tit_gris3">I. Municipalidad</td>
+            <td width="70" height="20" align="center" valign="bottom" class="arial_tit_gris3">Contacto</td>
+
+            </tr>
+        </table>
+
+        </td>
+        <td  width="493" align="center" valign="middle">
+      
+
+        </td>
+      </tr>
+      </table>

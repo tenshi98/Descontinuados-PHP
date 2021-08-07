@@ -1,0 +1,17 @@
+<table width="950" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="10" colspan="6" align="left" valign="middle"></td>
+        </tr>
+        <tr>
+          <!--td align="left" valign="middle"><input type="button" class='button3' onclick="window.location = 'http://<?=$nombreurl?>/';" value="Cerrar Sesion" /></td-->
+          <td align="left" valign="middle"><input type="button" class='button3' onclick="window.location = 'http://<?=$nombreurl?>/admin/envivo_a_tv.php';" value="Canal de Tv " /></td>
+          <td align="left" valign="middle"><input type="button" class='button3' onclick="window.location = 'http://<?=$nombreurl?>/admin/envivo.php';" value="Cambiar estado TV" /></td>
+          <td align="left" valign="middle"><input type="button" class='button3' onclick="window.location = 'http://<?=$nombreurl?>/admin/uploadvid.php';" value="Subir Videos" /></td>
+          <td align="left" valign="middle"><input type="button" class='button3' onclick="window.location = 'http://<?=$nombreurl?>/admin/conferencias.php';" value="Video Conferencias" /></td>
+          <td align="left" valign="middle"><input type="button" class='button3' onclick="window.location = 'http://<?=$nombreurl?>/admin/manten_videos.php?opt=todos';" value="Mantener Videos" /></td>
+          <!--td align="left" valign="middle"><input type="button" class='button3' onclick="window.location = 'http://<?=$nombreurl?>/admin/video_callcenter.php?opt=todos';" value="Video CallCenter" /></td-->
+          <td align="left" valign="middle"><input type="button" class='button3' onclick="window.location = 'http://<?=$nombreurl?>/admin/act_monitoreo.php?opt=todos';" value="Act. Monitoreor" /></td>
+          <td align="left" valign="middle"><input type="button" class='button3' onclick="window.location = 'http://<?=$nombreurl?>/admin/telefonos_ol.php';" value="Campañas" /></td>
+	</tr>
+
+</table>

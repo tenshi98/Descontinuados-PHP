@@ -1,0 +1,314 @@
+body{
+	background-image: url("../img/bkg_body.jpg");
+	background-attachment: fixed;
+	background-repeat: repeat;
+	padding: 0;
+	margin: 0 auto;
+	width: 788px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#cabecera{
+	background: #333333;
+	padding:10px;
+	text-align: center;
+	border-radius:5px;
+}
+	#cabecera h1{
+		font-family: 'Aclonica', serif;
+		color: #222;
+		text-shadow: 0px 1px 1px #4d4d4d;
+		text-transform:uppercase;
+	}
+
+
+/* Divs Contend */
+#contenedor{
+	/*background-color:#A9E2F3;*/
+	width:100%;
+}
+#nuevaimagen{
+	background-color: #707070;
+    color: #000;
+    font-family: Arial;
+    padding-bottom: 5px;
+}
+#listadoimagenes{
+	margin-top:20px;
+}
+#mensajevacio{
+	padding:10px;
+	text-align: center;
+	width:300px;
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+	border-radius: 4px;
+}
+/* //Divs Contend */
+
+
+/* Tabla de lista de archivos */
+.demoTable{
+	border-spacing:1px;
+	font-family:Verdana;
+	font-size:10px;
+	background-color:#C3E6FF;
+	color: #b7b7b7;
+	width:100%;
+	margin:auto;
+}
+
+.demoTable td, .demoTable tr, .demoTable th{
+	border-collapse: separate;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.demoTable caption {
+	background: #333333;
+	padding:5px;
+	color: #222;
+	text-align: center;
+	text-shadow: 0px 1px 1px #4d4d4d;
+	text-transform:uppercase;
+	font-family: Arial;
+	font-size: 24px;
+}
+
+.demoTable td, .demoTable th {
+	padding: 4px;
+}
+
+.demoTable thead th {
+	text-align: center;
+	background: #C3E6FF;
+	color: #0B173B;
+	border: 1px solid #C3E6FF;
+	text-transform:uppercase;
+}
+
+.demoTable tr:hover{
+	background:#C3E6FF;
+}
+
+.demoTable tbody tr {
+	background-color:#C3E6FF;
+	color: #0B173B;
+	text-align:left;
+}
+
+.demoTable tbody tr th {
+	background-color:#C3E6FF;
+	color: #2E2E2E;
+	text-align:left;
+}
+
+.demoTable tbody tr.odd {
+	background: #f9f9f9;
+	border-top:1px solid #FFF;
+}
+
+/*.demoTable tbody tr:hover {
+background: red;
+border-top:1px solid #FFF;
+}*/
+
+.demoTable tbody tr:hover{
+	background: #fff;
+	color:#000;
+}
+
+.demoTable tbody tr {
+	height:50px;
+	background: #FAFAFA;
+	border: 1px solid #FFF;
+}
+
+.demoTable tbody tr.odd td{
+	background: #f9f9f9;
+	border-top:1px solid #FFF;
+}
+
+.demoTable td a:link, .demoTable td a:visited {
+	color: #0B3861;
+	text-decoration: none;
+}
+
+.demoTable td a:hover {
+	color: #0B3861;
+	border-bottom:2px solid #8FD5FF;
+	text-decoration: none ;
+}
+
+.demoTable tfoot th, .demoTable tfoot td {
+	background-color:#fff; padding:10px;
+	text-align:center;
+	font-family:Georgia;
+	font-size:22px; font-weight:bold; font-style:italic;
+	border-bottom:3px solid #CCC;
+	border-top:1px solid #DFDFDF;
+}
+
+/* //Tabla de lista de archivos */
+
+.formulario-title{
+	font-size: 22px;
+color: #428bca;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: #d4d4d4;
+padding-bottom: 3px;
+font-weight: bold;
+margin-top: 8px;
+}
+
+
+/* Forms Inputs, texarea */
+.cajas{
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #555;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.cajas:focus{
+	border-color:#66afe9 !important;
+	outline:0;-webkit-box-shadow !important;
+	inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6) !important;
+	box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6) !important;
+	}
+.cajas::-moz-placeholder{
+	color:#999;opacity:1 !important;
+}
+.cajas:-ms-input-placeholder{
+	color:#999 !important;
+}
+.cajas::-webkit-input-placeholder{
+	color:#999 !important;
+}
+.button {
+   display: inline-block;
+margin-bottom: 0;
+font-weight: 400;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+color: #fff;
+background-color: #428bca;
+border-color: #357ebd;
+   }
+.button:hover, .button:active {
+  color: #fff;
+background-color: #3276b1;
+border-color: #285e8e;
+   }
+.odd, .gradeA, .sorting_1{
+	background-color: #f9f9f9 !important;
+	border-bottom: 1px solid #ddd !important;
+	
+}
+.gradeA td{
+	border-right: 1px solid #ddd !important;
+	
+}
+.sorting_1{
+	border-right-style: none !important;
+}
+
+a.icon-ver	{
+	display: block;
+	float: left;
+	height: 24px;
+	margin: 0 8px 0 0;
+	width: 24px;
+	background-image: url(../img/btn_list.png);
+	background-repeat: no-repeat;
+	}
+a:hover.icon-ver	{
+	background-image: url(../img/btn_list.png);
+	background-position: 0 -24px;
+	}
+a.icon-down	{
+	display: block;
+	float: left;
+	height: 24px;
+	margin: 0 8px 0 0;
+	width: 24px;
+	background-image: url(../img/btn_down.png);
+	background-repeat: no-repeat;
+	}
+a:hover.icon-down	{
+	background-image: url(../img/btn_down.png);
+	background-position: 0 -24px;
+	}
+a.icon-borrar	{
+	display: block;
+	float: left;
+	height: 24px;
+	margin: 0 8px 0 0;
+	width: 24px;
+	background-image: url(../img/btn_del.png);
+	background-repeat: no-repeat;
+	}
+a:hover.icon-borrar	{
+	background-image: url(../img/btn_del.png);
+	background-position: 0 -24px;
+	}
+ .info-tooltip2 {
+    display: inline;
+    position: relative;	
+  }
+  .info-tooltip2:hover:after {
+    margin: 0;
+    bottom: 34px;
+    content: attr(title); /* este es el texto que será mostrado */
+    left: -40px;
+    position: absolute;
+    z-index: 98;
+    /* el formato gráfico */
+    background: rgba(51, 51, 51, 0.8); /* el color de fondo */
+    border-radius: 5px;
+	border: 1px solid rgb(17, 17, 17);
+    color: #FAFAFA; /* el color del texto */
+    font-family: Georgia;
+    font-size: 12px;
+    padding: 5px 15px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 60px;
+
+  }
+  .info-tooltip2:hover:before {
+    bottom: 28px;
+    content: "";
+    left: 0px;
+    position: absolute;
+    z-index: 99;
+    /* el triángulo inferior */
+    border: solid;
+    border-color: rgba(17, 17, 17, 1.0) transparent;
+    border-width: 6px 6px 0 6px;
+  }
+
+  

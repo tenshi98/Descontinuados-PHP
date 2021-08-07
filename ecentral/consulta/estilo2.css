@@ -1,0 +1,327 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background-image: url(images/fondo.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: #0B61AC;
+	font-size: 10px;
+	margin: 0px;
+}
+.borde_gris {
+	text-align: center;
+	vertical-align: middle;
+	border: thin solid #F5F5F5;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+}
+
+.fondo_gris {
+	background-color: #F5F5F5;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 3px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+}
+.arial_tit_gris {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	vertical-align: middle;
+}
+.arial_tit_gris_left {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	color: #666;
+	text-align: left;
+	vertical-align: top;
+}
+
+.arial_tit_calip {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #00A69C;
+	vertical-align: middle;
+	padding-right: 10px;
+}
+.arial_tit_gris2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #666;
+	padding-right: 10px;
+	line-height: 11px;
+}
+.arial_tit_gris11 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	color: #333;
+	text-align: justify;
+	vertical-align: middle;
+}
+.tit_aviso_bold {
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	letter-spacing: normal;
+	text-align: left;
+	vertical-align: top;
+	word-spacing: normal;
+	white-space: normal;
+	color: #0B61AC;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.tit_aviso_norm {
+	font-size: 11px;
+	font-style: normal;
+	font-weight: lighter;
+	text-align: left;
+	word-spacing: normal;
+	white-space: normal;
+	color: #666;
+	font-family: Arial, Helvetica, sans-serif;
+	vertical-align: super;
+	line-height: 12px;
+}
+.padding_left {
+	padding-left: 3px;
+}
+.arial_tit_gris13 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	color: #666;
+	text-align: center;
+	vertical-align: middle;
+}
+.arial_tit_gris13_left {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	color: #666;
+	text-align: left;
+	vertical-align: middle;
+}
+.margen2 {
+	margin-top: 5px;
+}
+.borde_gris_margin {
+	text-align: center;
+	vertical-align: middle;
+	border: thin solid #00aad5;
+	padding: 4px;
+	margin-top: 10px;
+	background-color: #FFF;
+}
+.arial_tit_gris_justifica {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #666;
+	vertical-align: middle;
+	padding-right: 10px;
+	line-height: 11px;
+	text-align: justify;
+}
+.fondo_gris_padd {
+	background-color: #F5F5F5;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 8px;
+	padding-right: 7px;
+	padding-bottom: 7px;
+	padding-left: 7px;
+	margin-bottom: 5px;
+}
+.arial_tit_gris2_italic {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: italic;
+	font-weight: normal;
+	color: #099;
+	vertical-align: middle;
+	padding-right: 10px;
+	line-height: 11px;
+}
+.div_linea_nar {
+	background-image: url(images/div_nar.jpg);
+	background-repeat: repeat-x;
+	height: 6px;
+}
+.arial_orange {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #E35500;
+	vertical-align: middle;
+	padding-right: 10px;
+	line-height: 11px;
+}
+.arial_tit_gde {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: bold;
+	color: #666;
+	text-align: left;
+}
+.arial_tit_gris3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #666;
+	line-height: 12px;
+	text-align: center;
+}
+.arial_tit_sub_azul {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #0A61AB;
+	text-align: justify;
+}
+.arial_tit_gde_bco {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFF;
+	text-align: left;
+}
+.arial_tit_bco {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFF;
+	padding-right: 10px;
+	line-height: 11px;
+	text-align: left;
+}
+.top_fondo {
+	text-align: center;
+	vertical-align: middle;
+	background-image: url(images/div_nar.jpg);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	height: 130px;
+}
+.bottom_fondo {
+	text-align: center;
+	vertical-align: middle;
+	background-image: url(images/div_nar.jpg);
+	background-repeat: repeat-x;
+	height: 100px;
+	background-position: 40px 40px;
+}
+.arial_tit_gris4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #666;
+	line-height: 12px;
+	text-align: left;
+	vertical-align: top;
+}
+.arial_tit_sub_bco {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFF;
+	text-align: justify;
+}
+
+.body {
+	background-color: #cddcec;
+	margin-top: 0px;
+}
+.Titulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 40px;
+	color: #FFF;
+}
+.txt_footer {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+}
+.bot_sombra_ch {
+	border-radius: 3px 3px 3px 3px;
+	-ms-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	-khtml-border-radius: 3px 3px 3px 3px;
+	-webkit-box-shadow: 0 0px 5px 0px #555;
+	-moz-box-shadow: 0 0px 5px 0px #555;
+	box-shadow: 0 0px 3px 0px #555;
+	background-image: url(images/trans_grad_2.png);
+	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+	font-size: 11px;
+	color: #FFF;
+	height: 25px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: repeat-x;
+	background-color: #2C6F96;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-top: 2px;
+	margin-left: 0px;
+}
+.bot_sombra_ch:hover {
+	background-color: #333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#apDiv1 {
+	position:absolute;
+	left:363px;
+	top:188px;
+	width:158px;
+	height:42px;
+	z-index:1;
+	display: block;
+	overflow: visible;
+}
+.fondo_comenta_padd {
+	border-radius: 10px 10px 10px 10px;
+	-ms-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+	background-color: #333;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-top: 10px;
+}

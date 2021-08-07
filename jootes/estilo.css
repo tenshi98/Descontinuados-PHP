@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, html {
+	margin: 0px;
+	margin: 0px;
+	height: 100%;
+	background-image: url(images/fondo_pareja.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.celda_neg_ama {
+	width: 100%;
+	border-left-width: 20px;
+	border-left-style: solid;
+	border-left-color: #FCAB00;
+	background-color: #000;
+	height: 40px;
+}
+
+.logo_flot {
+	position: relative;
+	top: -18px;
+	right: 2px;
+	margin-bottom: -70px;
+}
+
+.google_fjalla {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 15px;
+	color: #666;
+	line-height: 25px;
+}
+.google_bot_txt_bco {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 15px;
+	color: #FFF;
+	background-color: #000;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-weight: normal;
+	text-decoration: none;
+}
+.google_bot_txt_bco:hover {
+	cursor: hand;
+	cursor: pointer;
+	color: #FCAB00;
+}
+.tabla_ama {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333;
+	text-decoration: none;
+	background-color: #FCAB00;
+	padding: 10px;
+	height: 250px;
+}
+.padding_10 {
+	padding-top: 5px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+}
+
+.tabla_bca {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	padding: 10px;
+	height: 250px;
+}
+
+
+
+
+.google_bot_txt_yell {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 15px;
+	color: #FCAB00;
+	background-color: #000;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-weight: normal;
+	text-decoration: none;
+}
+.google_bot_txt_yell:hover {
+	cursor: hand;
+	cursor: pointer;
+	color: #666;
+}
+
+.patt_slider {
+	background-image: url(images/pat0_trans.png);
+	text-align: center;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.esquina_red {
+	border-radius: 10px 10px 10px 10px;
+	-ms-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+}
+.esquina_red_3px {
+	border-radius: 3px 3px 3px 3px;
+	-ms-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	-khtml-border-radius: 3px 3px 3px 3px;
+}
+
+.titulo_bco {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFF;
+	text-decoration: none;
+}
+.titulo_yell {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FCAB00;
+	text-decoration: none;
+}
+
+.cuerpo_gris {
+	font-family: "Fjalla One", sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #333;
+	text-decoration: none;
+}
+.cuerpo_gris_red {
+	font-family: "Fjalla One", sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #ff0000;
+	text-decoration: none;
+}
+.cuerpo_bco {
+	font-family: "Fjalla One", sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: lighter;
+	color: #FFF;
+	text-decoration: none;
+}
+
+
+/* CSS Document */
+#nonFooter {
+	position: relative;
+	min-height: 100%;
+	width: 100%;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+* html #nonFooter {
+	height: 100%;
+}
+#Footer {
+	position: relative;
+	height: 70px;
+	margin-top: -105px;
+	margin-bottom: 0px;
+}
+
+#imagenFlotante {
+  top:200px;
+  left:0px;
+ position: fixed;
+  _position:absolute;
+  clip:inherit;
+_top: expression(200+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px'); 
+_left: expression(0+((e=document.documentElement.scrollLeft)?e:document.body.scrollLeft)+'px');
+}

@@ -1,0 +1,123 @@
+/* Color caracterisrico del tema */
+.navbar-inverse,
+.navbar-inverse .navbar-nav > .open > a {
+	background-color: #F9F9F9 !important;
+}
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-nav > li a,
+.navbar-inverse .navbar-nav > li a:hover,
+.navbar-inverse .navbar-nav > .open > a{
+	color: #fff !important;
+}
+#menu > li > a ,#menu > li ul a{
+	border-left: 5px solid #BDBDBD !important;
+}
+/* Modificacion de las tablas */
+.box {
+    border: none !important;
+    border-bottom: 1px solid #EFEFEF !important;
+}
+.box header {
+    background-image: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    border-left: 1px solid #EFEFEF;
+    border-right: 1px solid #EFEFEF;
+    border-top: 2px solid #BDBDBD;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+}
+.table-bordered > thead > tr > th, 
+.table-bordered > tbody > tr > th, 
+.table-bordered > tfoot > tr > th, 
+.table-bordered > thead > tr > td, 
+.table-bordered > tbody > tr > td, 
+.table-bordered > tfoot > tr > td{
+	border: none !important;
+}
+.table-bordered > thead > tr {
+	 border-bottom: 1px solid #EFEFEF !important;
+}
+/* Modificacion del infobox */
+.info-tooltip:hover:after {
+    background: rgba(189, 189, 189, 0.8) !important;
+    color: #FAFAFA !important;
+    border: 1px solid rgb(189, 189, 189) !important;
+}
+.info-tooltip:hover:before {
+    border-color: rgba(189, 189, 189, 1.0) transparent !important;
+}
+/* Modificacion de los botones */
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+    color: #fff;
+    background-color: #BDBDBD;
+    border-color: #ADADAD;
+}
+  
+
+
+
+/* Color de fondo de la aplicacion */
+#wrap,#left,.head,.user-media,
+#menu>li:hover>a, #menu>li:focus>a ,#menu>li ul,
+.sidebar-left-mini #menu>li>a .link-title,
+body:not(.sidebar-left-mini) #menu .nav-header,
+#footer{
+	background-color: #F9F9F9 !important;
+}
+
+
+/* Color de de los separadores de las secciones */
+.navbar-inverse, .head,.user-media{
+	border-color: #DBDBDB !important;
+}
+
+
+/* Color de los separadores del menu */
+#menu > li > a ,
+#menu > li ul a
+{
+    color: #555 !important;
+    text-shadow: none !important;
+    border-top: 1px solid #FFF !important;
+	border-bottom: 1px solid #DBDBDB !important;
+}
+/* Color de sombras separacion dividores */
+#menu .nav-divider,
+.outer{
+    background-color: #F4F4F4 !important;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3) inset;
+}
+
+
+/* Color de fuentes */
+.head .main-bar h3,
+.user-media .media-body h5.media-heading,
+#menu>li:hover>a, #menu>li:focus>a ,
+#menu > li ul a:hover,
+body:not(.sidebar-left-mini) #menu .nav-header,
+#footer{
+	color: #666 !important;
+	background-image: none !important;
+}
+
+/* Otros */
+#top > .navbar {
+	border-top: none !important;
+}
+body:not(.sidebar-left-mini) #menu .nav-header {
+    border-top: 1px solid #DBDBDB !important;
+}
+#menu>li a:hover {
+	background-color: rgba(0,0,0,0.1) !important;
+}
+.inner {
+    border: 10px solid #FCFCFC !important;
+}
+.table {
+    margin-bottom: 0px !important;
+}
+.container_box {
+    top: 10px !important;
+}

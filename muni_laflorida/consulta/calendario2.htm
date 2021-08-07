@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ejemplos de formularios emergentes con JavaScript</title>
+<meta name="description" content="Se exponen ejemplos de aplicación para un formulario emergente hecho con JavaScript."/>
+<meta name="keywords" content="javascript, formulario emergente, mensaje emergente, ventana emergente, popup, pop-up, objeto calendario con javascript, calendar.js, enviar datos al servidor con formulario, action, method, acción de envío, método de envío, php para enviar formulario, calculadora con javascript, bloc de notas emergente, menú contextual, contextual, context menu, shortcut, pop-up menu, menú de acciones, getelementsbyclassname, objeto evento, analizador dom"/>
+<meta name="author" content="Andrés de la Paz"/>
+<meta name="copyright" content="© 2010"/>
+<link rel="icon" href="/icon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="/icon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="/css/base.css"/>
+<noscript><link rel="stylesheet" href="/res/sty/base-nojs.css"/></noscript>
+<link rel="stylesheet" type="text/css" href="/css/form-emerge.css"/><
+link rel="stylesheet" type="text/css" href="/css/calculadora.css"/>
+<style type="text/css">
+ div.previo-cal{text-align:center;}
+ div.previo-cal input{font:0.85em 'Courier New';text-align:center;}
+ div#ubica-calendario{text-align:center;padding:0.3em;}
+ div#ubica-calendario table{font:0.9em Courier New;border-collapse:collapse;display:inline;}
+ div#ubica-calendario table th{color:black;padding-left:0.5em;padding-right:0.5em;}
+ div#ubica-calendario table td{color:black;font-weight:bold;text-align:center;border:gray solid 1px;}
+ div.PRECALCcalculadora{border:gray solid 1px;background-color:rgb(230,230,205);}
+ .fuente-mi-form{font:0.8em Courier New;}
+ ul.lista-propiedades{margin-left:0;padding-left:0;}
+ ul.lista-propiedades li{margin-left:1.2em;padding-left:0;}
+ ul.lista-propiedades ul{margin-left:0em;padding-left:0;}
+ ul.lista-propiedades ul li{margin-left:1em;padding-left:0;}
+ div#contenedor-contextual{-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;-ms-user-select:none;user-select:none;}
+ a.a-contextual{padding:0.1em;text-decoration:none;font-family:Arial;color:black;}
+ a.a-contextual:focus,a.a-contextual:hover,a.a-contextual:active{background-color:rgb(49,99,98);color:white;}
+ div#IDPREemergeContextualDimensionar{display:none;}
+</style>
+<link rel="canonical" href="http://www.wextensible.com/como-se-hace/emergente-javascript/aplicaciones-ejemplos.html"/>
+<link rel="publisher" href="https://plus.google.com/+Wextensible"/>
+<script src="/js/general.js" async="async"></script>
+<script src="/js/form-emerge.js" async="async"></script>
+<script src="/js/calendar.js" async="async"></script>
+<script src="/js/calculadora.js" async="async"></script>
+<script src="/js/dom.js" async="async"></script>
+</head>
+<body>
+<header><div id="cabeza-menu"><div id="cabeza"><div class="logowx"></div><span class="titulowx">Wextensible</span></div><nav><h2 class="dispnone">Menú</h2><ul id="menuwx"><li id="menuwx-inicio"><a href="/">Inicio</a></li><li id="menuwx-menu"><button type="button">Menú</button><div class="menuwx-desp"><ul><li><a href="/temas/">Temas</a></li><li><a href="/como-se-hace/">Cómo se hace</a></li><li><a href="/herramientas/">Herramientas</a></li><li><a href="/articulos/">Artículos</a></li><li><a rel="nofollow" href="/res/srv/resaltador.php?u=/como-se-hace/emergente-javascript/aplicaciones-ejemplos.html">Código</a></li><li><a href="/res/srv/historico/">Histórico</a></li><li><a href="/res/srv/creditos/acerca-de.html">Acerca de</a></li><li><a rel="nofollow" href="/res/srv/creditos/contacto.php">Contacto</a></li><li><form id="pre-buscador" action="/res/srv/buscador.php" method="post"><input type="text" size="15" name="prebusq"/><input type="submit" value="Buscar"/></form></li><li title="Imprimir" id="menu-imprimir"><button type="button" id="boton-imprimir-pagina"><span data-sprite-src="/res/img/impresora.png"></span><span class="dispnone">Imprimir</span></button></li><li title="Seguir en Google+"><a href="https://plus.google.com/+Wextensible"><span data-sprite-src="/res/img/googleplus.png"></span><span class="dispnone">Seguir en Google+</span></a></li><li title="Seguir en Twitter"><a href="http://www.twitter.com/wextensible"><span data-sprite-src="/res/img/twitter.png"></span><span class="dispnone">Seguir en Twitter</span></a></li><li title="Seguir en Facebook"><a href="http://www.facebook.com/wextensible"><span data-sprite-src="/res/img/facebook.png"></span><span class="dispnone">Seguir en Facebook</span></a></li><li title="Compartir" id="menu-compartir"><button type="button" id="boton-compartir"><span data-sprite-src="/res/img/compartir.png"></span><span class="dispnone">Compartir</span></button></li></ul></div></li><li id="menuwx-accesos"><button type="button">Accesos</button><ul id="accesos"></ul><a id="menuwx-accesos-data" href="/res/inc/accesos-data/">Accesos</a></li><li id="menuwx-pie"><a href="#pie">Pie</a></li></ul></nav></div></header>
+<div id="contenido"><noscript class="activar-js"></noscript> 
+<article> 
+<header><div class="encab-fecha"><div class="encab-datetime"><time datetime="2010-08-25"> <span class="encab-dia">25</span> <span class="encab-mes">ago</span> <span class="encab-anyo">2010</span> </time></div><div class="encab-lista"><button type="button" id="boton-lista-apartados">=</button></div><h1>Ejemplos de aplicación del formulario emergente</h1><nav><div id="lista-apartados"><h4 class="dispnone">Ruta de navegación</h4><ul><li><a href="/">Inicio</a></li><li>» <a href="/como-se-hace/">Cómo se hace</a></li><li>» I. <a href="./">Formularios emergentes</a></li><li>» II. <a href="objeto-respuesta.html">El objeto respuesta del formulario emergente</a></li><li>» III. <a href="eventos-formulario.html">Los eventos del formulario emergente</a></li><li>» IV. <a href="formulario-pestanyas.html">Pestañas para el interior de un formulario emergente</a></li><li>» <span>V. Ejemplos de aplicación del formulario emergente</span></li><li>» VI. <a href="documentacion-clase.html">Documentación de la clase <i>formEmerge</i></a></li><li>» VII. <a href="codigo-clase.html">Código de la clase <i>formEmerge</i></a></li><li>» VIII. <a href="aspectos-disenyo.html">Aspectos del diseño de la clase <i>formEmerge</i></a></li></ul><h4 class="dispnone">Índice de apartados</h4><ol><li><a href="#ejemplos">Ejemplos de aplicación de la clase <i>formEmerge</i></a></li><li><a href="#calendario-emergente">Usando un emergente para un calendario</a></li><li><a href="#emergente-envio">Un formulario emergente para enviar datos al servidor</a></li><li><a href="#calculadora">Un formulario emergente para una calculadora</a></li><li><a href="#emergente-notas">Un formulario emergente para Notas</a></li><li><a href="#emergente-contextual">Usando un emergente como menú contextual</a></li><li>Anexos:<ul><li><a href="codigo-ejemplos.html"> Código fuente de los ejemplos de esta página</a></li><li><a href="/como-se-hace/objetos-javascript-calendario/codigo.html"> Código fuente de la clase <i>calendar</i></a> (usado en este <a href="#calendario-emergente">ejemplo</a>)</li><li><a href="/temas/xhtml-css/ejemplos/script/calc/codigo-calculadora-objeto.html"> Código fuente de la clase <i>calculadora</i></a> (usado en este <a href="#calculadora">ejemplo</a>)</li><li><a href="codigo-analizador-dom.html"> Código fuente del Analizador DOM</a> (usado en este <a href="#emergente-contextual">ejemplo</a>)</li></ul></li></ol></div></nav>
+</div>
+</header>
+<h2 class="num" id="ejemplos">Ejemplos de aplicación de la clase <i>formEmerge</i></h2><p>Exponemos aquí algunos ejemplos de aplicación de la clase <i>formEmerge</i> para crear formularios emergentes. Usaremos todos los recursos vistos: objeto repuesta, eventos del formulario y pestañas. Todo el código JavaScript para crear los objetos así como el estilo CSS aplicado puede verlo en los elementos <code>&lt;script&gt;</code> y <code>&lt;style&gt;</code> en la cabecera de esta página, por lo que puede también consultarlo con el menú del navegador o bien en esta copia que hemos hecho del <a href="codigo-ejemplos.html">código de estos ejemplos</a>.</p><h2 class="num" id="calendario-emergente">Usando un emergente para un calendario</h2><p>En primer lugar incorporamos un calendario dentro de un formulario emergente con la clase <code>calendar</code>. La información sobre este clase está en <a href="/como-se-hace/objetos-javascript-calendario/aplicacion.html">el calendario con objetos de JavaScript</a>.</p><p>Disponemos de un cuadro de texto donde el usuario puede introducir una fecha, o bien usar el botón para seleccionarla desde el calendario:</p>
+<section><div class="ejemplo-linea">
+<h4>Ejemplo<span>:</span></h4><label>Introduzca fecha con el botón: <input type="text" value="" id="cuadro-fecha"/> </label> 
+<input type="button" value="..." onclick="emergeCalendario.abrir('','',this.offsetLeft,this.offsetTop+this.offsetHeight)"/>
+</div></section>
+
+<p>El código de este cuadro y botón es el siguiente:</p><pre>
+&lt;label&gt;Introduzca fecha con el botón:
+   &lt;input type="text" value="&nbsp;" id="cuadro-fecha" /&gt;
+&lt;/label&gt;
+&lt;input type="button" value="..."
+onclick="emergeCalendario.abrir('', '', this.offsetLeft,
+this.offsetTop+this.offsetHeight)" /&gt; </pre><p>Creamos un formulario emergente para contener nuestro objeto calendario. Los dos objetos los construimos en el <code>window.onload</code> de esta página, donde también puede ver el estilo aplicado al calendario así como el siguiente script:</p><pre>
+<span class="verde">//Una instancia de un calendario para usar en el ejemplo</span>
+var miCalendario = null;
+<span class="verde">//Una instancia de un emergente para el ejemplo</span>
+var emergeCalendario = null;
+...
+<span class="verde">//Carga de la página, donde creamos formularios emergentes</span>
+window.onload = function() {
+    <span class="verde">// EJEMPLO DEL CALENDARIO ------------------------</span>
+    <span class="verde">//Creamos el primer emergente para el calendario</span>
+    emergeCalendario = new formEmerge("emergeCalendario", "Calendario",
+            true, 2, "marco");
+    <span class="verde">//Componemos un interior para ubicar el calendario</span>
+    var html = "&lt;div class='previo-cal'&gt;" +
+    "&lt;input type='button' value='&lt;' " +
+    "onclick = 'miCalendario.mueveCalendar(-1)' /&gt;" +
+    "&lt;input type='text' id='ubica-titulo' value='' size='8' " +
+    "onfocus = 'miCalendario.entraFecha(this)' " +
+    "onblur = 'miCalendario.mueveMesAnyo(this)' /&gt;" +
+    "&lt;input type='button' value='&gt;' " +
+    "onclick = 'miCalendario.mueveCalendar(1)' /&gt;" +
+    "&lt;/div&gt;" +
+    "&lt;div id='ubica-calendario'&gt;&lt;/div&gt;";
+    <span class="verde">//Ponemos esa composición en el interior del emergente</span>
+    emergeCalendario.nuevoInterior(html);
+    <span class="verde">//Establecemos el cuadro de fecha como objeto respuesta.</span>
+    emergeCalendario.idObjetoRespuesta = "cuadro-fecha";
+    <span class="verde">//Cuando se abra el calendario, situamos la fecha del cuadro</span>
+    emergeCalendario.eventoAbrir = true;
+    emergeCalendario.ejecutaEventoAbrir = function (){
+        miCalendario.situaFecha(emergeCalendario.respuesta);
+    }
+    <span class="verde">//Cuando pulsemos aceptar extraemos la fecha del calendario</span>
+    emergeCalendario.eventoAceptar = true;
+    emergeCalendario.ejecutaEventoAceptar = function(){
+         emergeCalendario.respuesta = miCalendario.devuelveFecha("fecha-larga");
+    }
+    <span class="verde">//Creamos un objeto calendario</span>
+    miCalendario = new calendar("miCalendario", "ubica-calendario",
+            "ubica-titulo", "", true);
+    if (miCalendario.creado) miCalendario.construyeCalendario();
+    ...
+}</pre><p>En resumen se trata de hacer lo siguiente:</p><ol><li>Creamos el nuevo objeto <code>emergeCalendario = new formEmerge()</code> para contener el calendario.</li><li>Componemos una cadena literal HTML para el interior de ese emergente y luego la añadimos con <code>emergeCalendario.nuevoInterior()</code>. Esta construcción podrá entenderla mejor si analiza lo explicado en los ejemplos del <a href="/como-se-hace/objetos-javascript-calendario/aplicacion.html">calendario con objetos de JavaScript</a>. En resumen se trata de dotar de unos elementos de control del formulario: botones para avanzar y retroceder un mes y un cuadro de texto para poner el mes-año.</li><li>Establecemos el objeto respuesta del formulario apuntando al cuadro de texto que está por fuera, pasando el <code>id</code> a la propiedad <code>idObjetoRespuesta</code>.</li><li>Activamos el evento al abrir el formulario para que cargue la fecha de ese cuadro en el objeto calendario mediante su método <code>miCalendario.situaFecha()</code></li><li>Activamos el evento aceptar del emergente para hacer lo contrario, poner la fecha seleccionada del calendario en el emergente en el cuadro de texto externo (por medio de la propiedad respuesta del emergente). Se usa el método <code>miCalendario.devuelveFecha()</code> para obtener la fecha seleccionada.</li><li>Creamos el objeto calendario con <code>miCalendario = new calendar()</code> y lo construimos con <code>miCalendario.construyeCalendario()</code>.</li></ol><p>Esta aplicación funciona bien en Internet Explorer 8, Firefox 3.6, Opera 10.6 y Safari 4.0.</p><h2 class="num" id="emergente-envio">Un formulario emergente para enviar datos al servidor</h2><p>El formulario no deja de ser un elemento <code>&lt;form&gt;</code> por lo que podría servir para enviar datos al servidor.</p><section><div class="ejemplo-linea" id="ejemplo-envio-form"><h4>Ejemplo<span>:</span></h4>Abre un formulario para envío de datos al servidor<br/> <input type="button" value="..." onclick="miForm.abrir('','',this.offsetLeft,this.offsetTop+this.offsetHeight)"/></div></section><p>Al crear el emergente usamos los dos últimos argumentos para indicar el PHP que se ejecutará en el atributo <code>action</code> y el método <b>post</b> para el atributo <code>method</code> del formulario:</p><pre>
+...
+<span class="verde">//Una instancia para el formulario de envío de datos</span>
+var miForm = null;
+...
+<span class="verde">//Carga de la página, donde creamos formularios emergentes</span>
+window.onload = function() {
+    ...
+    <span class="verde">// EJEMPLO DEL FORMULARIO PARA ENVIO DE DATOS -----</span>
+    <span class="verde">//Creamos otro emergente para envío de datos</span>
+    miForm = new formEmerge("miForm", "Enviar datos",
+            true, 3, "marco", <span class="azul">"miform.php", "post"</span>);
+    <span class="verde">//Componemos un literal HTML para la primera pestaña</span>
+    var html1 = "&lt;label&gt;Nombre:&lt;input type='text' name='nombre' value='' " +
+    "size='35' class='fuente-mi-form' /&gt;" +
+    "&lt;/label&gt;&lt;br /&gt;" +
+    "&lt;label&gt;Dirección:&lt;input type='text' name='direccion' value='' " +
+    "size='35' class='fuente-mi-form' /&gt;" +
+    "&lt;/label&gt;&lt;br /&gt;" +
+    "&lt;label&gt;E-mail:&lt;input type='text' name='email' value='' " +
+    "size='35' class='fuente-mi-form' /&gt;" +
+    "&lt;/label&gt;&lt;br /&gt;" +
+    "&lt;label&gt;Cuestión:&lt;br /&gt;&lt;textarea name='cuestion' rows='7' cols='40' "+
+    "class='fuente-mi-form'&gt;&lt;/textarea&gt;" +
+    "&lt;/label&gt;";
+    <span class="verde">//Componemos otro literal para la segunda pestaña</span>
+    var html2 = "&lt;label&gt;Edad:&lt;input type='text' name='edad' value='' " +
+    "size='10' class='fuente-mi-form' /&gt;" +
+    "&lt;/label&gt;&lt;br /&gt;" +
+    "&lt;label&gt;Profesión:&lt;input type='text' name='profesion' value='' " +
+    "size='35' class='fuente-mi-form' /&gt;" +
+    "&lt;/label&gt;&lt;br /&gt;" +
+    "&lt;label&gt;Aficiones:&lt;input type='text' name='aficiones' value='' " +
+    "size='35' class='fuente-mi-form' /&gt;" +
+    "&lt;/label&gt;&lt;br /&gt;";
+    <span class="verde">//Llenamos un array con los nombres de las pestañas</span>
+    var arrayPestanyas = new Array("Personales", "Otros datos");
+    <span class="verde">// Llenamos una array con los contenidos</span>
+    var arrayHtmls = new Array(html1, html2);
+    <span class="verde">// Creamos las pestañas con esos dos array y les damos</span>
+    <span class="verde">//ancho, alto y "auto" para la propiedad overflow</span>
+    miForm.creaTabs(arrayPestanyas, arrayHtmls, "23em", "14em", "auto");
+    ...
+}</pre><p>En este caso podemos usar pestañas si son muchos los campos a enviar y no queremos que ocupe mucho espacio en pantalla, al tiempo que nos permite agruparlos de alguna forma.</p><p>Para el recibido de datos en el servidor hemos usado un ejemplo expuesto en nuestro glosario XHTML+CSS: <a href="/temas/xhtml-css/formulario.html#ejemplo-php">enviando formulario al servidor con PHP</a>, donde también exponemos el <a href="/temas/xhtml-css/ejemplos/formulario/form/codigo-php.html">código del php</a>. Hemos copiado ese archivo <b>script.php</b> en la ruta de este documento renombrándolo como <b>miform.php</b> y le hemos incorporado algunos campos más: edad, profesión y aficiones.</p><h2 class="num" id="calculadora">Un formulario emergente para una calculadora</h2><p>Una de las primeras aplicaciones que hice al aprender JavaScript fue esta calculadora, donde puede ver más detalles en mi glosario, en el tema sobre <a href="/temas/xhtml-css/script.html#calculadora">el uso del evento <code>onload</code></a> para hacer una aplicación de JavaScript: la calculadora. En este año he estado aprendiendo sobre los objetos de JavaScript y he reconvertido la calculadora anterior, que actuaba con funciones, en un objeto de JavaScript. Esto nos permite abrir varias calculadoras independientes en el mismo documento. Se estructura con archivos externos <b>calculadora-objeto.js</b> para el script y <b>calculadora-objeto.css</b> para el estilo. Puede ver el <a href="/temas/xhtml-css/ejemplos/script/calc/codigo-calculadora-objeto.html">codigo</a> del objeto con más comentarios.</p><p>En primer lugar insertamos en el siguiente <code>&lt;div id="div-una-calculadora"&gt;</code> con borde verde un objeto calculadora mediante el código que está en el <code>window.onload</code> de esta página, declarándolo en la variable <code>unaCalculadora</code> y creándolo en primer lugar.</p><pre>
+...
+<span class="verde">//Instancias para el ejemplo de la calculadora</span>
+var unaCalculadora = null;
+var emergeCalculadora = null;
+var miCalc = null;
+...
+<span class="verde">//Carga de la página, donde creamos formularios emergentes</span>
+window.onload = function() {
+    ...
+    <span class="verde">//EJEMPLO DEL FORMULARIO EMERGENTE CON CALCULADORA -------</span>
+    <span class="verde">//Creamos un objeto calculadora en un div del documento</span>
+    unaCalculadora = new calculadora("unaCalculadora",
+        "div-una-calculadora");
+    <span class="verde">//Creamos un emergente para OTRO objeto calculadora</span>
+    emergeCalculadora = new formEmerge("emergeCalculadora",
+        "Calculadora", false, 0, "marco");
+    <span class="verde">//Otro objeto calculadora para el emergente anterior, </span>
+    <span class="verde">//poniéndolo en su interior.</span>
+    miCalc = new calculadora("miCalc", <span class="azul">"IDPRE" + "emergeCalculadoraInterior"</span>);
+    ...
+}
+    </pre>Este es un objeto calculadora insertado en el <code>&lt;div id="div-una-calculadora"&gt;</code>: <section><div class="ejemplo-linea"><h4>Ejemplo<span>:</span></h4><div id="div-una-calculadora"></div></div></section><p>Luego declaramos otra variable <code>emergeCalculadora</code> para crear un formulario emergente. Otro <b>nuevo objeto</b> calculadora <code>miCalc</code> se crea y se inserta en el interior de ese emergente. El cuerpo interior de un emergente es un elemento <code>&lt;div&gt;</code> que se identifica con <code>"IDPRE" + nombre_del_emergente + "Interior"</code>, donde nombre_del_emergente es igual que el nombre de la variable con la que se instanció el objeto. Así para el <code>emergeCalculadora</code> su interior se identifica con <code>"IDPRE" + "emergeCalculadoraInterior"</code>. Recuerde que <code>"IDPRE"</code> es el prefijo que se antepone a todos los identificadores creados dinámicamente en un formulario emergente. Este prefijo se declara como una constante global en el archivo <code>form-emerge.js</code> donde esta la clase <code>emergeForm</code>.</p><p>Con el siguiente botón puede abrirse este emergente con calculadora:</p><section><div class="ejemplo-linea" id="ejemplo-calculadora"><h4>Ejemplo<span>:</span></h4>Abre una calculadora emergente. <input type="button" value="..." onclick="emergeCalculadora.abrir('','',this.offsetLeft,this.offsetTop+this.offsetHeight)"/></div></section><p>Como en otros ejemplos, este botón contiene el método abrir del emergente:</p><pre>
+Abre una calculadora emergente.
+&lt;input type="button" value="..."
+onclick="emergeCalculadora.abrir('', '', this.offsetLeft,
+this.offsetTop+this.offsetHeight)" /&gt;
+    </pre><p>Como objetos que son, ambas calculadoras son independientes de tal forma que podemos instanciar cuantas queramos y con sus propios cálculos. El estilo de la calculadora está en el archivo <code>calculadora-objeto.css</code> que define un borde y color de fondo. Para adecuarlo a nuestro emergente volvemos a a sobreescribir estas propiedades. El código CSS siguiente está en el elemento <code>&lt;style&gt;</code> de este documento:</p><pre>
+div.PRECALCcalculadora {
+    border: gray solid 1px;
+    background-color: rgb(230,230,205);
+    }</pre><h2 class="num" id="emergente-notas">Un formulario emergente para Notas</h2><p>Ahora ponemos un elemento HTML <code>&lt;textarea&gt;</code> dentro de otro formulario emergente que construimos como <code>emergeNotas</code>, con la finalidad de que sirva para anotaciones del usuario. También ponemos un botón que llama a otro emergente <code>emergeOpciones</code> para cambiar opciones de la fuente del <code>&lt;textarea&gt;</code>:</p><section><div class="ejemplo-linea" id="ejemplo-notas"><h4>Ejemplo<span>:</span></h4>Abre notas<br/> <input type="button" value="..." onclick="emergeNotas.abrir('','',this.offsetLeft,this.offsetTop+this.offsetHeight)"/></div></section><p>Activamos los eventos al abrir el formulario y al aceptarlo o aplicarlo:</p><pre>
+...
+<span class="verde">//Una instancia para un bloc de notas y otro para opciones</span>
+var emergeNotas = null;
+var emergeOpciones = null;
+...
+<span class="verde">//Carga de la página, donde creamos formularios emergentes</span>
+window.onload = function() {
+    ...
+    <span class="verde">//EJEMPLO DEL FORMULARIO EMERGENTE BLOC NOTAS ----------</span>
+    <span class="verde">//Creamos un emergente para contener el textarea de notas</span>
+    emergeNotas = new formEmerge("emergeNotas", "Notas", false, 0);
+    <span class="verde">//Componemos un literal HTML para el interior </span>
+    var interiorNotas = "&lt;textarea rows='10' cols='30' id='textarea-notas' " +
+    "style='font-size: 16px; font-family: Courier New; font-style: normal; " +
+    "font-weight: normal;'&gt;&lt;/textarea&gt;&lt;br /&gt;" +
+    "&lt;input type='button' value='opciones' " +
+    <span class="azul">"onclick = \"emergeOpciones.abrir('', '', " +</span>
+    <span class="azul">"emergeNotas.form().offsetLeft+emergeNotas.form().offsetWidth, " +</span>
+    <span class="azul">"emergeNotas.form().offsetTop)\" /&gt;";</span>
+    <span class="verde">//Ponemos ese literal en el interior</span>
+    emergeNotas.nuevoInterior(interiorNotas);
+
+    <span class="verde">//Creamos otro emergente con opciones para cambiar el</span>
+    <span class="verde">//estilo de la fuente en el textarea de emergeNotas</span>
+    emergeOpciones = new formEmerge("emergeOpciones", "Opciones", false, 3);
+    <span class="verde">//Componemos el literal HTML para el interior</span>
+    var contenidoOpciones = "&lt;label&gt;Tamaño fuente: " +
+    "&lt;input type='text' id='tamanyo-fuente-notas' value='' " +
+    "size='2' maxlength='2' "+
+    "onblur = \"<a href="/como-se-hace/javascript-general/codigo.html#limita-valor">limitaValor</a>(this, 'entero', 6, 48)\" /&gt;" +
+    "&lt;label&gt;&lt;br /&gt;" +
+    "&lt;label&gt;Fuente: " +
+    "&lt;select id='fuente-notas'&gt;" +
+    "&lt;option value='Courier New'&gt;Courier New&lt;/option&gt;" +
+    "&lt;option value='Times New Roman'&gt;Times New Roman&lt;/option&gt;" +
+    "&lt;option value='Palatino Linotype'&gt;Palatino&lt;/option&gt;" +
+    "&lt;option value='Arial'&gt;Arial&lt;/option&gt;" +
+    "&lt;option value='Arial Narrow'&gt;Arial Narrow&lt;/option&gt;" +
+    "&lt;/select&gt;" +
+    "&lt;label&gt;&lt;br /&gt;" +
+    "&lt;label&gt;Itálica: " +
+    "&lt;input type='checkbox' id='italica-notas' /&gt;" +
+    "&lt;label&gt;&lt;br /&gt;" +
+    "&lt;label&gt;Negrita: " +
+    "&lt;input type='checkbox' id='negrita-notas' /&gt;" +
+    "&lt;label&gt;";
+    <span class="verde">//Ponemos ese literal en el interior</span>
+    emergeOpciones.nuevoInterior(contenidoOpciones);
+    <span class="verde">//Activamos el evento al abrir el formulario para que llame a una</span>
+    <span class="verde">//función auxiliar opcionesNotas(salida) que está en este script pero</span>
+    <span class="verde">//fuera de este window.onload. Con salida=false toma el estilo de la</span>
+    <span class="verde">//fuente (tamaño, familia, itálica, negrita) y los pone en los</span>
+    <span class="verde">//cuadros de emergeOpciones</span>
+    emergeOpciones.eventoAbrir = true;
+    emergeOpciones.ejecutaEventoAbrir = function(){
+        opcionesNotas(false);
+    }
+    <span class="verde">//Activamos los eventos aceptar y aplicar, ambos con la misma</span>
+    <span class="verde">//función opcionesNotas(salida) pero con salida = true para hacer</span>
+    <span class="verde">//el proceso contrario: poner las opciones de emergeOpciones en</span>
+    <span class="verde">//emergeNotas</span>
+    emergeOpciones.eventoAceptar = true;
+    emergeOpciones.ejecutaEventoAceptar = function(){
+        opcionesNotas(true);
+    }
+    emergeOpciones.eventoAplicar = true;
+    emergeOpciones.ejecutaEventoAplicar = function(){
+        opcionesNotas(true);
+    }
+
+}</pre><p>Mediante una función auxiliar <code>opcionesNotas(salida)</code> que puede ver en el <a href="codigo-ejemplos.html">script</a> de este documento, podemos cambiar esas opciones. Con el argumento <code>salida</code> igual a <b>false</b> recogemos el estilo de la fuente del <code>&lt;textarea&gt;</code> (tamaño, familia, itálica y negrita) y rellenamos el cuadro de opciones al abrir el formulario. Con <code>salida</code> igual a <b>true</b> hacemos la operación inversa cuando pulsamos aceptar o aplicar: ponemos los valores del cuadro de opciones en el estilo de la fuente del <code>&lt;textarea&gt;</code>. En principio no merece extenderse más en esto, pues lo que se pretende es mostrar un ejemplo de uso de los emergentes, más que de las ejecuciones que puedan realizar en una aplicación de uso concreta.</p><p>Al componer el literal HTML para el botón interior del emergente notas que llama al método <code>abrir()</code> del emergente opciones, se observa que obtenemos las posiciones <b>offset</b> de esta forma:</p><pre>
+<span class="azul">"onclick = \"emergeOpciones.abrir('', '', " +</span>
+<span class="azul">"emergeNotas.form().offsetLeft+emergeNotas.form().offsetWidth, " +</span>
+<span class="azul">"emergeNotas.form().offsetTop)\" /&gt;";</span>    
+    </pre><p>El propósito es abrir las opciones al lado de las notas. Para ello necesitamos los <b>offset</b> o posiciones y medidas actuales o computadas del elemento <code>&lt;form&gt;</code> que supone el emergente de notas. Y es que todo el contenido de un formulario emergente se construye dentro de un <code>&lt;form&gt;</code>. La clase <code>formEmerge</code> dispone del método <code>this.form()</code> que nos devuelve una referencia al elemento <code>&lt;form&gt;</code> sin necesidad de tener que conocer el <code>id</code> para hacer un <code>document.getElementById()</code> por ejemplo. Puede ver más sobre el <a href="aspectos-disenyo.html#controles-formulario">acceso a los controles del formulario</a>.</p><h2 class="num" id="emergente-contextual">Usando un emergente como menú contextual</h2><p>El <b>menú contextual</b>, en inglés <b>context menu</b> y también llamado <b>contextual, shortcut</b> o <b>pop-up menu</b>, es un menú de acciones que se presenta al usuario según el contexto, normalmente mediante el uso del botón derecho del ratón. Nuestro emergente puede también prestarse a este cometido. Aunque con ciertas limitaciones en cuanto al uso del botón derecho del ratón, pues interacciona con el del navegador cuando presenta su menú contextual. <span style="text-decoration:line-through"> En este ejemplo usaremos el botón izquierdo, es decir, el que se usa para el <b>click</b>. Si se conoce la posibilidad de desactivar la acción del navegador sobre el botón derecho se podría aplicar para conseguir un resultado óptimo</span> <small>(Ver notas siguientes)</small>.</p><div class="aclaracion">En Marzo 2013 he preparado el script <b>menu-context.js</b> para implementar <strong>menús contextuales</strong> en una página. Aunque no lo incorporo en este ejemplo puede ver cómo usarlo en el tema <a href="/como-se-hace/menu-contextual/">cómo se hace un menú contextual</a>. Ahí no uso el formulario emergente pues es <i>"demasiado código"</i> para esa tarea. Además puede abrirse usando el botón derecho del ratón.</div><div class="aclaracion">En Septiembre 2013 he estado actualizando todos los JavaScript para que gestionen también <strong>eventos de toque (<em>touch events</em>)</strong> y poder ejecutarlos en los móviles. He actualizado este ejemplo modificando la función <code>abreContextual()</code>. Ahora usamos el evento <strong>contextmenu</strong> lo que nos permite usar el <strong>botón derecho del ratón</strong>, bloqueando el menú contextual que por defecto sale en el navegador. Aparecerán más abajo códigos tachados que han sido eliminados. Los que tienen fondo azul claro son las nuevas incorporaciones. En el texto las referencias al evento <code>click</code> se deben entender ahora a <code>contextmenu</code>.</div><p>En este ejemplo insertamos a continuación un elemento <code>&lt;p class="contextual"&gt;</code> y un <code>&lt;ul class="contextual"&gt;</code> con dos entradas de lista <code>&lt;li&gt;</code>, además de otros elementos HTML en sus interiores <span style="background-color:lightcyan">(todo encerrado en un DIV con <code>id="contenedor-contextual"</code>)</span>. Les hemos puesto bordes a algunos con objeto de probar nuestro menú contextual sobre esos elementos y saber su superficie para hacerle click:</p><section><div class="ejemplo-linea" id="contenedor-contextual"><h4>Ejemplo<span>:</span></h4><p class="contextual" style="border:blue solid 1px;margin:1em;padding:1em;">Esto es un párrafo P con un <span style="border:maroon solid 1px;">elemento SPAN</span> en su interior. Además tenemos este input type="text" <input type="text" value="input texto"/> y también este input type="button" <input type="button" value="input button"/>.</p><ul class="contextual" style="border:blue solid 1px;margin:1em"><li style="border:red solid 1px;margin:1em;padding:1em;">Primer LI con un <i style="border:maroon solid 1px;">elemento I</i> en su interior.</li><li style="border:red solid 1px;margin:1em;padding:1em;">Segundo LI con un <em style="border:maroon solid 1px;">elemento EM</em> en su interior.</li></ul></div></section><p>El nombre de la clase <code>contextual</code> para los elementos <code>&lt;p&gt;</code> y <code>&lt;ul&gt;</code> no es primordialmente para darle estilo, aunque puede servir, sino para luego adjudicarle un evento <code>onclick</code> como veremos. Por ahora diremos que al hacer click sobre esos elementos, o sus hijos, se abre un menú contextual que nos permitirá ver algunas cosas sobre el elemento. Es importante ver que no es necesario etiquetar con la clase <code>contextual</code> a todos los hijos, sino al elemento padre que los contiene, pues el evento <code>onclick</code> se va a heredar a todos sus hijos. De hecho esto podría hacerse en el <code>&lt;body&gt;</code> de un documento y tendríamos el menú contextual para todos los elementos de la página. Este emergente contextual se ha implantado en el <code>window.onload</code> de este documento así:</p><pre>
+...
+var emergeContextual = null;
+...
+window.onload = function() {
+    ...
+    <span class="verde">//EJEMPLO DEL FORMULARIO PARA MENÚ CONTEXTUAL ---------------
+    //Este es el emergente para el contextual. Se abre con
+    //pantalla y sin botones.</span>
+    emergeContextual = new formEmerge("emergeContextual", "", true, 0);
+    <span class="verde">//Desactivamos la barra del título del emergente</span>
+    emergeContextual.form("Barra").style.display = "none";
+    <span class="verde">//Aplicamos un evento a la pantalla para que cuando hagamos click
+    //se cierre el contextual</span>
+    emergeContextual.form("IDPRE" + "pantalla", true).onclick = cerrarFormularios;
+<span style="text-decoration:line-through;">    <span class="verde">//Adjudicamos eventos a todos los elementos del documento que sean de
+    //la clase "contextual". La función arrayClassName() la hice para
+    //IE que no admite getElementsByClassName().</span>
+    var elementosContextuales = <a href="/como-se-hace/javascript-general/codigo.html#array-class-name">arrayClassName</a>("contextual");
+    for (var i=0; i&lt;elementosContextuales.length; i++){
+        elementosContextuales[i].onclick = abreContextual;
+    }</span>
+<span style="background-color:lightcyan">    <span class="verde">//Adjudicamos evento contextmenu al contenedor que alberga los elementos sobre
+    //los que vamos a ejecutar el ejemplo. El evento se transmite del contenedor a 
+    //todos sus hijos.</span>
+    document.getElementById("contenedor-contextual").oncontextmenu = abreContextual;</span>
+}</pre><p>En primer lugar creamos un emergente <code>emergeContextual</code> con pantalla y sin botones y a continuación hacemos estas tres cosas:</p><ol><li>Desactivar la barra superior del emergente con <code>emergeContextual.form("Barra").style.display = "none"</code>. El método <code>this.form()</code> nos permite obtener referencias al formulario y sus elementos (ver más en <a href="aspectos-disenyo.html#controles-formulario">acceso a los controles del formulario</a>).</li><li>Aplicar un evento sobre la pantalla para que se desactive con un sólo click: <code>emergeContextual.form("IDPRE" + "pantalla", true).onclick = cerrarFormularios</code>. La pantalla se puede desactivar siempre con un doble click, pero para un menú contextual es usual que cuando pinchemos por fuera del mismo con un único click el menú desaparezca. La función <code>cerrarFormularios()</code> es una global del archivo <b>form-emerge.js</b> donde se encuentra la clase <code>emergeForm</code> que, además de cerrar todos los formularios abiertos, desactiva la pantalla.</li><li>Por último hemos de adjudicar eventos <code>onclick</code> a todos los elementos de la clase <code>contextual</code>:<pre style="text-decoration:line-through;">
+var elementosContextuales = <a href="/como-se-hace/javascript-general/codigo.html#array-class-name">arrayClassName</a>("contextual");
+for (var i=0; ielementosContextuales.length; i++){
+    elementosContextuales[i].onclick = abreContextual;
+}</pre><pre style="background-color:lightcyan">
+<span class="verde">//Adjudicamos evento contextmenu al contenedor que alberga los elementos sobe
+//los que vamos a ejecutar el ejemplo. El evento se transmite del contenedor a 
+//todos sus hijos.</span>
+document.getElementById("contenedor-contextual").oncontextmenu = abreContextual;
+</pre></li></ol><p>La función <a href="/como-se-hace/javascript-general/codigo.html#array-class-name"><code>arrayClassName</code></a> es una construcción propia para emular <code>document.getElementsByClassName()</code> que IE no tiene. Simplemente si existe ésta se devuelve la colección de elementos por la clase y si no se devuelve un array con elementos haciendo una búsqueda en el DOM. Por otro lado la función global <code>abreContextual()</code> está en el script del encabezado y tiene el siguiente código:</p><pre>
+<span class="verde">//En esta variable global se guarda el elemento
+//que genera el contextual</span>
+var elementoContextual = null;
+<span class="verde">/* Al abrir el contextual se guarda la referencia
+ * al elemento sobre el que se hizo click.
+ */</span>
+function abreContextual(event){
+<span style="background-color:lightcyan">    var evento = event||window.event;
+    var msie = false;
+    if (evento.preventDefault){
+        evento.preventDefault();
+    } else {
+        <span class="verde">//Para IE8</span>
+        evento.returnValue = false;
+        msie = true;
+    }
+    if (msie || (evento.button == 2)){</span>
+        <span class="verde">//Buscamos el evento con mi función recogeEvento()</span>
+        <span class="verde">//para unificar diferencias en IE, FF, OP y SA.</span>
+        <span class="verde">//Actualizamos la referencia elementoContextual </span>
+        <span class="verde">//y obtenemos el punto x,y del evento</span>
+        var evt = <a href="/como-se-hace/javascript-general/codigo.html#recoge-evento">recogeEvento</a>(evento);
+        elementoContextual = evt.element;
+        var izquierda = evt.x;
+        var arriba = evt.y;
+        <span class="verde">//Seleccionamos el menú que queremos presentar según el</span>
+        <span class="verde">//contexto. En este ejemplo hacemos una diferenciación para</span>
+        <span class="verde">//los elementos input.</span>
+        var interior = menuGeneral;
+        if (elementoContextual.tagName.toLowerCase() == "input"){
+            interior += "&lt;hr /&gt;" + menuInput;
+        }
+        <span class="verde">//Abrimos el menú contextual</span>
+        emergeContextual.abrir(interior, "", izquierda, arriba);
+<span style="background-color:lightcyan">    }</span>
+}</pre><p>Disponemos de la variable global <code>elementoContextual</code> que guarda la referencia del elemento sobre el que hayamos hecho click y abierto el menú. Luego esa variable será utilizada en la función que luego veremos <code>contextual(queHacer)</code> para ejecutar algo. Ese "algo" puede tener o no relación con el elemento sobre el que se hizo click, pero en todo caso ya tenemos la referencia al elemento. Como vemos la referencia se obtiene a partir del elemento que porta el evento. Sin embargo hay diferencias en la forma que actúa Firefox con el resto Internet Explorer, Opera y Safari. Entonces uso una construcción propia <a href="/como-se-hace/javascript-general/codigo.html#recoge-evento"><code>recogeEvento(evento)</code></a> que trata el objeto <code>event</code> devolviendo un objeto <b>Object</b> con las propiedades <code>event, element, x, y</code> que son el mismo evento devuelto, el elemento que lo causó y las coordenadas donde se produjo.</p><p>Antes de llamar al emergente <code>emergeContextual</code> que nos va a presentar el menú, hemos de personalizarlo. En nuestro ejemplo hemos dispuesto un menú general para todo tipo de elementos y cuando sean <code>&lt;input&gt;</code> le agregamos una par de entradas para ver sus atributos <code>value</code> y <code>type</code>. Por eso agregamos al <code>menuGeneral</code> el <code>menuInput</code> con una regla <code>&lt;hr&gt;</code> por medio.</p><p>Las variables <code>menuGeneral</code> y <code>menuInput</code> contienen literales HTML. Se trata de una relación de vínculos <code>&lt;a&gt;</code> separados por retornos de carro. Podemos separar grupos con la regla <code>&lt;hr&gt;</code>. Esto es un simple ejemplo de aplicación, pero puede servir cualquier otra cosa que ejecute algo en esa entrada de menú.</p><pre>
+<span class="verde">//Entradas de menú para toda clase de elementos</span>
+var menuGeneral = "&lt;a class='a-contextual' " +
+"href='javascript: contextual(\"tag\")'&gt;Tag&lt;/a&gt;&lt;br /&gt;" +
+"&lt;a class='a-contextual' " +
+"href='javascript: contextual(\"dom\")'&gt;Analiza DOM&lt;/a&gt;&lt;hr /&gt;" +
+"&lt;a class='a-contextual' " +
+"href='javascript: contextual(\"html\")'&gt;Html&lt;/a&gt;&lt;br /&gt;" +
+"&lt;a class='a-contextual' "+
+"href='javascript: contextual(\"texto\")'&gt;Texto&lt;/a&gt;";
+<span class="verde">//Entradas de menú para elementos &lt;input&gt;</span>
+var menuInput = "&lt;a class='a-contextual' " +
+"href='javascript: contextual(\"valor\")'&gt;Valor&lt;/a&gt;&lt;br /&gt;" +
+"&lt;a class='a-contextual' " +
+"href='javascript: contextual(\"tipo\")'&gt;Tipo&lt;/a&gt;";
+    </pre><p>La clase <code>a-contextual</code> es para darle estilo, que se encuentra también en el elemento <code>&lt;style&gt;</code> de la cabecera de este documento:</p><pre>
+<span style="background-color:lightcyan">
+<span class="verde">/* Este contenedor-contextual es un ID que le hemos puesto al contenedor que
+   alberga los elementos donde vamos a usar el contextual. Por un lado nos
+   sirve para adjudicarle el evento contextmenu. Por otro para dar estilo de
+   no seleccionable a todo su interior, pues de otra forma en los móviles
+   no podremos activar el menú contextual pues aparecerá la utilidad del
+   móvil para seleccionar texto.
+*/</span>
+div#contenedor-contextual {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }</span> 
+a.a-contextual {
+    padding: 0.1em;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 0.9em;
+    color: black;
+    }
+
+a.a-contextual:focus, a.a-contextual:hover, a.a-contextual:active  {
+    background-color: rgb(49, 99, 98);
+    color: white;
+    }</pre><p>Como vemos se trata de quitarle los decorados del vínculo y que cuando nos posicionemos con el ratón se ponga un fondo azul y letra de color blanco. Por otro lado su atributo <code>href</code> lleva a un código Javascript para ejecutar la función <code>contextual("tipo")</code> que también se encuentra en el script del encabezado de este documento, pero por fuera del <code>window.onload</code> y que será la que finalmente ejecute lo que deseemos:</p><pre>
+<span class="verde">/* Con esto ejecutamos las entradas del contextual.</span>
+<span class="verde"> * El argumento queHacer trae uno de los posibles valores</span>
+<span class="verde"> * para ejecutar una acción de menú.</span>
+<span class="verde"> */</span>
+function contextual(queHacer){
+    switch (queHacer){
+        <span class="verde">//ENTRADAS DE MENÚ GENERAL</span>
+        case "tag": {
+            <span class="verde">//Esto simplemente da un alert sobre el tagName</span>
+            alert("Este elemento es un &lt;" +
+            elementoContextual.tagName + "&gt;");
+            break;
+        }
+        case "dom": {
+            ...<span class="azul">ejecuta analizaDOM()</span> <a href="#nota-dom">(VER NOTA)</a>...
+        }
+        case "html": {
+            ...<span class="azul">ejecuta esto</span>...
+        }
+        case "texto": {
+            ...<span class="azul">ejecuta esto</span>...
+        }
+        <span class="verde">//ENTRADAS DE MENÚ PARA LOS INPUT</span>
+        case "valor": {
+            <span class="verde">//Esto nos da el atributo value de un input</span>
+            alert("Su valor es \"" +
+            elementoContextual.value + "\"");
+            break;
+        }
+        case "tipo": {
+            <span class="verde">//Esto nos da el atributo type de un input</span>
+            alert("Su tipo es \"" +
+            elementoContextual.type + "\"");
+            break;
+        }
+
+    }
+} </pre><p>Esta función global <code>contextual(queHacer)</code> se encarga de ejecutar la acción declarada en los elementos vínculo del menú. Estos son ejemplos particulares que hemos puesto para este caso, pero en otra aplicación aquí habría que poner la ejecución que quisiéramos con cada entrada de menú. De hecho sólo señalamos algunos y otros los obviamos para aclarar el concepto general (puede ver el código de la página y de esa función <a href="codigo-ejemplos.html#contextual-que-hacer"><code>contextual()</code></a>). Por ejemplo, pasando <code>"tag"</code> nos dará un mensaje del navegador con el <code>tagName</code> del elemento sobre el que hicimos click.</p><div class="aclaracion" id="nota-dom"><b>NOTA sobre analizaDOM():</b> En una de las entradas de menú se llama a <code>analizaDOM()</code>. Se trata de una función en JavaScript con objeto de practicar detalles sobre el manejo del <b>DOM (Document Object Model, Modelo de Objetos del Documento).</b> Esta función analiza el nombre tag de un elemento, sus hijos, los atributos y también el estilo actual (<b>currentStyle</b> para Internet Explorer y <b>getComputedStyle</b> para Firefox y otros). Aunque no viene al caso explicarlo ahora, puede ver su <a href="codigo-analizador-dom.html">código fuente</a>.</div></article></div><footer><div id="pie"><div><a href="formulario-pestanyas.html">Anterior</a> <a href="#cabeza">Arriba</a> <a href="documentacion-clase.html">Siguiente</a></div><div></div></div></footer><script>var wxG;var miCalendario=null;var emergeCalendario=null;var miForm=null;var unaCalculadora=null;var miCalc=null;var emergeCalculadora=null;var emergeNotas=null;var emergeOpciones=null;var emergeContextual=null;var emergeMensaje=null;window.onload=function(){wxG=Wextensible.general;wxG.adjudicarEventosGenerales();wxG.cargarModulos(["form-emerge.js","calendar.js","calculadora.js","dom.js"]);miCalendario=new Wextensible.Calendar("miCalendario","ubica-calendario","ubica-titulo",fechaHoy,true);emergeCalendario=new Wextensible.FormEmerge("emergeCalendario","Calendario",true,2,"marco");var html="<div class='previo-cal'>"+"<input type='button' value='&lt;' "+"onclick = 'miCalendario.mueveCalendar(-1)' />"+"<input type='text' id='ubica-titulo' value='' size='8' "+"onfocus = 'miCalendario.entraFecha(this)' "+"onblur = 'miCalendario.mueveMesAnyo(this)' />"+"<input type='button' value='&gt;' "+"onclick = 'miCalendario.mueveCalendar(1)' />"+"</div>"+"<div id='ubica-calendario'></div>";emergeCalendario.nuevoInterior(html);emergeCalendario.idObjetoRespuesta="cuadro-fecha";emergeCalendario.eventoAbrir=true;emergeCalendario.ejecutaEventoAbrir=function(){var fecha="";var arrFecha=wxG.compruebaFecha(emergeCalendario.respuesta);if(arrFecha==null){fecha=wxG.fechaActual()[4];emergeCalendario.respuesta=fecha;}else{fecha=arrFecha[3];}miCalendario.situaFecha(fecha);};emergeCalendario.eventoAceptar=true;emergeCalendario.ejecutaEventoAceptar=function(){emergeCalendario.respuesta=miCalendario.devuelveFecha("fecha-larga");};var hoy=wxG.fechaActual();var fechaHoy=hoy[1]+"/"+hoy[2]+"/"+hoy[3];miForm=new Wextensible.FormEmerge("miForm","Enviar datos",true,3,"marco","ejemplos/miform.php","post");var html1="<label>Nombre:<input type='text' name='nombre' value='' "+"size='20' class='fuente-mi-form' />"+"</label><br />"+"<label>Dirección:<input type='text' name='direccion' value='' "+"size='20' class='fuente-mi-form' />"+"</label><br />"+"<label>E-mail:<input type='text' name='email' value='' "+"size='20' class='fuente-mi-form' />"+"</label><br />"+"<label>Cuestión:<br /><textarea name='cuestion' rows='5' cols='27' "+"class='fuente-mi-form'></textarea>"+"</label>";var html2="<label>Edad:<input type='text' name='edad' value='' "+"size='10' class='fuente-mi-form' />"+"</label><br />"+"<label>Profesión:<input type='text' name='profesion' value='' "+"size='20' class='fuente-mi-form' />"+"</label><br />"+"<label>Aficiones:<input type='text' name='aficiones' value='' "+"size='20' class='fuente-mi-form' />"+"</label><br />";var arrayPestanyas=new Array("Personales","Otros datos");var arrayHtmls=new Array(html1,html2);miForm.creaTabs(arrayPestanyas,arrayHtmls,"15.5em","12em","auto");unaCalculadora=new Wextensible.Calculadora("unaCalculadora","div-una-calculadora");emergeCalculadora=new Wextensible.FormEmerge("emergeCalculadora","Calculadora",false,0,"marco");miCalc=new Wextensible.Calculadora("miCalc","IDPRE"+"emergeCalculadoraInterior");emergeNotas=new Wextensible.FormEmerge("emergeNotas","Notas",false,0);var interiorNotas="<textarea rows='10' cols='15' id='textarea-notas' "+"style='font-size: 16px; font-family: Courier New; font-style: normal; "+"font-weight: normal;'></textarea><br />"+"<input type='button' value='opciones' "+"onclick = \u0022emergeOpciones.abrir('', '', "+"emergeNotas.form().offsetLeft+emergeNotas.form().offsetWidth, "+"emergeNotas.form().offsetTop)\u0022 />";emergeNotas.nuevoInterior(interiorNotas);emergeOpciones=new Wextensible.FormEmerge("emergeOpciones","Opciones",false,3);var contenidoOpciones="<label>Tamaño fuente: "+"<input type='text' id='tamanyo-fuente-notas' value='' "+"size='2' maxlength='2' "+"onblur = \u0022wxG.limitaValor(this, 'entero', 6, 48)\u0022 />"+"<label><br />"+"<label>Fuente: "+"<select id='fuente-notas'>"+"<option value='Courier New'>Courier New</option>"+"<option value='Times New Roman'>Times New Roman</option>"+"<option value='Palatino Linotype'>Palatino</option>"+"<option value='Arial'>Arial</option>"+"<option value='Arial Narrow'>Arial Narrow</option>"+"</select>"+"<label><br />"+"<label>Itálica: "+"<input type='checkbox' id='italica-notas' />"+"<label><br />"+"<label>Negrita: "+"<input type='checkbox' id='negrita-notas' />"+"<label>";emergeOpciones.nuevoInterior(contenidoOpciones);emergeOpciones.eventoAbrir=true;emergeOpciones.ejecutaEventoAbrir=function(){opcionesNotas(false);};emergeOpciones.eventoAceptar=true;emergeOpciones.ejecutaEventoAceptar=function(){opcionesNotas(true);};emergeOpciones.eventoAplicar=true;emergeOpciones.ejecutaEventoAplicar=function(){opcionesNotas(true);};emergeMensaje=new Wextensible.FormEmerge("emergeMensaje","",false,0);emergeContextual=new Wextensible.FormEmerge("emergeContextual","",true,0);emergeContextual.form("Barra").style.display="none";emergeContextual.form("IDPRE"+"pantalla",true).onclick=emergeContextual.cerrarFormulario;emergeContextual.form("Interior").style.lineHeight="2em";document.getElementById("contenedor-contextual").oncontextmenu=abreContextual;};var menuGeneral="<a class='a-contextual' "+"href='javascript: contextual(\u0022tag\u0022)'>Tag</a><br />"+"<a class='a-contextual' "+"href='javascript: contextual(\u0022dom\u0022)'>Analiza DOM</a><hr />"+"<a class='a-contextual' "+"href='javascript: contextual(\u0022html\u0022)'>Html</a><br />"+"<a class='a-contextual' "+"href='javascript: contextual(\u0022texto\u0022)'>Texto</a>";var menuInput="<a class='a-contextual' "+"href='javascript: contextual(\u0022valor\u0022)'>Valor</a><br />"+"<a class='a-contextual' "+"href='javascript: contextual(\u0022tipo\u0022)'>Tipo</a>";var elementoContextual=null;function abreContextual(event){var evento=event||window.event;var msie=false;if(evento.preventDefault){evento.preventDefault();}else{evento.returnValue=false;msie=true;}if(msie||(evento.button==2)){var evt=wxG.recogeEvento(evento);elementoContextual=evt.element;var izquierda=evt.pagx;var arriba=evt.pagy;var interior=menuGeneral;if(elementoContextual.tagName.toLowerCase()=="input"){interior+="<hr />"+menuInput;}emergeContextual.abrir(interior,"",izquierda,arriba);}}function contextual(queHacer){switch(queHacer){case "tag":{alert("Este elemento es un <"+elementoContextual.tagName+">");break;}case "dom":{var html=Wextensible.dom.analizarDOM(elementoContextual);emergeMensaje.abrir(html,"Analizador del DOM",emergeContextual.form().offsetLeft+emergeContextual.form().offsetWidth,emergeContextual.form().offsetTop,"20em","10em","auto");break;}case "html":{var html=elementoContextual.innerHTML;if(html==""){html="&nbsp;";}else{html=html.replace(/&/g,"&amp;");html=html.replace(/</g,"&lt;");html=html.replace(/>/g,"&gt;");}emergeMensaje.abrir(html,"HTML del elemento",(emergeContextual.form().offsetLeft+emergeContextual.form().offsetWidth),emergeContextual.form().offsetTop,"20em","10em","auto");break;}case "texto":{var texto=wxG.getInnerText(elementoContextual);if(texto=="")texto="&nbsp;";emergeMensaje.abrir(texto,"Texto interior",emergeContextual.form().offsetLeft+emergeContextual.form().offsetWidth,emergeContextual.form().offsetTop,"20em","10em","auto");break;}case "valor":{alert("Su valor es \u0022"+elementoContextual.value+"\u0022");break;}case "tipo":{alert("Su tipo es \u0022"+elementoContextual.type+"\u0022");break;}}}function opcionesNotas(salida){var textareaNotas=document.getElementById("textarea-notas");if(textareaNotas!=null){var elemento=document.getElementById("fuente-notas");if(elemento!=null){if(salida){textareaNotas.style.fontFamily=elemento.value;}else{elemento.value=textareaNotas.style.fontFamily;}}elemento=document.getElementById("tamanyo-fuente-notas");if(elemento!=null){if(salida){textareaNotas.style.fontSize=parseInt(elemento.value)+"px";}else{elemento.value=parseInt(textareaNotas.style.fontSize);}}elemento=document.getElementById("italica-notas");if(elemento!=null){if(salida){if(elemento.checked){textareaNotas.style.fontStyle="italic";}else{textareaNotas.style.fontStyle="normal";}}else{if(textareaNotas.style.fontStyle=="italic"){elemento.checked=true;}else{elemento.checked=false;}}}elemento=document.getElementById("negrita-notas");if(elemento!=null){if(salida){if(elemento.checked){textareaNotas.style.fontWeight="bold";}else{textareaNotas.style.fontWeight="normal";}}else{if(textareaNotas.style.fontWeight=="bold"){elemento.checked=true;}else{elemento.checked=false;}}}}}</script></body></html>

@@ -1,0 +1,32 @@
+#comoLlegar{width:400px;}#comoLlegar .step-1 label{font-size:12px;}#comoLlegar .step-1 label.dia_label{margin-right:15px;display:inline-block;width:90px;}
+#comoLlegar .step-1 input.datepicker{width:90px;margin-right:10px;}
+#comoLlegar .step-1 .ind{display:inline-block;position:relative;top:-3px;}#comoLlegar .step-1 .ind span{margin:0;}
+#comoLlegar .step-1 .line{margin:0 0 8px;}
+#comoLlegar .step-1 .input.text{position:relative;}#comoLlegar .step-1 .input.text .cp{position:absolute;left:0;line-height:30px;}#comoLlegar .step-1 .input.text .cp label{width:40px;display:inline-block;}
+#comoLlegar .step-1 .input.text .w{height:30px;}
+#comoLlegar .step-1 .input.text input{display:block;margin-left:20%;width:80%;}
+#comoLlegar .step-1 .invert{display:inline-block;background:url(../img/back_rev.png) repeat-x left center #ffff00;color:black;padding:2px 35px 2px 6px;text-decoration:none;height:18px;line-height:18px;font-size:12px;vertical-align:top;float:right;position:relative;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;}#comoLlegar .step-1 .invert .ico{position:absolute;right:5px;top:2px;}
+#comoLlegar .step-1 .preferencias{background:#ffc;padding:5px 0;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;}
+#comoLlegar .step-1 .sel_pref{width:44%;float:left;margin-left:10px;margin-right:10px;}#comoLlegar .step-1 .sel_pref select{width:100%;}
+#comoLlegar .step-1 select{vertical-align:top;}
+#comoLlegar .step-1 .sel_id_2{width:70px;display:inline-block;}
+#comoLlegar .step-1 .sel_temp{margin-left:10px;}
+#comoLlegar .step-1 .submit{margin-top:10px;}
+#conocerRecorridos{width:400px;}#conocerRecorridos .text label{width:50%;display:inline-block;}
+#conocerRecorridos .text input[type="text"]{width:49%;}
+#conocerRecorridos .step-2 .recRes{position:relative;margin-left:58px;display:block;}#conocerRecorridos .step-2 .recRes .tit{padding-top:12px;margin-bottom:10px;display:block;}
+#conocerRecorridos .step-2 .recRes .numColor{font-style:italic;}
+#conocerRecorridos .step-2 .recRes ol{list-style:none;padding:0;margin:0;}#conocerRecorridos .step-2 .recRes ol li{padding:10px;display:block;background:#FCF7E4;margin-bottom:10px;cursor:pointer;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;}#conocerRecorridos .step-2 .recRes ol li:hover,#conocerRecorridos .step-2 .recRes ol li.active{background:#F7E8AE;}
+#conocerRecorridos .step-2 .recRes ol li .arrow{margin-right:5px;}
+#conocerRecorridos .step-2 .recRes ol li div{font-size:12px;}#conocerRecorridos .step-2 .recRes ol li div.rec{font-size:12px;margin-bottom:5px;}
+#conocerRecorridos .step-2 .busColor{position:absolute;left:-58px;top:0;}
+#cuandoLlega{width:400px;}#cuandoLlega .line{margin-bottom:10px;}
+#cuandoLlega .step-1 .submit .w{width:90%;display:block;margin:0 5%;}
+#cuandoLlega .step-1 .submit .note{text-align:right;float:left;width:50%;font-size:11px;line-height:13px;margin-right:15px;margin-top:5px;}
+#cuandoLlega .step-1 .input label{display:inline-block;width:50%;}
+#cuandoLlega .step-2 p{margin:0;font-size:12px;}
+#cuandoLlega .loader{position:absolute;right:12px;top:12px;margin:0;}
+#encuentraParadas{width:400px;}#encuentraParadas .step-1 input[type="text"]{display:block;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:5px 0 0;}
+#encuentraParadas .parRes{max-height:150px;height:150px;width:100%;overflow:auto;display:block;}#encuentraParadas .parRes ol{list-style:none;padding:0;margin:0;display:block;width:100%;height:auto;}#encuentraParadas .parRes ol li{display:block;background:#FCF7E4;padding:5px;margin-bottom:10px;cursor:pointer;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;}#encuentraParadas .parRes ol li .li{position:relative;margin-left:35px;}#encuentraParadas .parRes ol li .li .parada{position:absolute;left:-35px;top:0;}
+#encuentraParadas .parRes ol li:hover,#encuentraParadas .parRes ol li.active{background:#F7E8AE;}
+#encuentraParadas .submit{margin-bottom:0;}

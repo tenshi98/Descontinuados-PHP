@@ -1,0 +1,181 @@
+/*
+	 CSS-Tricks Example
+	 by Chris Coyier
+	 http://css-tricks.com
+*/
+
+* { margin: 0; padding: 0; }
+html, body {
+	height: auto;
+	overflow: auto;
+	right: 50%;
+}
+#page-wrap {
+	width: 960px;
+	padding: 0 0 0 0px;
+	margin: 0 auto;
+	overflow: inherit;
+	height: auto;
+}
+
+.info-col {
+	float: center;
+	height: auto;
+	width: 100%;
+}
+.info-col h2 {
+	text-align: center;
+	font-weight: normal;
+}
+
+.image { height: 100px; text-indent: -9999px; display: block; border-right: 1px solid white; }
+
+dt {
+	background: #900;
+	color: white;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	text-align: left;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+dd {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+	padding: 10px;
+	color: white;
+	border-right: 1px solid white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #333;
+}
+
+dt:nth-of-type(1) {
+	background-color: #003673;
+}
+dd:nth-of-type(1) {
+	background: #003673;
+}
+
+dt:nth-of-type(2) {
+	background: #063E76;
+}
+dd:nth-of-type(2) {
+	background: #063E76;
+}
+
+dt:nth-of-type(3) {
+	background: #0C4578;
+}
+dd:nth-of-type(3) {
+	background: #0C4578;
+}
+
+dt:nth-of-type(4) {
+	background: #124D7B;
+}
+dd:nth-of-type(4) {
+	background: #124D7B;
+}
+
+dt:nth-of-type(5) {
+	background: #17547D;
+}
+dd:nth-of-type(5) {
+	background: #17547D;
+}
+
+dt:nth-of-type(6) {
+	background: #1D5C80;
+}
+dd:nth-of-type(6) {
+	background: #1D5C80;
+}
+
+dt:nth-of-type(7) {
+	background: #236382;
+}
+dd:nth-of-type(7) {
+	background: #236382;
+}
+
+dt:nth-of-type(8) {
+	background: #296B85;
+}
+dd:nth-of-type(8) {
+	background: #296B85;
+}
+
+dt:nth-of-type(9) {
+	background: #2C6577;
+}
+dd:nth-of-type(9) {
+	background: #2C6577;
+}
+
+dt:nth-of-type(10) {
+	background: #2E5F69;
+}
+dd:nth-of-type(10) {
+	background: #2E5F69;
+}
+
+dt:nth-of-type(11) {
+	background: #31595B;
+}
+dd:nth-of-type(11) {
+	background: #31595B;
+}
+
+dt:nth-of-type(12) {
+	background: #33544E;
+}
+dd:nth-of-type(12) {
+	background: #33544E;
+}
+
+dt:nth-of-type(13) {
+	background: #364E40;
+}
+dd:nth-of-type(13) {
+	background: #364E40;
+}
+
+dt:nth-of-type(14) {
+	background: #384832;
+}
+dd:nth-of-type(14) {
+	background: #384832;
+}
+
+dt:nth-of-type(15) {
+	background: #3B4224;
+}
+dd:nth-of-type(15) {
+	background: #3B4224;
+}
+
+dt:nth-of-type(16) {
+	background: #2F3616;
+}
+dd:nth-of-type(16) {
+	background: #2F3616;
+	
+	
+
+dt:nth-of-type(16) {
+	background: #2F3619;
+}
+dd:nth-of-type(16) {
+	background: #2F3619;
+}
+
+}
+.curCol {
+	z-index: 1;
+	position: relative;
+}

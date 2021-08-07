@@ -1,0 +1,123 @@
+/*** general styling */
+.ui-page.ui-body-c{
+background:url(images/bg.png);
+box-shadow:  0px 0px 30px 5px rgba(107, 105, 105, 0.3) inset,
+ 0px 0px 0px 1px rgba(107, 105, 105, 0.4) inset;
+
+}
+
+.ui-icon.ui-icon-arrow-r {
+background-color:rgb(136, 111, 110);
+}
+.ui-corner-all, 
+.ui-corner-top,
+.ui-corner-bottom,
+.ui-corner-tl,
+.ui-corner-tr,
+.ui-corner-bl,
+.ui-header .ui-btn-corner-all,
+.ui-listview-filter .ui-btn-corner-all,
+#restau_infos .ui-btn-corner-all,
+#contact_buttons .ui-btn-corner-all,
+#notation .ui-btn-corner-all{
+border-radius:0.2em;
+}
+
+.ui-btn-active {
+background: #654644; /* Old browsers */
+background: -moz-linear-gradient(top,  #654644 0%, #331c1b 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#654644), color-stop(100%,#331c1b)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #654644 0%,#331c1b 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #654644 0%,#331c1b 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #654644 0%,#331c1b 100%); /* IE10+ */
+background: linear-gradient(top,  #654644 0%,#331c1b 100%); /* W3C */
+color:#fff !important;
+}
+.ui-content .choice_list  .ui-btn-active .ui-link-inherit,
+.ui-btn-down-c a.ui-link-inherit,
+#home .ui-btn-down-c a.ui-link-inherit{
+color:#fff !important;
+}
+
+img{
+max-width: 100%;
+height: auto; width: auto;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.ui-grid-a .ui-block-a, .ui-grid-a .ui-block-b {
+    width: 48%;
+    padding:1%;
+}
+
+
+/* title bar */
+.ui-header.ui-bar-a{
+background:url(images/header_bg.png);
+}
+.ui-header .ui-title {
+text-indent:-9999px;
+font-size:0px;
+background:url(images/header_logo.png) no-repeat 69% 5px ;
+height:33px;
+padding:5px 0 5px 50px;
+margin:0px;
+}
+
+.ui-header  .ui-btn-up-a  {
+background:rgba(255, 255, 255, 0.1);
+box-shadow:none;
+}
+.ui-header  .ui-btn-hover-a {
+background:rgba(0, 0, 0, 0.3);
+box-shadow:none;
+}
+
+
+
+
+/*** home **/
+
+#branding{
+background:url(images/logo_cel.png) no-repeat;
+width:322px;
+height:165px;
+text-indent:-999px;
+font-size:0px;
+margin:-10px auto 0 auto;
+border-bottom:1px solid rgba(65, 38, 37, 0.6);
+}
+
+.choice_list h1{
+/*margin-top: 10px;*/
+font-size:14px;
+color:rgb(65, 38, 37);
+font-weight:normal;
+font-style:italic;
+padding:5px 0 26px 50px;
+background:url(images/logo_cuad48.png) no-repeat;
+}
+
+#home .choice_list h1{
+background-position: 0 0px;
+}
+#home .choice_list  h3{
+font-size:14px;
+padding-top:10px;
+color:rgb(63, 41, 39);
+}
+#home .choice_list .ui-btn-active  a.ui-link-inherit h3{
+color:#fff;
+}
+.choice_list  img{
+padding:3px;
+}
+
+.fecha {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #666;
+}

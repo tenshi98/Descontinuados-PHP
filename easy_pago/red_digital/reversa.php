@@ -1,0 +1,30 @@
+<?php   
+//Se llama a la libreria necesaria   
+include "lib/nusoap.php"; //Soap Library.
+//se ejecuta codigo
+try {
+	// Inicio del servicio, con la ubicacion de los archivos
+	$client = new soapclient(null, array(
+	'location' => "http://rdigital.naturalphone.com.pe/server.php",
+	'uri' => "http://rdigital.naturalphone.com.pe"));
+	
+	// Se leen los parametros entregados
+	if(isset($_POST["id_vendor"])&&$_POST["id_vendor"]!=''){  $Cellid  = $_POST["id_vendor"];  }else{$Cellid ='';}
+	
+	//Si todos los datos solicitados existen
+	if ($Cellid!='') {
+		$result = $client->DellSell($Cellid);
+		$response["result"] = $result;
+	//si no existen se despliega mensaje de error
+	}else{
+		$response["result"] = 'No ha ingresado todos los datos';
+	}
+	//se imprimen las variables
+	echo json_encode($response);
+	
+} catch(SoapFault $ex) {
+	
+	$response["result"] = $ex->getMessage();
+	echo json_encode($response);
+} 
+?> 

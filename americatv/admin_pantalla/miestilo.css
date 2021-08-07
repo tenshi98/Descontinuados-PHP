@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+.btn{
+	text-decoration: none;
+	padding-top: 8px;
+	padding-right: 15px;
+	padding-bottom: 8px;
+	padding-left: 15px;
+}
+
+.btn_list {
+font-weight: 500;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+border: 1px solid transparent;
+-webkit-box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.09);
+-moz-box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.09);
+box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, 0.09);
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 1.428571429;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+.btn_list.btn-app {
+position: relative;
+box-shadow: none;
+border-radius: 0px;
+text-align: center;
+color: #666;
+border: 1px solid #DDD;
+background-color: #FAFAFA;
+font-size: 12px;
+padding: 5px;
+min-width: 40px;
+}
+.btn_list.btn-app > .fap,.btn_list.btn-app > .fa, .btn_list.btn-app > .glyphicon, .btn_list.btn-app > .ion {
+font-size: 20px;
+display: block;
+}
+
+.fap {
+display: inline-block;
+font-family: FontAwesome;
+font-style: normal;
+font-weight: normal;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.fap-edit:before, .fap-pencil-square-o:before {
+content: "\f044";
+}
+.fap-trash-o:before {
+content: "\f014";
+}
+.fap-eye:before {
+content: "\f06e";
+}
+
+.alert {
+padding-left: 20px;
+position: relative;
+}
+.alert {
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	padding-top: 12px;
+	padding-right: 15px;
+	padding-bottom: 12px;
+	padding-left: 50px;
+}
+.alert_error {
+color: #a94442;
+background-color: #f2dede;
+border-color: #ebccd1 !important;
+}
+.alert-danger .close {
+	border-radius: 25px !important;
+	border: 1px solid #ebccd1 !important;
+}	
+.alert-info {
+color: #31708f;
+background-color: #d9edf7;
+border-color: #bce8f1 !important;
+}
+.alert-info .close {
+	border-radius: 25px !important;
+	border: 1px solid #bce8f1 !important;
+}
+.alert-warning {
+color: #8a6d3b;
+background-color: #fcf8e3;
+border-color: #faebcc !important;
+}
+.alert-warning .close {
+	border-radius: 25px !important;
+	border: 1px solid #faebcc !important;
+}
+.alert_sucess {
+color: #3c763d;
+background-color: #dff0d8;
+border-color: #A2A393 !important;
+}
+.alert_sucess .close {
+	border-radius: 25px !important;
+	border: 1px solid #A2A393 !important;
+}
+.alert-dismissable {
+padding-right: 35px;
+}
+.alert-dismissable .close {
+	position: relative;
+	top: 10px !important;
+	color: inherit;
+	position: absolute;
+	right: 15px !important;
+}
+.alert > .fa, .alert > .glyphicon {
+position: absolute;
+left: 5px !important;
+top: 5px !important;
+width: 35px;
+height: 35px;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+border-radius: 50%;
+line-height: 35px;
+text-align: center;
+background: inherit;
+border: inherit;
+}
+
+button.close {
+padding: 0;
+cursor: pointer;
+background: transparent;
+border: 0;
+-webkit-appearance: none;
+}
+.close {
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	opacity: .5;
+	filter: alpha(opacity=20);
+	margin-left: 5px;
+	float: right;
+}
+.oculto {
+	color: #b94a48;
+	background-color: #f2dede;
+	margin-bottom: 0px !important;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	border: 1px solid #eed3d7;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	width: 100%;
+	margin-top: 0px !important;
+	padding-top: 0px !important;
+	padding-right: 0px!important;
+	padding-bottom: 0px !important;
+	padding-left: 0px !important;
+	text-align: center !important;
+	
+	-webkit-transition:0.2s;
+	-moz-transition:0.2s;
+	-o-transition:0.2s;
+	-ms-transition:0.2s;
+	opacity:0;
+	-ms-opacity:0;
+	-moz-opacity:0;
+	visibility:hidden;
+	height:0px !important;	
+}
+.bot_sombra {
+	margin-bottom: 0 !important;
+}

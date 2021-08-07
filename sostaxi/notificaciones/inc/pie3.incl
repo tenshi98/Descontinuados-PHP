@@ -1,0 +1,10 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="pie2" valign="bottom">
+  <tr>
+    <td align="center" valign="middle" ><a href="http://<?=$nombreurl?>" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image2','','../images/logo_footer_up2_blue.png',1)"><img src="../images/logo_footer_up_blue.png" name="Image2" width="300" height="64" border="0" id="Image2" /></a></td>
+  </tr>
+</table>      
+<table  width="100%" border="0" cellpadding="0" cellspacing="0" class="pie" valign="bottom">
+  <tr>
+    <td align="center" valign="middle" class="arial_bco_light_med">Avenida Kennedy 5735 &bull; Edificio Hotel Marriot, Torre Poniente , Oficina 1107. Las Condes, Santiago &bull; (56 2) 2454637 - 2454622</td>
+  </tr>
+</table>

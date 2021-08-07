@@ -1,0 +1,103 @@
+.service_item
+{
+	padding: 3px 0px 3px 25px;
+	background-repeat: no-repeat;
+	background-position: 2px 2px;
+}
+
+.service_item_h3
+{
+	padding: 3px 0px 3px 25px;
+	background-repeat: no-repeat;
+	background-position: 2px 5px;
+}
+
+.gmail_si { background-image: url(gmail.png); }
+.yahoo_si { background-image: url(yahoo.png); }
+.hotmail_si { background-image: url(hotmail.png); }
+.facebook_si { background-image: url(facebook.png); }
+.aol_si { background-image: url(aol.png); }
+.twitter_si { background-image: url(twitter.png); }
+.mail_com_si { background-image: url(mail_com.png); }
+.icloud_si { background-image: url(icloud.png); }
+.gmx_net_si { background-image: url(gmx_net.png); }
+.freenet_de_si { background-image: url(freenet_de.png); }
+.arcor_si { background-image: url(arcor.png); }
+.libero_si { background-image: url(libero.png); }
+.virgilio_si { background-image: url(virgilio.png); }
+.mailchimp_si { background-image: url(mailchimp.png); }
+.excite_it_si { background-image: url(excite_it.png); }
+.tonline_si { background-image: url(tonline.png); }
+.email_it_si { background-image: url(email_it.png); }
+.sapo_si { background-image: url(sapo.png); }
+.fastmail_si { background-image: url(fastmail.png); }
+.gawab_si { background-image: url(gawab.png); }
+.terra_si { background-image: url(terra.png); }
+.bol_com_br_si { background-image: url(bol_com_br.png); }
+.operamail_si { background-image: url(operamail.png); }
+.interia_si { background-image: url(interia.png); }
+.mynet_si { background-image: url(mynet.png); }
+.inbox_si { background-image: url(inbox.png); }
+.qip_si { background-image: url(qip.png); }
+.mail_ru_si { background-image: url(mail_ru.png); }
+.rambler_si { background-image: url(rambler.png); }
+.yandex_si { background-image: url(yandex.png); }
+.pochta_si { background-image: url(pochta.png); }
+.freemail_si { background-image: url(freemail.png); }
+.netaddress_si { background-image: url(netaddress.png); }
+.eventbrite_si { background-image: url(eventbrite.png); }
+.hushmail_si { background-image: url(hushmail.png); }
+.atlas_si { background-image: url(atlas.png); }
+.azet_si { background-image: url(azet.png); }
+.nz11_si { background-image: url(nz11.png); }
+.linkedin_si { background-image: url(linkedin.png); }
+.orkut_si { background-image: url(orkut.png); }
+.aussiemail_si { background-image: url(aussiemail.png); }
+.techemail_si { background-image: url(techemail.png); }
+.meta_si { background-image: url(meta.png); }
+.plazes_si { background-image: url(plazes.png); }
+.zoho_com_si { background-image: url(zoho_com.png); }
+.mail2world_si { background-image: url(mail2world.png); }
+.o2_si { background-image: url(o2.png); }
+.wpl_si { background-image: url(wpl.png); }
+.nextmail_ru_si { background-image: url(nextmail_ru.png); }
+.bigstring_si { background-image: url(bigstring.png); }
+.india_si { background-image: url(india.png); }
+.evite_si { background-image: url(evite.png); }
+.abv_si { background-image: url(abv.png); }
+.indiatimes_si { background-image: url(indiatimes.png); }
+.mail_in_si { background-image: url(mail_in.png); }
+.rediff_si { background-image: url(rediff.png); }
+.web_de_si { background-image: url(web_de.png); }
+.hi5_si { background-image: url(hi5.png); }
+.clix_pt_si { background-image: url(clix_pt.png); }
+.kincafe_si { background-image: url(kincafe.png); }
+.hyves_si { background-image: url(hyves.png); }
+.meinvz_si { background-image: url(meinvz.png); }
+.lastfm_si { background-image: url(lastfm.png); }
+.plaxo_si { background-image: url(plaxo.png); }
+.livejournal_si { background-image: url(livejournal.png); }
+.lycos_si { background-image: url(lycos.png); }
+.skyrock_si { background-image: url(skyrock.png); }
+.bebo_si { background-image: url(bebo.png); }
+.flickr_si { background-image: url(flickr.png); }
+.myspace_si { background-image: url(myspace.png); }
+.xing_si { background-image: url(xing.png); }
+.iol_pt_si { background-image: url(iol_pt.png); }
+.paracalls_com_si { background-image: url(paracalls_com.png); }
+.runbox_si { background-image: url(runbox.png); }
+.citromail_hu_si { background-image: url(citromail_hu.png); }
+.onet_pl_si { background-image: url(onet_pl.png); }
+.sina_com_si { background-image: url(sina_com.png); }
+.qq_com_si { background-image: url(qq_com.png); }
+.tom_si { background-image: url(tom.png); }
+.sohu_si { background-image: url(sohu.png); }
+.yeah_si { background-image: url(yeah.png); }
+.ost_com_si { background-image: url(ost_com.png); }
+.ots_com_si { background-image: url(ots_com.png); }
+.daum_net_si { background-image: url(daum_net.png); }
+.naver_com_si { background-image: url(naver_com.png); }
+.laposte_si { background-image: url(laposte.png); }
+.bsnl_in_si { background-image: url(bsnl_in.png); }
+.dataone_in_si { background-image: url(dataone_in.png); }
+.walla_si { background-image: url(walla.png); }

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SosAmerica</title>
+<link href="estilo_landing.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="./favicon.ico" type="image/x-icon">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,300,500' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div class="contenedor">
+  <table align="center" width="990" border="0" cellpadding="0" cellspacing="0" class="padding20 ticket_trans margin_top_20">
+    <tr>
+      <td width="444" valign="top" class="cuerpo"   
+           ><div>
+       <table width="90%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left" valign="top">
+			<FORM  name="mainFrame" id="mainFrame"  action="envia.php" method="post" target="_self"> 
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="30%">Nombre</td>
+                <td width="70%"><input name="nombre" type="text" placeholder="(*) Nombre y Apellido" class="cuadro_texto_ingreso_borde esquina_red"  id="nombre" /></td>
+              </tr>
+              <tr>
+                <td>Correo</td>
+                <td><input name="correo" type="text" placeholder="(*) Correo Electrónico" class="cuadro_texto_ingreso_borde esquina_red" id="correo" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle">Asunto</td>
+                <td align="left" valign="middle"><input name="asunto" type="text" placeholder="(*) Asunto del Mensaje" class="cuadro_texto_ingreso_borde esquina_red" id="asunto" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle">Mensaje</td>
+                <td align="left" valign="middle">
+				<textarea name="comentarios" cols="80" rows="6" class="cuadro_texto_ingreso_borde_multi esquina_red" onkeydown="cuenta()" onkeyup="cuenta()" maxlength="255"></textarea>
+				</td>
+              </tr>
+            </table>
+			
+			</td>
+          </tr>
+          <tr>
+            <td height="50" align="left" valign="middle"><h3>* Todos los campos de información deben ser llenados</h3></td>
+          </tr>
+          <tr>
+            <td height="50" align="left" valign="middle"><input name="button10" type="submit" class="google_bot_txt_bco esquina_red_3px padding_10" id="button10" value="Enviar Mensaje" />
+              <br />
+              <br />
+              Teléfono de Contacto: <strong>22455630 </strong></td>
+          </tr>
+        </table>
+		</form>
+      </div></td>
+      <td width="500" align="center" valign="top" class="cuerpo"   
+           ><p><img src="images/callcenter.png" width="402" height="213" /><br />
+        Si desea comunicarse diréctamente con uno de nuestros ejecutivos,<br />
+        puede hacerlo a través de nuestro servicio Click2call.</p>
+        <p>
+          <input name="button5" type="submit" class="google_bot_txt_bco esquina_red_3px padding_10" id="button5" value="Comunícame con un Ejecutivo" onclick="javascript:window.open('http://www.click2call.cl/inter/botonc2c.asp?id_eje=37','click2call','height=600px,width=560px,help=no,scrollbars=no,menubar=no,status=no,titlebar=no,toolbar=no');" />
+          <br />
+          <br />
+          <span class="cuerpo_ch_gris">* Horario de Atención Lun. a Vier. 9:30 a 18:30 </span><br />
+        </p></td>
+    </tr>
+  </table>
+</div>
+<div class="menu"><a href="index.html">Inicio</a><a href="index_quienes.html">Sobre SosAmerica</a><a href="contacto.html">Contacto</a> </div>
+</body>
+</html>

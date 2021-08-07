@@ -1,0 +1,52 @@
+/*!
+ * Responsive v1.0
+ * Copyright 2013
+ */
+
+
+/*ipad- desktop*/
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/*ipad*/
+@media screen and (max-width:767px) {
+}
+
+/* screen 1024*/
+@media screen and (max-width: 1250px) {
+ 
+}
+
+
+/*mayor a ipad*/
+@media screen and (max-width: 980px) {
+}
+
+/*ipad*/
+@media screen and (max-width:801px) {
+}
+	
+	
+	 
+/*ipad landscape*/	
+@media only screen and (min-device-width: 768px) and (max-device-width : 1000px) and (orientation : landscape) {
+}
+
+/*720*/
+@media screen and (max-width:758px) {
+}
+
+/*600*/
+@media screen and (max-width:600px) {
+}
+
+/*movil 480*/
+@media screen and (max-width:480px) {
+}
+
+/*ipad landscape*/	
+@media only screen and (min-device-width: 480px) and (max-device-width : 599px) and (orientation : landscape) {
+}
+/*iphone*/
+@media screen and (max-width:320px) {
+}

@@ -1,0 +1,24 @@
+#top > .navbar {border-top: 3px solid #FF0000 !important;
+}
+#wrap,#left {background-color: #333 !important;
+}
+.navbar-inverse {background-color: #222 !important;
+}
+.head {background-color: #333 !important;
+}
+.user-media {background-color: #444 !important;
+}
+#menu>li:hover>a, #menu>li:focus>a {background-color: #404040 !important;color: #fff !important;
+}
+body:not(.sidebar-left-mini) #menu .nav-header {color: #777 !important;background: #404040 !important;
+}
+#menu>li ul {background: #404040 !important;
+}
+#menu>li a:hover {background-color: rgba(0,0,0,0.1) !important;
+}
+.sidebar-left-mini #menu>li>a .link-title {background: #404040 !important;
+}
+#footer {background-image: none !important;background-color: #333 !important;color: #f9f9f9 !important;
+}
+.outer {background-color: rgba(0,0,0,0.3) !important;
+}

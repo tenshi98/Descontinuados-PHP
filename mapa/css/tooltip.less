@@ -1,0 +1,36 @@
+@tamano_flecha: 10px;
+@borderRadius: 4px;
+@colorFondo : rgba(0,0,0,0.8);
+.tooltip{
+	position: absolute;
+	background: @colorFondo;
+	color: white;
+	height: auto;
+	max-width: 300px;
+	z-index: 100;
+	-webkit-border-radius: @borderRadius;
+	-moz-border-radius: @borderRadius;
+	border-radius: @borderRadius;
+	-webkit-box-shadow: 0 0 8px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 0 8px rgba(0,0,0,0.2);
+	box-shadow: 0 0 8px rgba(0,0,0,0.2);
+	span{
+		margin: 10px 20px;
+		display: block;
+	}
+	&:before{
+		display: block;
+		width: 0;
+		height: 0;
+		left: -@tamano_flecha;
+		top: (35px / 2) - 10;
+		position: absolute;
+		z-index: 101;
+		content: "&larr;";
+		border-bottom: @tamano_flecha solid transparent;
+		border-right: @tamano_flecha solid @colorFondo;
+		border-top: @tamano_flecha solid transparent;
+		overflow: hidden;
+		text-indent: -9999px;
+	}
+}

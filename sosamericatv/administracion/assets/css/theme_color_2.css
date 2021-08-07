@@ -1,0 +1,40 @@
+#top > .navbar {
+	border-top: 3px solid #000055 !important;
+}
+#wrap,#left {
+	background-color: #000055 !important;
+}
+.navbar-inverse {
+	background-color: #0174DF !important;
+}
+.head {
+	background-color: #000055 !important;
+}
+.user-media {
+	background-color: #000055 !important;
+}
+#menu>li:hover>a, #menu>li:focus>a {
+	background-color: #000055 !important;
+	color: #ffffff !important;
+}
+body:not(.sidebar-left-mini) #menu .nav-header {
+	color: #777 !important;
+	background: #000055 !important;
+}
+#menu>li ul {
+	background: #000055 !important;
+}
+#menu>li a:hover {
+	background-color: rgba(0,0,0,0.1) !important;
+}
+.sidebar-left-mini #menu>li>a .link-title {
+	background: #000055 !important;
+}
+#footer {
+	background-image: none !important;
+	background-color: #000055 !important;
+	color: #f9f9f9 !important;
+}
+.outer {
+	background-color: rgba(0,0,0,0.3) !important;
+}

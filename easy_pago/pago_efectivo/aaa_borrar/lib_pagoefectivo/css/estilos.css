@@ -1,0 +1,256 @@
+/********************************** KIT - PHP ******************************************/
+    .clear{clear:both;}
+    *+html h1.thnk-you-pur{
+    margin-top:30px !important;
+    display:block;
+}
+            .inline {
+                display: inline !important;
+            }
+           .pe_pago {
+                margin: 0 auto;
+                width: 1024px;
+            }
+            .pe_price{
+                margin:0 auto;
+                width: 200px;
+            }
+            .pe_price, .pe_content, .pe_option_pago{
+                font-size: 11px!important;                
+            }
+              .pe_option_pago {
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                padding-left: 6px;
+                /*padding-top: 10px;*/
+                width: auto;
+            }
+            .pe_option_pago .title {
+                color: #333333;
+                font: 14px Arial;
+                margin-bottom: 12px;
+                padding-left: 6px;
+            }
+            .pe_detail h3, .pe_payment h3 {
+                background: none repeat scroll 0 0 #666666;
+                color: #FFFFFF;
+                font: bold 14px Arial;
+                height: 21px;
+                margin: 0;
+                padding: 7px 10px 3px 9px;
+                position: relative;
+            }
+            .pe_detail {
+                float: left;
+                margin-left: 10px;
+                width: 341px;
+            }
+            .pe_payment {
+            float: left;
+            width: 606px;
+        }
+         .pe_detail .pe_content .pe_total {
+                  color: #373737;
+                font: bold 16px Arial;
+                padding: 10px 16px 0 0;
+                text-align: right;
+            }
+            .pe_detail .pe_content .pe_obs {
+                color: #373737;
+                font: 11px Arial;
+                margin: 0;
+            }
+                            div.pe_cms_page {
+                                    margin: 0 20px;   
+                                    padding-bottom: 30px;
+                                    margin-top:15px;
+                                    width: 500px;
+                            }
+                            div.pe_cms_page, div.pe_cms_page * {
+                                    font-family: Arial;
+                                    font-size: 12px;
+                                    text-align: justify;
+                                    line-height:18px;
+                            }
+                            div.pe_cms_page h2  {
+                                    font-size: 20px;
+                                    margin-bottom:10px
+
+                            }
+                            div.pe_cms_page ul  {
+                                    padding-left:15px;
+                                    list-style: disc;
+
+                            }
+                            .pe_pregunta{
+                                background: url('../images/ico_pregunta_22x23.png') no-repeat;
+                                display: inline-block;
+                                height: 23px;
+                                width: 23px;
+                            }
+/* Ventana emergente*/
+.fancybox-skin {
+    box-shadow: 0 0 50px #222;
+    width: 615px!important;
+}
+
+/* Resumen pago*/
+
+.pe_content-resumen {
+    margin: 0 auto;
+    width: 606px;
+}
+
+.pe_content-resumen h3 {
+    background-color: #A2CE45;
+    color: #FFFFFF;
+    font-size: 1.4em;
+    font-weight: 700;
+    height: 27px;
+    margin: 0;
+    padding: 5px 0 0 10px;
+    position: relative;
+}
+.pe_warning {background-color:#ffda68;border:1px dashed #F9E400;color:#000;float:left;font-size:1.2em;font-weight:700;margin:0.2em 2em;padding:0.6em 1em;width:100%}
+.pe_content-resumen .pe_content {
+    background: url("../images/vertical-sprite.png") repeat-y scroll -1385px top transparent;
+    overflow: hidden;
+    padding: 5px 20px;
+    position: relative;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.pe_logo-small{
+    background: url('../images/logo.png') no-repeat;
+    width: 82px;
+    height: 49px;
+}
+.pe_content-resumen .pe_content .pe_card {
+    /*height: 75px;*/
+    margin: 0 auto;    
+    text-align: center;
+    top: 8px;
+    width: 125px;
+    padding-top: 10px;
+}
+.pe_content-resumen .pe_content .pe_card span {
+    display: block;
+    height: 52px;
+    margin: 0 auto 6px;
+    width: 115px;
+}
+.pe_content-resumen .pe_content .pe_pago-efectivo span{
+    background: url('../images/bancos/pago-efectivo.jpg') no-repeat;
+    width: 112px;
+    height: 52px;
+}
+.pe_content-resumen .pe_content .pe_bar-code {
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.pe_content-resumen p {
+    color: #545454;
+    font-size: 11px;
+}
+.pe_content-resumen .pe_content .pe_legal {
+    float: left;
+    line-height: 15px;
+    padding-right: 10px;
+    width: 555px;
+}
+.pe_content-resumen .pe_legal.pe_last {
+    float: right;
+    padding: 0;
+}
+.pe_content-resumen .pe_content .pe_legal p {
+    color: #333333;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.pe_content-resumen .pe_content .pe_legal .pe_cc-banco span{
+    display: block;
+}
+.pe_content-resumen .pe_content .pe_legal .pe_cc-banco .pe_bcp {
+    background: url("../images/bancos/bcp-pe.png") no-repeat scroll 0 0 transparent;
+    height: 44px;
+    width: 116px;
+}
+.pe_content-resumen .pe_content .pe_legal .pe_cc-banco .pe_bbva {
+    background: url("../images/bancos/bbva-pe.png") no-repeat scroll 0 0 transparent;
+    height: 44px;
+    width: 181px;
+}
+.pe_content-resumen .pe_content .pe_legal .pe_cc-banco .pe_full {
+    background: url("../images/bancos/fullcarga-resumen-pe.jpg") no-repeat scroll 0 0 transparent;
+    height: 50px;
+    width: 78px;
+}
+.pe_content-resumen .pe_content .pe_legal .pe_cc-banco .pe_wu {
+    background: url("../images/bancos/westernunion-pe.jpg") no-repeat scroll 0 0 transparent;
+    height: 50px;
+    width: 225px;
+}
+.pe_content-resumen .pe_content .pe_legal .pe_cc-banco .pe_scotia {
+    background: url("../images/bancos/scotiabank-pe.jpg") no-repeat scroll 0 0 transparent;
+    height: 39px;
+    width: 200px;
+}
+.pe_content-resumen .pe_content .pe_legal .pe_break {
+    border-bottom: 1px solid #CCCCCC;
+    height: 1px;
+    margin-bottom: 15px;
+}
+.pe_content-resumen .pe_content .pe_legal p {
+    color: #333333;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.pe_content-resumen .pe_content .pe_legal ul {
+    list-style: decimal inside none;
+    margin-bottom: 12px;
+}
+.pe_content-resumen .pe_content .pe_legal ul li {
+    color: #545454;
+    font-size: 11px;
+}
+.pe_content-resumen .pe_content a.pe_print {
+    background: url("../images/imprimir.png") no-repeat;
+    border: medium none;
+    color: #FFFFFF;
+    display: block;    
+    height: 62px;    
+    margin: 0 auto;
+    padding: 13px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 66px;
+}
+.pe_content-resumen .pe_bottom {
+    border-bottom: 1px gray solid;
+    font-size: 8px;
+    height: 10px;
+}
+.pe_footer-aclaration {
+    border-bottom: 1px solid #CCCCCC;
+    color: #666666;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    text-align: right;
+}
+.pe_content-resumen #secure {    
+    color: #666666;
+    margin: 10px auto 20px;
+    padding: 3px 0 0 25px;
+    text-align: center;
+    width: 245px;
+    height: 25px;
+}
+.fancybox-inner{
+	width: 615px!important;
+}
+.fancybox-image, .fancybox-iframe {
+    overflow:hidden;
+}

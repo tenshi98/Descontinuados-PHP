@@ -1,0 +1,122 @@
+.rounded(@radius: 6px){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+@anchoDef: 18px;
+
+#resumen{
+	ol{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		padding: 2px 8px 4px 8px !important;
+		background: #FCF7E4;
+		.rounded(4px);
+		margin-bottom: 4px;
+		padding-bottom: 8px !important;
+		div>span{
+			display: inline-block;
+		}
+	}
+	img{
+		width: auto;
+		height: @anchoDef;
+		position: relative;
+		top: 5px;
+	}
+	.recorrido{
+		margin-left: -19px;
+		span{
+			padding: 2px 4px 3px 20px !important;
+			color: white !important;
+			.rounded(4px);
+		}
+	}
+	.metro{
+		padding: 2px 4px 3px!important;
+		.rounded(4px);
+		color: white;
+		margin-left: 2px;
+		&.ml1{ background-color: #F20726; }
+		&.ml2{ background-color: #F27000; }
+		&.ml4{ background-color: #1A1D6A; }
+		&.ml4a{ background-color: #0A5FCA; }
+		&.ml5{ background-color: #008A63; }
+	}
+	.gm-arrow{
+		width: 16px;
+		height: @anchoDef;
+		background: url(../img/icon/r_flecha.png) no-repeat center center transparent !important;
+	}
+	
+	@tamano_flecha: 5px;
+	@borderRadius: 4px;
+	@colorFondo : rgba(0,0,0,0.8);
+	.adp-summary-duration{
+		width: 80px;
+		height: 26px;
+		text-align: center;
+		padding: 0 0 0 12px;
+		margin-top: 1px;
+		line-height: 26px;
+		font-weight: bold;
+		background: url(../img/clock_white.png) no-repeat 6px center @colorFondo;
+		position: absolute;
+		right: -82px;
+		z-index: 100;
+		color: white;
+		-webkit-border-radius: @borderRadius;
+		-moz-border-radius: @borderRadius;
+		border-radius: @borderRadius;
+		-webkit-box-shadow: 0 0 8px rgba(0,0,0,0.2);
+		-moz-box-shadow: 0 0 8px rgba(0,0,0,0.2);
+		box-shadow: 0 0 8px rgba(0,0,0,0.2);
+		display: none;
+		&:before{
+			display: block;
+			width: 0;
+			height: 0;
+			left: -@tamano_flecha;
+			top: (25px / 2) - @tamano_flecha;
+			position: absolute;
+			z-index: 101;
+			content: "&larr;";
+			border-bottom: @tamano_flecha solid transparent;
+			border-right: @tamano_flecha solid @colorFondo;
+			border-top: @tamano_flecha solid transparent;
+			overflow: hidden;
+			text-indent: -9999px;
+		}
+	}
+	.adp-listsel, li:hover{
+		background: #F7E8AE;
+		cursor: pointer;
+		.adp-summary-duration{
+			display: block;
+		}
+	}
+	.adp-listheader{
+		padding: 0;
+		margin-bottom: 4px;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	.estimado{
+		display: none;
+	}
+}
+
+#suggestCont
+.no-border .adp-listsel{
+	.adp-summary-duration{
+		display: none;
+	}
+	&:hover{
+		.adp-summary-duration{
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+#indications{
+	.adp-directions{
+		margin-left: -28px;
+		.walk, .metro, .bus{
+			background-position: 0 8px;
+		}
+		.adp-substep{
+			padding-left:32px;
+			padding-top: 0;
+			border-top: 0;
+			b{
+				padding-top: 9px;
+				display: block;
+				border-top: 1px solid #202020;
+			}
+		}
+	}
+}
+input[type="text"]{
+	font-size: 12px;
+	font-family: arial, sans-serif;
+}
+.placeholder_ie{
+	position: absolute;
+	color: #999;
+	left: 0;
+	top: 0;
+	z-index: 5;
+	cursor: text;
+	font-size: 12px;
+	&.for_start2,
+	&.for_end2{
+		left: 79px;
+		top: 7px;
+	}
+	&.for_ubicacion{
+		top: 26px;
+		left: 6px;
+	}
+	&.for_recorrido{
+		top: 7px;
+		left: 194px;
+	}
+}
+.input.text.line{
+	.w{
+		position: relative;
+		input[type="text"]{
+			position: relative;
+		}
+	}
+}

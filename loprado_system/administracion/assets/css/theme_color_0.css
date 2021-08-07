@@ -1,0 +1,77 @@
+/* Color barra titulo del tema */
+.navbar-inverse,
+.navbar-inverse .navbar-nav > .open > a{
+	background-color: #222 !important;
+}
+.logo_empresa .texto h1{
+	color: #fff !important;
+}
+
+/* Color caracteristico del tema */
+#wrap,
+#left,
+.head,
+.user-media,
+.sidebar-left-mini .user-wrapper,
+body:not(.sidebar-left-mini) #menu .nav-header,
+.sidebar-left-mini #menu>li>a .link-title,
+#footer{
+	background-color: #333 !important;
+}
+/* Color seleccion del tema */
+#menu>li:hover>a, 
+#menu>li:focus>a,
+#menu>li a:hover {
+	background-color: #404040 !important;
+	color: #fff !important;
+}
+/* Color submenu del tema */
+#menu>li ul {
+	background: #404040 !important;
+}
+#menu>li ul li a{
+	color: #BABABA !important;
+}
+
+/* Color de las fuentes del tema */
+.head .main-bar h3,
+.user-media .media-body h5.media-heading,
+body:not(.sidebar-left-mini) #menu .nav-header,
+.sidebar-left-mini .user-media-toggleHover,
+#menu > li > a,
+#footer {
+    color: #BABABA;
+    text-shadow: none !important;
+}
+
+/* Color de de los separadores de las secciones */
+#menu .nav-divider,
+.outer {
+    background: #222 !important;
+    box-shadow: none !important;
+}
+.inner {
+    border: none !important;
+}
+#menu > li > a,
+body:not(.sidebar-left-mini) #menu .nav-header {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);	
+}
+.head{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);	
+}
+
+
+/* Otros */
+#top > .navbar {
+	border-top: none !important;
+}
+#footer {
+	background-image: none !important;
+}
+.table {
+    margin-bottom: 0px !important;
+}
+.container_box {
+    top: 10px !important;
+}

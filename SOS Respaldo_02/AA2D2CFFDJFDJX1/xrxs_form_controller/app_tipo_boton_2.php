@@ -1,0 +1,41 @@
+<?php 
+/**********************************/
+/*       Bloque de seguridad      */
+/**********************************/
+if( ! defined('XMBCXRXSKGC')) {
+    die('No tienes acceso a esta carpeta o archivo.');
+}
+/**********************************/
+/*     Ejecucion del Codigo       */
+/**********************************/
+
+//Validaciones de ingreso de datos obligatorios
+                   
+	//Valida el ingreso del Nombre
+	if ( empty($Nombre) )      $errors[1] 	  = '
+	<div id="txf_01" class="alert_error">  
+	  	No ha ingresado un Nombre para el tipo de boton
+		<a class="closed_b" href="javascript:void(0);" onclick="document.getElementById(&apos;txf_01&apos;).className = &apos;oculto&apos;">
+			<i class="fa fa-times"></i>
+		</a>
+	</div>';
+	
+	//Se valida el ingreso del Archivo
+	if ( empty($Archivo) )     $errors[2] 	  = '
+	<div id="txf_02" class="alert_error">  
+	  	No ha ingresado un archivo para el tipo de boton
+		<a class="closed_b" href="javascript:void(0);" onclick="document.getElementById(&apos;txf_02&apos;).className = &apos;oculto&apos;">
+			<i class="fa fa-times"></i>
+		</a>
+	</div>';
+	
+	//Se valida el ingreso del Archivo
+	if ( empty($fun) )     $errors[3] 	  = '
+	<div id="txf_03" class="alert_error">  
+	  	No ha seleccionado la funcion del boton
+		<a class="closed_b" href="javascript:void(0);" onclick="document.getElementById(&apos;txf_03&apos;).className = &apos;oculto&apos;">
+			<i class="fa fa-times"></i>
+		</a>
+	</div>';
+	
+?>

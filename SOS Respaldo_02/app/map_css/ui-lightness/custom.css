@@ -1,0 +1,190 @@
+html .ui-widget-header{
+	border: 1px solid black;
+	background: #0f0f0f;
+	color: #ffffff;
+	font-weight: bold;
+}
+html .ui-datepicker table .ui-state-disabled{ color: #999; }
+html .ui-datepicker table .ui-state-default{ color: #666; }
+
+html .ui-datepicker .ui-datepicker-header .ui-state-hover{
+	border: 1px solid black;
+	background: black;
+	background-image: none;
+	background-position: 50% 50%;
+	font-weight: bold;
+	color: white;
+}
+html .ui-datepicker table .ui-state-active{
+	background: #999;
+	color: white;
+	border-color: #666;
+}
+html .ui-datepicker table .ui-state-hover{
+	color: white;
+	background: #333;
+	border-color: #000;
+}
+html .ui-datepicker table .ui-state-disabled{
+	color: #999;
+	background: #ccc;
+	border-color: #999;
+}
+html .ui-datepicker table .ui-state-highlight{
+	border-color: #FED22F;
+	color: black;
+	background: #FFc;
+}
+html .ui-datepicker table .ui-datepicker-current-day a{
+	border-color: #333;
+}
+
+/* AUTOCOMPLETE */
+html .ui-autocomplete.ui-widget-content{
+	background: #fcfcfc;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	border-color: #ccc;
+	border-bottom: 0;
+	padding: 0;
+	font-family: arial, sans-serif;
+	font-size: 12px;
+}
+html .ui-autocomplete li{
+	padding: 0;
+	border: 0;
+	margin: 0;
+	border-bottom: 1px solid #ccc;
+}
+html .ui-autocomplete .ui-menu-item a{
+	padding: 5px 10px;
+	float:none;
+}
+html .ui-autocomplete .ui-menu-item:hover a,
+html .ui-autocomplete .ui-state-active,
+html .ui-autocomplete .ui-state-focus{
+	background: #FDF1AD;
+	color: black;
+	border-color: #ccc;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+html .ui-autocomplete .ui-menu-item a{
+	float: none;
+	text-decoration: none;
+	cursor: default;
+	outline: none;
+}
+
+aside .planifica{
+	background:url(/map_img/back_box.png) repeat-x left top transparent;
+	margin-bottom:10px;
+}
+
+
+
+.box header .hideShowBox,
+.btn_otr { 
+	line-height: 18px !important;
+	font-size: 12px !important;
+	vertical-align: top !important;
+	text-align: center !important;
+	border: 1px solid #dedede !important;
+	font: bold 12px/12px HelveticaNeue, Arial !important;
+	text-decoration: none !important;
+	outline: none !important;
+	cursor: pointer !important;
+	padding: .5em 2em .55em !important;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3) !important;
+	-webkit-border-radius: .5em !important;
+	-moz-border-radius: .5em !important;
+	border-radius: .5em !important;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+	color: #fef4e9 !important;
+	border: solid 1px #da7c0c !important;
+	background: #f78d1d !important;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20)) !important;
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20) !important;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20') !important;
+	
+}
+.btn_submit{
+	line-height: 18px !important;
+	font-size: 12px !important;
+	vertical-align: top !important;
+	text-align: center !important;
+	width: 100% !important;
+	border: 1px solid #dedede !important;
+	font: bold 12px/12px HelveticaNeue, Arial !important;
+	text-decoration: none !important;
+	outline: none !important;
+	cursor: pointer !important;
+	padding: .8em 2em .8em !important;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3) !important;
+	-webkit-border-radius: .5em !important;
+	-moz-border-radius: .5em !important;
+	border-radius: .5em !important;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+	color: #fef4e9 !important;
+	border: solid 1px #da7c0c !important;
+	background: #f78d1d !important;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20)) !important;
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20) !important;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20') !important;
+}
+.btn_submit:active ,
+.box header .hideShowBox:active{
+	color: #fcd3a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+.adp-agencies{
+	display:none;
+}
+#encuentraParadas .step-1,
+#encuentraParadas .step-1 .f,
+#encuentraParadas .step-1 .f .c,
+#encuentraParadas .step-1 .f .c .parRes,
+#encuentraParadas .step-1 .f .c .parRes .jspContainer{
+	height:90% !important;
+	max-height: 90% !important;
+}
+#encuentraParadas .step-1 .f .c,
+#encuentraParadas .step-1 .f .c .parRes,
+#encuentraParadas .step-1 .f .c .parRes .jspContainer{
+	width:100% !important;
+}
+.jspVerticalBar .jspArrow {
+    display:none;
+}
+#conocerRecorridos .f,
+#encuentraParadas .f {
+	margin-top:20px;
+}
+header#header nav ul li i{
+	height: 47px;
+	width: 50px;
+}
+header#header nav ul li.item-1 i{
+	background-image: url(../../map_img/03.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+header#header nav ul li.item-2 i{
+	background-image: url(../../map_img/01.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+header#header nav ul li.item-3 i{
+	background-image: url(../../map_img/02.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}

@@ -1,0 +1,196 @@
+@charset "utf-8";
+body , html{
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+
+}
+/* CSS Document */
+
+
+.llamando_gif {
+	background-image: url(images/loaderA64.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 130px;
+	width: 130px;
+}
+.logo_cent {
+	background-image: url(images/logo_sos_n.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 386px;
+	width: 386px;
+	background-size: contain;
+	min-width: 100px;
+	min-height: 100px;
+	max-width: 385px;
+	max-height: 386px;
+}
+
+.gris_arial_12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #999;
+	text-decoration: none;
+}
+.red_arial_15 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 700;
+	color: #F00;
+	text-decoration: none;
+}
+.bco_arial_15 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 700;
+	color: #FFF;
+	text-decoration: none;
+}
+
+
+
+
+.text_bco {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.text_bco_bot {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: 700;
+}
+.icono_der {
+	margin-left: -15px;
+}
+.icono_iz {
+	margin-right: -12px;
+}
+.tabla_ppal {
+	width: 100%;
+	margin: 0px;
+
+}
+
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=1 );
+
+}
+.alto_100 {
+	height: 80%;
+	min-height: 80%;
+	margin-left: 3% !important;;
+}
+.alto_50 {
+	margin: 0px;
+	height: 50%;
+	min-height: 50%;
+}
+
+
+.link {
+	text-decoration: none;
+}
+.link:hover {
+	text-decoration: none;
+	color: #F93;
+}
+.sombra_interna{
+}
+.bot_seguridad {
+	background-color: #004880;
+	background-image: url(images/seguridad.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100% !important;
+	width: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-size: contain;
+}
+
+.bot_seguridad:hover {
+	cursor:hand;
+	cursor:pointer;
+	background-color:#333;
+}
+
+.bot_vfamilia {
+	background-color: #642EBE;
+	background-image: url(images/violencia_fam.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100% !important;
+	width: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-size: contain;
+}
+
+.bot_vfamilia:hover {
+	cursor:hand;
+	cursor:pointer;
+	background-color:#333;
+}
+.bot_sosmuni {
+	background-color: #009999;
+	background-image: url(images/municipalidad.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100% !important;
+	width: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-size: contain;
+}
+
+.bot_sosmuni:hover {
+	cursor:hand;
+	cursor:pointer;
+	background-color:#333;
+}
+.bot_carrete {
+	background-color: #61942B;
+	background-image: url(images/carrete2.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100% !important;
+	width: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-size: contain;
+}
+.bot_carrete:hover {
+	cursor:hand;
+	cursor:pointer;
+	background-color:#333;
+}
+/*#widget {
+    width:100%;
+}*/
+img{
+max-width:100%;
+height: auto;
+}
+svg{
+max-width:100%;
+height: auto;
+}

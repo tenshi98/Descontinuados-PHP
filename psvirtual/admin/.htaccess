@@ -1,0 +1,4 @@
+AuthUserFile /var/www/sosclick/admin/.htpasswd
+AuthName "Necesita validarse"
+AuthType Basic
+require user admin

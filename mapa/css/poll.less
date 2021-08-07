@@ -1,0 +1,360 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700');
+
+.poll {
+    font-family: 'Open Sans', sans-serif;
+    
+    .inside_poll {
+        width: 272px;
+        height: 83px;
+        padding: 13px 10px 0 10px;
+        position: absolute;
+        bottom: -5px;
+        right: -1px;
+        border-radius: 4px;
+        background: #1D1D1D;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        cursor: pointer;
+        
+        &:hover {
+            .content {
+                .icon {
+                    background-position: left -47px !important;
+                }
+            }
+        }
+        .content {
+            width: 100%;
+            display: table;
+            
+            .icon {
+                width: 47px !important;
+                height: 47px;
+                display: table-cell;
+                background: url(../img/sprite_nav.png) no-repeat left top rgba(0, 0, 0, 0);
+                
+                i {
+                    width: 20px;
+                    height: 20px;
+                    margin: 13px 0 0 13px;
+                    display: block;
+                    background: url(../img/sprite_nav.png) no-repeat -90px -30px rgba(0, 0, 0, 0);
+                }
+            }
+            .text {
+                width: 120px;
+                padding: 0 75px 0 10px;
+                display: table-cell;
+                vertical-align: middle;
+                color: white;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+    }
+    .msg_poll {
+        width: 407px;
+        position: absolute;
+        bottom: 95px;
+        right: 60px;
+        .start_poll{
+            color: #333;
+            &:hover{
+                color: black;
+            }
+        }
+        .top {
+            width: 100%;
+            height: 8px;
+            background: url(../img/top_msg_poll.png) left top no-repeat;
+        }
+        .bot {
+            width: 100%;
+            height: 26px;
+            background: url(../img/bot_msg_poll.png) left top no-repeat;
+        }
+        .content_msg {
+            background: url(../img/mid_msg_poll.png) left top repeat-y;
+            padding: 10px 30px 8px 21px;
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            
+            .left {
+                width: 46px;
+                height: 46px;
+                float: left;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .right {
+                width: 295px;
+                float: right;
+                
+                h3 {
+                    color: white;
+                    font-size: 14px;
+                }
+                p {
+                    color: white;
+                    font-size: 12px;
+                    line-height: 14px;
+                    margin-bottom: 15px;
+                }
+                button {
+                    border-radius: 4px;
+                    background: #FAEE5E;
+                    padding: 5px 13px;
+                    border: none;
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: 600;
+                    font-size: 12px;
+                    
+                    &.special {
+                        color: #FAEE5E;
+                        text-decoration: underline;
+                        background: none;
+                        
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.poll_popup {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0);
+    display: block;
+    z-index: 9997;
+    
+    .popup_layer {
+        width: 710px - 50;
+        height: 370px - 40;
+        margin: ((-370px) / 2) 0 0 ((-710px) /2);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        padding: 20px 25px;
+        border-radius: 4px;
+        background: rgba(67,67,67,0.9);
+        -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.65);
+        -moz-box-shadow:    0px 0px 7px 0px rgba(0, 0, 0, 0.65);
+        box-shadow:         0px 0px 7px 0px rgba(0, 0, 0, 0.65);
+        
+        .box_question {
+            width: 300px;
+            height: 110px;
+            background: rgba(255,255,255,0.2);
+            float: left;
+            padding: 10px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            position: relative;
+            
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+            &:hover {
+                background: rgba(253,247,168,0.2);
+            }
+            i {
+                width: 36px;
+                height: 36px;
+                margin-right: 10px;
+                float: left;
+                background: url(../img/num_question.png) no-repeat;
+                
+                &.one {
+                    background-position: left top;
+                }
+                &.two {
+                    background-position: left -36px;
+                }
+                &.three {
+                    background-position: left -72px;
+                }
+                &.four {
+                    background-position: left -108px;
+                }
+                &.five {
+                    background-position: right top;
+                }
+                &.six {
+                    background-position: right -36px;
+                }
+                &.seven {
+                    background-position: right -72px;
+                }
+                &.eight {
+                    background-position: right -108px;
+                }
+            }
+            label {
+                width: 236px;
+                float: right;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17px;
+                color: white;
+                max-height: 52px;
+                overflow: hidden;
+                margin-right: 16px;
+            }
+            .sel_id_3, .radios {
+                width: 236px;
+                float: right;
+                position: absolute;
+                bottom: 15px;
+                left: 58px;
+                z-index: 9998;
+                
+            }
+            .radios>label {
+                width: 32px;
+                height: 32px;
+                display: inline-block;
+                background: #eee;
+                line-height: 30px;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 700;
+                position: relative;
+                padding-left: 26px;
+                border-radius: 4px;
+                margin-right: 10px;
+                color: black;
+                float: none;
+                
+                &:last-child {
+                    margin-right: 0;
+                }
+                &.active {
+                    background: #FAEE5E;
+                }
+                &:hover{
+                    cursor: pointer;
+                    background: #FAEE5E;
+                }
+                input[type="radio"] {
+                    position: absolute;
+                    top: 6px;
+                    left: 6px;
+                    cursor: pointer;
+                }
+            }
+            
+            &.error {
+                background-color: rgba(255,70,70,0.2);
+            }
+        }
+        .poll_error {
+            width: 710px;
+            padding: 10px 0;
+            display: block;
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            background: #FF6F6F;
+            overflow: hidden;
+            p {
+                margin: 0;
+                color: white;
+                font-size: 12px;
+                text-align: center;
+                font-weight: 700;
+            }
+        }
+        .btns_inline {
+            padding: 15px 0 0;
+            clear: both;
+            display: block;
+            text-align: center;
+        }
+            .btn, button {
+                padding: 0 20px;
+                height: 32px;
+                font-size: 12px;
+                font-weight: 700;
+                border-radius: 4px;
+                color: black;
+                border: none;
+                margin-right: 10px;
+                
+                &:last-child {
+                    margin: 0;
+                }
+            }
+            .btn {
+                background: #FAEE5E;
+                color: #333;
+                &:hover{
+                    color: black;
+                }
+            }
+        &.feedback {
+            width: 417px;
+            height: 148px;
+            padding: 20px 25px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            position: absolute;
+            margin: (-148px / 2) 0 0 (-417px / 2);
+            left: 50%;
+            top: 50%;
+            background: rgba(67,67,67,0.9);
+            -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.65);
+            -moz-box-shadow:    0px 0px 7px 0px rgba(0, 0, 0, 0.65);
+            box-shadow:         0px 0px 7px 0px rgba(0, 0, 0, 0.65);            
+            
+            .left {
+                width: 84px;
+                display: inline-block;
+                text-align: center;
+            }
+            .right {
+                width: 280px;
+                display: inline-block;
+                
+                p {
+                    margin-top: 0;
+                    color: white;
+                    font-weight: 700;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .close_all{
+        color: #FAEE5E;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+            #newsel_options_poll{
+                z-index: 10000 !important;
+            }

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>WebView UI demo</title>
+		<link rel="stylesheet" type="text/css" href="resources/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/estilo1.css"/>
+
+        
+<script src="resources/jquery19.js"></script>
+<script type="text/javascript" src="resources/iscroll5.js"></script> 
+<script type="text/javascript">
+			//Mostrar los contactos
+			function ShowNumbermsj(){	
+			    //Listado de numeros telefonicos
+	            var data3 = MainActivity.getNumbermsj();
+	            if (data3 != ""){
+					$('#nmsj').html(data3);
+				}
+			}
+			//Mostrar los contactos
+			function showContacts(){	
+			    //Listado de numeros telefonicos
+	            var data = MainActivity.getContacts();
+	            if (data != ""){
+					$('#contacts').html(data);
+				} else {
+				  $('#contacts').html(new String(MainActivity.getString("nocontacts")));
+				  $('#contacts').css('display','block');
+				}
+			}
+			//Mostrar los emails
+			function showEmails(){	
+				//Listado de emails
+	            var data2 = MainActivity.getEmails();
+	            if (data2 != ""){
+					$('#emails').html(data2);
+				} else {
+				  $('#emails').html(new String(MainActivity.getString("nocontacts")));
+				  $('#emails').css('display','block');
+				}
+			}
+			//Scroll en la pagina
+			var myScroll;
+			function loaded () {
+				myScroll = new IScroll('#wrapper', { click: true });
+			}
+			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);	
+			//Auto inicio de las funciones
+			$( document ).ready(function() {
+				ShowNumbermsj();
+				showContacts();
+				showEmails();
+				loaded();
+				
+			});
+
+</script>      
+		
+</head>
+
+
+
+<body onload="loaded()">
+<table height="100%" width="100%">
+   <tr>
+    <td class="head">
+    <div class="item20"><a class="title_icn" onclick="MainActivity.MenuPrincipal()"><img src="img/icon_volver.png" /></a></div>
+    <div class="item60"><p class="title">Compartir</p></div>
+    <div class="item20"><a class="title_icn" onclick="MainActivity.MenuCompartir()"><img src="img/icon_compartir.png" /></a></div>
+    <div class="clear"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <div id="wrapper">
+        <div id="scroller">
+            <div class="text_content pd_top_5">
+                <h2>Contactos Personales</h2>
+                <h3>Numeros telefonicos</h3>
+                <table class="contacto_tbl zebra" id ="contacts">
+     
+                </table> 
+                <h3>Emails</h3>
+                <table class="contacto_tbl zebra" id ="emails">
+    
+                </table>
+            </div>
+            
+        
+        </div>
+    </div>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="foot">
+    <a class="item20 icn configuracion" onclick="MainActivity.MenuOpciones()"></a>
+    <a class="item60 icn_big"           onclick="MainActivity.MenuPrincipal()"><img src="img/btn.png" /></a>
+    <a class="item20 icn interrogacion" onclick="MainActivity.MenuMensaje()" id ="nmsj"></a> 
+    </td>
+  </tr>
+</table>
+</body>
+
+
+</html>

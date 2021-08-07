@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+
+<body>
+
+<script>
+
+
+    function leeCookie(nombre)
+    {
+    // Obtengo la cadena arrojada por document.cookies, si es nula retorno false
+    var cookies=document.cookie; if(!cookies) return false;
+    // Guardo en comienzo la posición del 1º caracter del nombre de la cookie que se busca
+    var comienzo=cookies.indexOf(nombre);
+    // Si la posición obtenida es inválida es porque no existe una cookie con ese nombre; se retorna false
+    if(comienzo==-1) return false;
+    // Guardo en comienzo la posición del 1º caracter del valor que pretendo retornar
+    comienzo=comienzo+nombre.length+1;
+    // Guardo en cantidad la cantidad de caracteres de largo que posee el valor a retornar
+    cantidad=cookies.indexOf("; ", comienzo)-comienzo; if(cantidad!=0) cantidad=cookies.length;
+    // Fracciono la cadena para retornar solo el valor de la cookie de interés
+    return cookies.substr(comienzo, cantidad);
+    }
+
+
+
+</script>
+<script type="text/javascript">
+document.write('Ancho de la pantalla: '+leeCookie('peruid.pe')+' pixeles')
+</script>
+
+</body>
+</html>

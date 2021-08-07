@@ -1,0 +1,673 @@
+body {
+	background: #F5F5F5;
+	color: #212121;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+}
+
+img {
+	border: 0;
+}
+
+form {
+	margin: 0;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	margin: 0 0 11px;
+}
+
+object {
+	margin: 0 0 7px;
+}
+
+hr {
+	margin: 18px 0;
+	border: 0;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #fff;
+}
+
+a {
+	color: #afafaf;
+	text-decoration: none;
+}
+a:hover {
+	color: #447AA4;
+}
+
+/* Basic classes */
+.hidden {
+	display: none;
+}
+
+.centerize {
+	text-align: center;
+}
+
+.clear {
+	height: 0;
+	clear: both;
+}
+
+/*-------------------------------------------------
+  Header
+-------------------------------------------------*/
+.header {
+	background-color: #fbfbfb;
+	background-color: rgba(255,255,255,0.8);
+	-moz-box-shadow:    0 0 5px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	box-shadow:         0 0 5px rgba(0,0,0,0.3);
+}
+
+.header-inner {
+	height: 29px;
+	margin: 0 auto;
+	padding: 10px 0;
+	max-width: 891px;
+	position: relative;
+}
+
+.header h1 {
+	margin: 0 0 0 8px;
+	width: 200px;
+}
+
+.header h1 a {
+	display: block;
+	background: url(http://www.naturalphone.cl/jwp/images/NaturalPhoneLogo_30.png) no-repeat;
+	height: 30px;
+}
+
+.header h1 a span {
+	display: none;
+}
+
+.info {
+	position: absolute;
+	right: 0;
+	top: 9px;
+}
+.info li {
+	display: inline-block;
+	margin-left: 5px;
+}
+.info a {
+	display: block;
+	width: 32px;
+	height: 32px;
+	opacity: 0.15;
+	filter:alpha(opacity=15);
+	-webkit-transition: opacity 0.15s;
+	-moz-transition: opacity 0.15s;
+	-ms-transition: opacity 0.15s;
+	-o-transition: opacity 0.15s;
+	transition: opacity 0.15s;
+}
+.info a:hover {
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+.info a span {
+	display: none;
+}
+
+.github a {
+	background: url(http://www.naturalphone.cl/jwp/images/github.png) no-repeat;
+}
+.twitter a {
+	background: url(http://www.naturalphone.cl/jwp/images/twitter.png) no-repeat;
+}
+.email a {
+	background: url(http://www.naturalphone.cl/jwp/images/mail.png) no-repeat;
+}
+
+/*-------------------------------------------------
+  Content wrappers
+-------------------------------------------------*/
+
+.mainwrapper {
+	width: 867px;
+	margin: 0 auto 60px;
+}
+
+.wrapper {
+	margin: 0 8px;
+}
+
+/*-------------------------------------------------
+  Footer
+-------------------------------------------------*/
+
+.footer {
+	clear: both;
+}
+
+/*-------------------------------------------------
+  Main content
+-------------------------------------------------*/
+.container {
+	width: 851px;
+	height: 1%;
+	overflow: visible;
+	float: left;
+	padding: 0;
+	margin: 50px -270px 0 0;
+}
+
+.content {
+	padding: 0;
+	margin: 0 331px 0 0;
+}
+
+.content2 {
+	padding: 0;
+	margin: 40px 331px 0 0;
+}
+
+/*-------------------------------------------------
+  Item styles
+-------------------------------------------------*/
+h2.contenttitle {
+	clear: both;
+	color: #11242B;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 20px;
+	margin: 0 0 20px;
+	padding: 0 0 8px;
+	background: url(http://www.naturalphone.cl/jwp/images/dots.png) repeat-x bottom;
+}
+
+h3.contenttitle {
+	clear: both;
+	color: #bbb;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 14px;
+	text-shadow: 0 1px 0 #fff;
+	margin: 35px 0 10px;
+}
+
+h3.contenttitle.notop {
+	margin-top: 0;
+}
+
+.contenttitle a  {
+	color: #11242B;
+}
+.contenttitle a:hover {
+	color: #11242B;
+	text-decoration: underline;
+}
+
+.contentbody {
+	font-size: 13px;
+	line-height: 18px;
+	padding: 0;
+}
+
+.contentbody ul {
+	list-style-type: square;
+	margin: 7px 0 11px 30px;
+}
+
+.contentbody ul li {
+	display: list-item;
+	line-height: 18px;
+}
+
+.contentbody a  {
+	color: #447AA4;
+}
+.contentbody a:hover {
+	color: #447AA4;
+	text-decoration: underline;
+}
+
+.content2 {
+	background: url(http://www.naturalphone.cl/jwp/images/dots.png) repeat-x top;
+}
+
+.content2 h2.contenttitle {
+	font-size: 14px;
+	margin: 0;
+	padding: 10px 0;
+}
+
+.content2 h2.contenttitle span {
+	float: left;
+	color: #aaa;
+	font-size: 10px;
+	text-transform: uppercase;
+	margin-top: 3px;
+	width: 60px;
+}
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+/*-------------------------------------------------
+  Sidebar Menu
+-------------------------------------------------*/
+.sidebar {
+	float: right;
+	width: 270px;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebarcontent {
+	font-size: 11px;
+	line-height: 15px;
+	margin: 0 0 30px;
+	padding: 0;
+}
+
+.sidebarcontent p {
+	margin: 0 0 20px;
+}
+
+.aboutmeimage {
+	background: url(http://www.naturalphone.cl/jwp/images/wesley-luyten.png) no-repeat 0 0;
+	border-bottom: 1px solid #ddd;
+	width: 270px;
+	height: 158px;
+}
+
+.aboutme {
+	border-top:1px solid #fff;
+	padding: 10px 0 0;
+}
+
+.aboutme p {
+	margin: 0 0 5px;
+}
+
+.sidebarcontent h2 {
+	border-bottom: 1px solid #ddd;
+	color: #11242B;
+	font-size: 11px;
+	font-family: 'Ubuntu', sans-serif;
+	margin: 0;
+	padding: 2px 0;
+	text-transform: uppercase;
+}
+
+/*-------------------------------------------------
+  Work
+-------------------------------------------------*/
+
+.work {
+	margin: 0 0 15px;
+}
+
+.work dl {
+	margin: 0;
+}
+
+.work dt {
+	color: #aaa;
+	font-size: 10px;
+	border-bottom: 1px solid #ddd;
+	padding: 10px 3px 2px;
+	text-transform: uppercase;
+	text-shadow: 0 1px 0 #fff;
+}
+
+.work dd {
+	margin: 0;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #fff;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+.work dd a {
+/*	background: url(http://www.naturalphone.cl/jwp/images/arrow.gif) no-repeat 99% 50%;*/
+	display: block;
+	padding: 5px 3px;
+}
+
+.work dd a {
+	color: #447AA4;
+}
+.work dd a:hover {
+	background-color: #fff;
+}
+
+/*-------------------------------------------------
+  Checkout
+-------------------------------------------------*/
+
+.checkout {
+	width: 270px;
+	margin: 80px 0 30px;
+}
+
+.checkout h4 {
+	color: #999;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 25px 0 5px;
+}
+
+.checkout b {
+	color: #11242B;
+	font-size: 14px;
+}
+
+.checkout .boxlink {
+	background-color: #fbfbfb;
+	border-top: 1px solid #ccc;
+}
+
+.checkout .boxlink a {
+	display: block;
+	color: #444;
+	padding: 7px 9px;
+}
+.checkout .boxlink a:hover,
+.checkout .boxlink a:hover b {
+	color: #fff;
+	background-color: #11242B;
+}
+
+.checkout .section {
+	background-color: #fbfbfb;
+	border-top: 1px solid #ccc;
+	position: relative;
+	padding: 7px 9px;
+}
+
+.checkout .section p {
+	color: #333;
+	margin: 1px 0 0;
+}
+
+.checkout .section .button,
+.checkout .section .agree {
+	margin-top: 3px;
+}
+
+.checkout .price-badge {
+	background: url(http://www.naturalphone.cl/jwp/images/price-badge.png) no-repeat;
+	position: absolute;
+	right: 7px;
+	top: 3px;
+	width: 35px;
+	font-weight: bold;
+	font-size: 13px;
+	text-align: center;
+	line-height: 29px;
+}
+
+/*-------------------------------------------------
+  Version
+-------------------------------------------------*/
+
+span.v10, span.v11, span.v12, span.v13, span.v14, span.v15,
+span.v20, span.v21 {
+	background: url(http://www.naturalphone.cl/jwp/images/version.png) no-repeat right 0;
+	padding-right: 32px;
+}
+span.v10 {
+	background-position: right 8px;
+}
+span.v11 {
+	background-position: right -11px;
+}
+span.v12 {
+	background-position: right -31px;
+}
+span.v13 {
+	background-position: right -51px;
+}
+span.v14 {
+	background-position: right -71px;
+}
+span.v15 {
+	background-position: right -91px;
+}
+span.v20 {
+	background-position: right -111px;
+}
+span.v21 {
+	background-position: right -131px;
+}
+
+/*-------------------------------------------------
+  Comments
+-------------------------------------------------*/
+#comments, #nocomments {
+	padding: 0;
+	margin: 10px 361px 20px 0;
+}
+
+#comments #dsq-content,
+#comments #dsq-content #dsq-topbar {
+	background: transparent;
+}
+
+#comments #dsq-content {
+	padding: 0;
+}
+
+#nocomments {
+	border-top: 1px dotted #a1a1a1;
+	font-size: 12px;
+	line-height: 17px;
+	padding: 10px 0 0;
+}
+
+#comments h4 {
+	clear: both;
+	color: #7f7f7f;
+	font-size: 11px;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.itemcomment {
+	background: url(http://www.naturalphone.cl/jwp/images/commentquote01.gif) no-repeat;
+	background-position: 6px 19px;
+	font-size: 12px;
+	line-height: 17px;
+	padding: 16px 0 11px 45px;
+	border-top: 1px dotted #a1a1a1;
+	margin: 9px 0 0;
+}
+
+.id1 { /*This is to give the admin a special comment style, to distinguish him/her from the rest of the commentors*/
+	background: url(http://www.naturalphone.cl/jwp/images/commentquote02.gif) no-repeat;
+	background-position: 6px 19px;
+}
+
+.commentinfo {
+	color: #777;
+	font-size: 11px;
+	margin: 7px 0 0;
+}
+
+.commentinfo a {
+	color: #777;
+}
+
+.commentinfo a:hover {
+	color: #447AA4;
+}
+
+/*-------------------------------------------------
+  Miscelaneous
+-------------------------------------------------*/
+
+.highlight {
+	background: #DEFFA9;
+}
+
+.leftbox, .rightbox {
+	display: block;
+	font-size: smaller;
+	padding: 3px 0;
+}
+
+.leftbox {
+	float: left;
+	margin-right: 10px;
+}
+
+.rightbox {
+	float: right;
+	margin-left: 10px;
+}
+
+pre, pre.prettyprint {
+	background-color: #fcfcfc;
+	border: none;
+	clear: both;
+	font-family: consolas, courier, monospace;
+	font-size: 11px;
+	line-height: 14px;
+	overflow: hidden;
+	margin: 0 0 11px;
+	padding: 7px;
+}
+
+.note {
+	background-color: #E0F3E0;
+	clear: both;
+	color: #212121;
+	font-size: 12px;
+	margin: 0 0 11px;
+	padding: 12px;
+}
+
+.quote {
+	font-style: italic;
+	font-size: 11px;
+	padding-left: 10px;
+	border-left: 3px solid #CCC;
+	margin: 0 0 11px;
+}
+
+.flashvars {
+	background-color: #FFFFCC;
+	color: #212121;
+	font-size: 11px;
+	line-height: 17px;
+	padding: 10px;
+	width: 500px;
+	text-align: left;
+}
+
+.flashvars b {
+	clear: left;
+	float: left;
+	font-family: Courier New, monospace;
+	width: 230px;
+}
+
+.flashvars p {
+	margin: 0 0 0 231px;
+}
+
+.flashvars span {
+	border-top: 1px dotted #F6D87D;
+	display: block;
+	margin: 7px 0;
+}
+
+.credits {
+	font-size: 11px;
+	margin: 3px 0 0;
+	text-align: right;
+}
+
+.credits span {
+	background: url(http://www.naturalphone.cl/jwp/images/video-camera.png) no-repeat 0 0;
+	padding-left: 22px;
+}
+
+ul.apibar {
+	position: relative;
+	list-style-type: none;
+	margin-left: 0;
+}
+
+ul.apibar li {
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+ul.apibar .cf-focus,
+ul.apibar .cf-click {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+ul.apibar .cf-focus {
+	right: 97px;
+}
+
+a.button {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0 10px;
+	font-weight: 700;
+	line-height: 23px;
+	color: white;
+	background-color: #345;
+	border: 0;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+a.button:hover {
+	background-color: #447AA4;
+}
+
+button {
+	cursor: pointer;
+	color: #999;
+	line-height: 19px;
+    background-color: #222;
+    border: 1px solid #333;
+    padding: 2px 11px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0;
+}
+
+button input[type="text"] {
+	color: #fff;
+	background-color: #555;
+    border: 1px solid #333;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0 -9px 0 5px;
+    padding: 2px;
+    width: 24px;
+}

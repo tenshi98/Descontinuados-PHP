@@ -1,0 +1,245 @@
+@charset "utf-8";
+/* CSS Document */
+
+body  {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #EDEAE0;
+	background-image: url(images/bg.jpg);
+	background-repeat: repeat-x;
+}
+.contenedor {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.center {
+	margin: 0 auto 0 auto;
+	width: 950px;
+}
+
+
+
+
+.secc_izq {
+	float: left;
+	width: 360px;
+	position: relative;
+	z-index: 9;
+}
+
+
+
+
+.secc_der {
+	float: right;
+	width: 569px;
+	position: relative;
+	z-index: 10;
+}
+.contenedor .center .secc_der {
+	padding-top: 60px;
+}
+.texto_index {
+	text-align: center;
+	width: 230px;
+	margin-top: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #333;
+}
+
+
+.titulo_index {
+	text-align: center;
+	width: 230px;
+	margin-top: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	color: #333;
+}
+.titulo_index_gr {
+	text-align: left;
+	width: 550px;
+	margin-top: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	color: #C10347;
+}
+.texto_index_gr {
+	text-align: left;
+	width: 550px;
+	margin-top: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #333;
+}
+
+
+.logo    {
+	padding-top: 60px;
+	width: 228px;
+}
+
+.menu {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	color: #C10347;
+	text-decoration: none;
+	clear: both;
+	text-align: center;
+	z-index: 100;
+	position: fixed;
+	bottom: 10px;
+	background-color: #FAFAF8;
+	height: 30px;
+	vertical-align: middle;
+	width: 100%;
+	margin-right: 0px;
+	margin-left: -10px;
+	padding-top: 15px;
+}
+.menu a {
+	text-decoration: none;
+	color: #C10347;
+	padding-right: 30px;
+	padding-left: 30px;
+	z-index: 101;
+}
+.menu a:hover {
+	color: #00548C;
+
+}
+
+/* CSS Document */
+
+.cuerpo {
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: normal;
+	color: #333;
+}.cuerpo_ch_gris {
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: normal;
+	color: #999;
+}
+
+
+
+.cuadro_texto_ingreso {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333;
+	text-decoration: none;
+	height: 25px;
+	padding-left: 10px;
+	text-align: left;
+	width: 90%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.cuadro_texto_ingreso_borde_multi {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333;
+	text-decoration: none;
+	height: 80px;
+	padding-left: 10px;
+	text-align: left;
+	width: 95%;
+	margin-top: 5px;
+	border: 2px solid #CCC;
+}
+
+
+.google_bot_txt_bco {
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	color: #FFF;
+	background-color: #D50347;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-weight: normal;
+	text-decoration: none;
+}
+.google_bot_txt_bco:hover {
+	cursor: hand;
+	cursor: pointer;
+	background-color: #333;
+}
+.esquina_red {
+	border-radius: 10px 10px 10px 10px;
+	-ms-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+}
+.esquina_red_3px {
+	border-radius: 3px 3px 3px 3px;
+	-ms-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	-khtml-border-radius: 3px 3px 3px 3px;
+}
+
+
+.cuadro_texto_ingreso_borde {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333;
+	text-decoration: none;
+	height: 25px;
+	padding-left: 10px;
+	text-align: left;
+	width: 95%;
+	margin-top: 5px;
+	border: 2px solid #CCC;
+	margin-bottom: 5px;
+}
+.cuadro_texto_ingreso_borde_ch {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333;
+	text-decoration: none;
+	height: 25px;
+	padding-left: 10px;
+	text-align: left;
+	margin-top: 5px;
+	border: 2px solid #CCC;
+	margin-bottom: 5px;
+}
+
+
+
+.padding_10 {
+	padding-top: 5px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+}
+
+
+.margin_top_20 {
+	margin-top: 120px;
+}

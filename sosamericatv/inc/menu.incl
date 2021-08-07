@@ -1,0 +1,18 @@
+ <table bgcolor="#999" width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td align="center" valign="middle">
+	
+	<table width="990" align="center" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="25%" align="right" valign="middle" class="google_fjalla_bco">
+          Administraci&oacute;n</td>
+        <td width="75%" height="50" align="center" valign="middle">
+		<input name="button" type="submit" class="bot_sombra_izq" id="button" value="Tutorial de Uso" />
+			<input name="button2" type="submit" class="bot_sombra_cent" id="button2" value="T&eacute;rminos y Condiciones" /><input name="button3" type="submit" class="bot_sombra_cent" id="button3" onclick="javascript:window.open('pop_descarga.php','Telefon&iacute;a','height=400px,width=480px,help=no,scrollbars=no,menubar=no,status=no,titlebar=no,toolbar=no');" value="Descarga App" /><input name="button4" type="submit" class="bot_sombra_cent" id="button4"  onclick="javascript:window.location.href='http://<?=$nombreurl?>/alarmas.php';" value="Recordatorios" /><input name="button4" type="submit" class="bot_sombra_cent" id="button4"  onclick="javascript:window.location.href='http://<?=$nombreurl?>/administracion.php';" value="Administraci&oacute;n" /><input name="button4" type="submit" class="bot_sombra_der" id="button4"  onclick="javascript:window.location.href='http://<?=$nombreurl?>/index.php?cierro=si';" value="Cerrar Sesi&oacute;n" />
+		  </td>
+      </tr>
+    </table>
+	
+	</td>
+    </tr>
+</table>

@@ -1,0 +1,103 @@
+/* 
+    Document   : chat
+    Created on : 30.04.2013, 09:01:54
+    Author     : lxblink
+*/
+
+.chat-widget {
+    position: absolute;
+    right: -400px;
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #4A9AC6;
+}
+.chat-widget, 
+.chat-widget .chat-toggle {
+    height: 250px;
+}
+.chat-widget .chatInner {
+    padding: 20px;
+    padding-bottom: 0px;
+   
+}
+.chat-widget .chat-messages {
+    overflow: auto;
+}
+.chat-widget .chat-messages, 
+.chat-widget .chat-content {
+    height: 182px;
+}
+.chat-widget .chat-content {
+    border: 1px solid #4A9AC6;
+    position: relative;
+}
+.chat-widget .chat-messages {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.chat-widget .chat-messages, 
+.chat-widget .chat-messages li {
+    list-style: none;
+}
+.chat-widget .chat-messages li {
+    padding: 6px;
+    margin: 10px;
+    background-color: #FEFEFF;
+    border: 1px solid #7BB6D6;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #7BB6D6 inset;
+    
+}
+.chat-widget .chat-toggle {
+    position: absolute;
+    left: -21px;
+    top: -1px;
+    cursor: pointer;
+    width: 20px;
+    border: 1px solid #4A9AC6;
+    background-color: #fff;
+    transition: background-color 0.2s ease;
+}
+.chat-widget .chat-toggle:hover {
+    background-color: #e3eff6;
+}
+.chat-widget .chat-toggle:hover .chat-toogle-icon {
+    text-shadow: 0 0 2px #fff;
+}
+.chat-widget .chat-toggle .chat-toogle-icon {
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    color: #4A9AC6;
+    font-weight: bold;
+}
+.chat-widget .chtat-inputs {
+    padding: 10px 0;
+    position: relative;
+}
+.chat-widget .chat-msg {
+    width: 75%;
+}
+.chat-widget .chat-submit {
+    width: 20%;
+    margin-left: 1%;
+}
+.chat-widget .chat-time {
+    color: #ccc;
+}
+.chat-widget .chat-name {
+    font-weight: bold;
+}
+.chat-widget .chat-error {
+    background-color: #ffdede;
+    border: 1px solid #ff9b9b;
+    padding: 4px;
+    position: absolute;
+    top: -13px;
+    display: none;
+    font-size: 12px;
+}

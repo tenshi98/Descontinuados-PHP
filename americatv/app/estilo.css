@@ -1,0 +1,208 @@
+@charset "utf-8";
+body , html{
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+
+}
+/* CSS Document */
+
+
+.gradient_box {
+background: #e42322; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMjElIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VkZWRlZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-radial-gradient(center, ellipse cover,  #ffffff 21%, #ededed 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(21%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 21%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #ffffff 21%,#ededed 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #ffffff 21%,#ededed 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #ffffff 21%,#ededed 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
+}
+.gradient_red {
+background: #e42322; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlNDIzMjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYTMwMDAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-radial-gradient(center, ellipse cover,  #e42322 0%, #a30000 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e42322), color-stop(100%,#a30000)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #e42322 0%,#a30000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #e42322 0%,#a30000 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #e42322 0%,#a30000 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #e42322 0%,#a30000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e42322', endColorstr='#a30000',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+.llamando_gif {
+	background-image: url(images/loaderA64.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 130px;
+	width: 130px;
+}
+.logo_cent {
+	background-image: url(images/logo_sos_n.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 386px;
+	width: 386px;
+	background-size: contain;
+	min-width: 100px;
+	min-height: 100px;
+	max-width: 385px;
+	max-height: 386px;
+}
+
+.gris_arial_12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #999;
+	text-decoration: none;
+}
+.red_arial_15 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 700;
+	color: #F00;
+	text-decoration: none;
+}
+.bco_arial_15 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 700;
+	color: #FFF;
+	text-decoration: none;
+}
+
+
+
+
+.text_bco {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.text_bco_bot {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: 700;
+}
+.icono_der {
+	margin-left: -15px;
+}
+.icono_iz {
+	margin-right: -12px;
+}
+.tabla_ppal {
+	width: 100%;
+	margin: 0px;
+
+}
+
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=1 );
+
+}
+.alto_100 {
+	margin: 0px;
+	height: 100%;
+	min-height: 100%;
+}
+
+
+
+.link {
+	text-decoration: none;
+}
+.link:hover {
+	text-decoration: none;
+	color: #F93;
+}
+.sombra_interna{
+ box-shadow: inset -1px -2px 47px 13px rgba(0,0,0,0.37); 
+}
+.bot_seguridad {
+	background-color: #004880;
+	background-image: url(images/seguridad.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100% !important;
+	width: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-size: contain;
+}
+
+.bot_seguridad:hover {
+	cursor:hand;
+	cursor:pointer;
+	background-color:#333;
+}
+
+.bot_vfamilia {
+	background-color: #642EBE;
+	background-image: url(images/violencia_fam.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100% !important;
+	width: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-size: contain;
+}
+
+.bot_vfamilia:hover {
+	cursor:hand;
+	cursor:pointer;
+	background-color:#333;
+}
+.bot_sosmuni {
+	background-color: #009999;
+	background-image: url(images/municipalidad.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100% !important;
+	width: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-size: contain;
+}
+
+.bot_sosmuni:hover {
+	cursor:hand;
+	cursor:pointer;
+	background-color:#333;
+}
+.bot_carrete {
+	background-color: #61942B;
+	background-image: url(images/carrete2.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100% !important;
+	width: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-size: contain;
+}
+.bot_carrete:hover {
+	cursor:hand;
+	cursor:pointer;
+	background-color:#333;
+}

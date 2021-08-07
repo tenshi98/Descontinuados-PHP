@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Documento sin título</title>
+<!-- TemplateEndEditable -->
+<link href="../css/reset.css" rel="stylesheet" type="text/css" />
+<link href="../css/estilo2.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+<body>
+<table class="table" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="2" height="39px;">
+<?php require_once 'AR2D2CFFDJFDJX1/xrxs_core/menu_nav.php'; ?>     
+    </td>
+  </tr>
+  <tr>
+    <td width="220px;" bgcolor="#eee">
+<?php require_once 'AR2D2CFFDJFDJX1/xrxs_core/menu_lateral.php'; ?>  
+    </td>
+    <td height="100%">
+    	<div class="body">
+		<!-- TemplateBeginEditable name="content" -->
+        
+		
+		
+		
+		<!-- TemplateEndEditable --> 
+    	</div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

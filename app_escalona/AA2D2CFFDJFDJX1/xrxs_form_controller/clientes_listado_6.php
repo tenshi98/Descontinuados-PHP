@@ -1,0 +1,134 @@
+<?php 
+/**********************************/
+/*       Bloque de seguridad      */
+/**********************************/
+if( ! defined('XMBCXRXSKGC')) {
+    die('No tienes acceso a esta carpeta o archivo.');
+}
+/**********************************/
+/*     Ejecucion del Codigo       */
+/**********************************/
+
+
+	//Valida el ingreso del Nombre
+	if ( empty($Nombre) )      $errors[1] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha ingresado el nombre.</p>
+	</div>";
+	
+	//Valida el ingreso del Apellido_Paterno
+	if ( empty($Apellido_Paterno) )      $errors[2] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha ingresado el apellido paterno.</p>
+	</div>";
+	
+	//Valida el ingreso del Apellido_Materno
+	if ( empty($Apellido_Materno) )      $errors[3] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha ingresado el apellido materno.</p>
+	</div>";
+	
+	//Valida el ingreso del email
+	if ( empty($email) )      $errors[4] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha ingresado el email.</p>
+	</div>";
+	
+	//Valida el ingreso del Rut
+	if ( empty($Rut) )      $errors[5] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha ingresado el Rut.</p>
+	</div>";
+	
+	//Valida el ingreso del Sexo
+	if ( empty($Sexo) )      $errors[6] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha seleccionado el Sexo.</p>
+	</div>";
+	
+	//Valida el ingreso del fNacimiento
+	if ( empty($fNacimiento) )      $errors[7] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha ingresado la fecha de nacimiento.</p>
+	</div>";
+	
+
+	
+	//Valida el ingreso del idCiudad
+	if ( empty($idCiudad) )      $errors[9] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha seleccionado una Region.</p>
+	</div>";
+	
+	//Valida el ingreso del idComuna
+	if ( empty($idComuna) )      $errors[10] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha seleccionado una comuna.</p>
+	</div>";
+	
+
+	
+	//Valida el ingreso del Direccion
+	if ( empty($mesa) )      $errors[12] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>No ha ingresado una la mesa de votacion.</p>
+	</div>";
+	
+
+	
+	
+	//Valida si el fono ingresado es un numero telefonico
+	if(isset($Fono1)){
+		if (validarnumero($Fono1)) {   
+			$errors[13]	    = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>Ingrese un numero telefonico Valido.</p>
+	</div>"; 
+		}
+	}
+	
+	//Valida si el fono ingresado es un numero telefonico
+	if(isset($Fono2)){
+		if (validarnumero($Fono2)) {   
+			$errors[14]	    = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>Ingrese un numero telefonico Valido.</p>
+	</div>"; 
+		}
+	}
+	
+	//Valida si el rut ingresado sea un rut chileno valido
+	if(isset($Rut)){
+		if(RutValidate($Rut)==0){
+   			$errors[15]	    = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>Ingrese un Rut Valido.</p>
+	</div>"; 
+		}
+	}
+	
+	//Verifica si el mail corresponde
+	if(isset($email)){
+		if(validaremail($email)){ }else{ 
+   			$errors[16]	    = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'>Ingrese un email Valido.</p>
+	</div>"; 
+		}
+	}
+	
+?>

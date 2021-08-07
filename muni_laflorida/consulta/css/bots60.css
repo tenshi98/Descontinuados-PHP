@@ -1,0 +1,447 @@
+@charset "utf-8";
+/* CSS Document */
+
+.bot_search {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/search_50.png);
+	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	color: #FFF;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #0099CC;
+	background-position: center 15px;
+	width: 60px;
+	padding-top: 50px;
+	margin: 3px;
+}
+.bot_search:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+.bot_social {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/social_50.png);
+	background-color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 7.5pt;
+	color: #FFF;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #ab1b01;
+	background-position: center -2px;
+	width: 70px;
+	padding-top: 40px;
+	margin: 3px;
+}
+.bot_social:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+.bot_aseo {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/aseo_50.png);
+	background-color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 7.5pt;
+	color: #FFF;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #573d23;
+	background-position: center -2px;
+	width: 70px;
+	padding-top: 35px;
+	margin: 3px;
+}
+.bot_aseo:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+.bot_circulacion {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/permiso_50.png);
+	background-color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 7.5pt;
+	color: #FFF;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #d08e00;
+	background-position: center -2px;
+	width: 70px;
+	padding-top: 35px;
+	margin: 3px;
+}
+.bot_circulacion:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+.bot_comercial {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/comercial_50.png);
+	background-color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 7.5pt;
+	color: #FFF;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #e1621a;
+	background-position: center -2px;
+	width: 70px;
+	padding-top: 35px;
+	margin: 3px;
+}
+.bot_comercial:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+.bot_licencia {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/licencia_50.png);
+	background-color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 7.5pt;
+	color: #FFF;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #9d7f3e;
+	background-position: center -2px;
+	width: 70px;
+	padding-top: 35px;
+	margin: 3px;
+}
+.bot_licencia:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.bot_obras {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/obra_50.png);
+	background-color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 7.5pt;
+	color: #FFF;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #465837;
+	background-position: center -2px;
+	width: 70px;
+	padding-top: 41px;
+	margin: 3px;
+}
+.bot_obras:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.bot_inspecciones {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/inspecciones_50.png);
+	background-color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 7.5pt;
+	color: #FFF;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #21332c;
+	background-position: center -2px;
+	width: 70px;
+	padding-top: 35px;
+	margin: 3px;
+}
+.bot_inspecciones:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.bot_provisorios {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/provisorio_50.png);
+	background-color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 7.5pt;
+	color: #FFF;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #1f4952;
+	background-position: center -2px;
+	width: 70px;
+	padding-top: 35px;
+	margin: 3px;
+}
+.bot_provisorios:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.bot_administra {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/config_50.png);
+	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	color: #FFF;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #2163AB;
+	background-position: center 15px;
+	width: 60px;
+	padding-top: 50px;
+	margin: 3px;
+}
+.bot_administra:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.bot_clave {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/clave_50.png);
+	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	color: #FFF;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #003366;
+	background-position: center 15px;
+	width: 60px;
+	padding-top: 50px;
+	margin: 3px;
+}
+.bot_clave:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.bot_cerrar {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/cerrar_50.png);
+	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	color: #FFF;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #FF0000;
+	background-position: center 15px;
+	width: 60px;
+	padding-top: 50px;
+	margin: 3px;
+}
+.bot_cerrar:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+
+
+.bot_aceptar {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/aceptar_50.png);
+	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	color: #FFF;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #339933;
+	background-position: center 15px;
+	width: 60px;
+	padding-top: 50px;
+	margin: 3px;
+}
+.bot_aceptar:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.bot_limpiar {
+	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	background-image: url(../images/icons/limpiar_50.png);
+	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	color: #FFF;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+	background-repeat: no-repeat;
+	background-color: #000000;
+	background-position: center 15px;
+	width: 60px;
+	padding-top: 50px;
+	margin: 3px;
+}
+.bot_limpiar:hover {
+	background-color: #333333;
+	cursor: pointer;
+	cursor: hand;
+}

@@ -1,0 +1,1800 @@
+/*
+	 CSS-Tricks Example
+	 by Chris Coyier
+	 http://css-tricks.com
+*/
+
+* { margin: 0; padding: 0; }
+html, body {
+	height: auto;
+	overflow: auto;
+	right: 50%;
+}
+#page-wrap {
+	width: 960px;
+	padding: 0 0 0 0px;
+	margin: 0 auto;
+	overflow: inherit;
+	height: auto;
+}
+
+.info-col {
+	float: center;
+	height: auto;
+	width: 100%;
+}
+.info-col h2 {
+	text-align: center;
+	font-weight: normal;
+}
+
+.image { height: 100px; text-indent: -9999px; display: block; border-right: 1px solid white; }
+.do {
+	background: #900;
+	background-color: #900;
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	text-align: left;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+dt {
+	background: #900;
+	color: white;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	text-align: left;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+.general {
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 5px;
+}
+.social {
+	background-image: url(../images/icons/social.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
+.patente {
+	background-image: url(../images/icons/comercial.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
+.circulacion {
+	background-image: url(../images/icons/permiso.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
+.licencia {
+	background-image: url(../images/icons/licencia.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
+.aseo {
+	background-image: url(../images/icons/aseo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
+.obras {
+	background-image: url(../images/icons/obra.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
+.inspecciones {
+	background-image: url(../images/icons/inspecciones.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
+.provisorio {
+	background-image: url(../images/icons/provisorio.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
+.tesoreria {
+	background-image: url(../images/icons/pagos.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
+dd {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+	background: #900;
+	padding: 10px;
+	color: white;
+	border-right: 1px solid white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+dt:nth-of-type(1) {	background-color: #ab1b01;}
+dd:nth-of-type(1) {	background: #ab1b01;}
+
+dt:nth-of-type(2) {	background-color: #e1621a;}
+dd:nth-of-type(2) {	background: #e1621a;}
+
+dt:nth-of-type(3) {	background-color: #d08e00;}
+dd:nth-of-type(3) {	background: #d08e00;}
+
+dt:nth-of-type(4) {	background-color: #9d7f3e;}
+dd:nth-of-type(4) {	background: #9d7f3e;}
+
+dt:nth-of-type(5) {	background-color: #573d23;}
+dd:nth-of-type(5) {	background: #573d23;}
+
+dt:nth-of-type(6) {	background-color: #465837;}
+dd:nth-of-type(6) {	background: #465837;}
+
+dt:nth-of-type(7) { background-color: #21332c; }
+dd:nth-of-type(7) { background: #21332c; }
+
+dt:nth-of-type(8) {	background-color: #1f4952;}
+dd:nth-of-type(8) {	background: #1f4952;}
+
+dt:nth-of-type(9) {	background-color: #074693;}
+dd:nth-of-type(9) {	background: #074693;}
+
+.curCol {
+	z-index: 1;
+	position: relative;
+}
+a {
+	text-decoration: none;
+	color: #FFF;
+}
+.container { width:262px; margin:0 auto; padding-top:200px; }
+#container {
+	margin: 0 auto;
+}
+a {
+	text-decoration: none;
+	color: #FFF;
+}
+.container { width:262px; margin:0 auto; padding-top:200px; }
+#container {
+	margin: 0 auto;
+}
+
+/*-------LOGIN STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+#loginContainer {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+
+/* Login Button */
+#loginButton {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	/* padding-top: 1px; */
+}
+
+/* Login Button Text */
+#loginButton span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+
+#loginButton:hover {
+	color: #FFF;
+
+}
+
+/* Login Box */
+#loginBox {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButton.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButton.active span {
+	background-position: 70px -73px;
+}
+
+/* A Line added to overlap the border */
+#loginButton.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+
+/* Login Form */
+#loginForm {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+
+#loginForm fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginForm #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+
+#loginForm #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginForm input {
+	width: 92%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/* Sign In Button */
+#loginForm #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+   *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+
+/* Forgot your password */
+#loginForm span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginForm span a {
+	color: #000000;
+	font-size: 12px;
+}
+
+input:focus {
+    outline:none;
+}
+.login_txt {
+	font-family: Fjalla One, sans-serif;
+}
+
+
+/*------- SOCIAL -------*/
+
+/* Login Container (default to float:right) */
+
+#loginContainerSocial {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+#loginButtonSocial {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 1px;
+}
+#loginButtonSocial span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+#loginButtonSocial:hover {
+	color: #FFF;
+
+}
+#loginBoxSocial {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+#loginButtonSocial.active {
+    border-radius:3px 3px 0 0;
+}
+#loginButtonSocial.active span {
+	background-position: 70px -73px;
+}
+#loginButtonSocial.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+#loginFormSocial {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+#loginFormSocial fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+#loginFormSocial #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+#loginFormSocial #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+#loginFormSocial input {
+	width: 96%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+#loginFormSocial #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+#loginFormSocial span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginFormSocial span a {
+	color: #000000;
+	font-size: 12px;
+}
+.login_txtSocial {
+	font-family: Fjalla One, sans-serif;
+}
+/*-------PATENTES COMERCIALES -------*/
+
+/* Login Container (default to float:right) */
+#loginContainerPatCom {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+#loginButtonPatCom {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 1px;
+}
+
+/* Login Button Text */
+#loginButtonPatCom span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+
+#loginButtonPatCom:hover {
+	color: #FFF;
+}
+
+/* Login Box */
+#loginBoxPatCom {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButtonPatCom.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButtonPatCom.active span {
+	background-position: 70px -73px;
+}
+
+/* A Line added to overlap the border */
+#loginButtonPatCom.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+
+/* Login Form */
+#loginFormPatCom {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+
+#loginFormPatCom fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginFormPatCom #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+
+#loginFormPatCom #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginFormPatCom input {
+	width: 96%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/* Sign In Button */
+#loginFormPatCom #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+
+/* Forgot your password */
+#loginFormPatCom span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginFormPatCom span a {
+	color: #000000;
+	font-size: 12px;
+}
+.login_txtPatCom {
+	font-family: Fjalla One, sans-serif;
+}
+
+/*------- PerCirc STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+#loginContainerPerCirc {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+
+#loginButtonPerCirc {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 1px;
+}
+
+/* Login Button Text */
+#loginButtonPerCirc span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+
+#loginButtonPerCirc:hover {
+	color: #FFF;
+}
+
+/* Login Box */
+#loginBoxPerCirc {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButtonPerCirc.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButtonPerCirc.active span {
+	background-position: 70px -73px;
+}
+
+/* A Line added to overlap the border */
+#loginButtonPerCirc.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+
+/* Login Form */
+#loginFormPerCirc {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+
+#loginFormPerCirc fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginFormPerCirc #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+
+#loginFormPerCirc #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginFormPerCirc input {
+	width: 96%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/* Sign In Button */
+#loginFormPerCirc #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+
+
+
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+
+/* Forgot your password */
+#loginFormPerCirc span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginFormPerCirc span a {
+	color: #000000;
+	font-size: 12px;
+}
+
+/*input:focus {
+    outline:none;
+}*/
+.login_txtPerCirc {
+	font-family: Fjalla One, sans-serif;
+}
+
+/*-------LOGIN STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+#loginContainerLicCond {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+
+/* Login Button */
+#loginButtonLicCond {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 1px;
+}
+
+/* Login Button Text */
+#loginButtonLicCond span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+
+#loginButtonLicCond:hover {
+	color: #FFF;
+
+}
+
+/* Login Box */
+#loginBoxLicCond {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButtonLicCond.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButtonLicCond.active span {
+	background-position: 70px -73px;
+}
+
+/* A Line added to overlap the border */
+#loginButtonLicCond.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+
+/* Login Form */
+#loginFormLicCond {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+
+#loginFormLicCond fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginFormLicCond #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+
+#loginFormLicCond #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginFormLicCond input {
+	width: 96%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/* Sign In Button */
+#loginFormLicCond #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+
+
+
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+
+/* Forgot your password */
+#loginFormLicCond span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginFormLicCond span a {
+	color: #000000;
+	font-size: 12px;
+}
+
+/*input:focus {
+    outline:none;
+}*/
+.login_txtLicCond {
+	font-family: Fjalla One, sans-serif;
+}
+
+/*-------LOGIN STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+#loginContainerAseo {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+
+/* Login Button */
+#loginButtonAseo {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 1px;
+}
+
+/* Login Button Text */
+#loginButtonAseo span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+
+#loginButtonAseo:hover {
+	color: #FFF;
+}
+
+/* Login Box */
+#loginBoxAseo {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButtonAseo.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButtonAseo.active span {
+	background-position: 70px -73px;
+}
+
+/* A Line added to overlap the border */
+#loginButtonAseo.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+
+/* Login Form */
+#loginFormAseo {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+
+#loginFormAseo fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginFormAseo #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+
+#loginFormAseo #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginFormAseo input {
+	width: 96%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/* Sign In Button */
+#loginFormAseo #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+
+
+
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+
+/* Forgot your password */
+#loginFormAseo span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginFormAseo span a {
+	color: #000000;
+	font-size: 12px;
+}
+
+/*input:focus {
+    outline:none;
+}*/
+.login_txtAseo {
+	font-family: Fjalla One, sans-serif;
+}
+
+/*-------LOGIN STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+#loginContainerCertObras {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+
+/* Login Button */
+#loginButtonCertObras {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 1px;
+}
+
+/* Login Button Text */
+#loginButtonCertObras span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+
+#loginButtonCertObras:hover {
+	color: #FFF;
+
+}
+
+/* Login Box */
+#loginBoxCertObras {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButtonCertObras.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButtonCertObras.active span {
+	background-position: 70px -73px;
+}
+
+/* A Line added to overlap the border */
+#loginButtonCertObras.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+
+/* Login Form */
+#loginFormCertObras {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+
+#loginFormCertObras fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginFormCertObras #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+
+#loginFormCertObras #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginFormCertObras input {
+	width: 96%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/* Sign In Button */
+#loginFormCertObras #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+
+
+
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+
+/* Forgot your password */
+#loginFormCertObras span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginFormCertObras span a {
+	color: #000000;
+	font-size: 12px;
+}
+
+/*input:focus {
+    outline:none;
+}*/
+.login_txtCertObras {
+	font-family: Fjalla One, sans-serif;
+}
+
+/*-------LOGIN STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+#loginContainerInspeccion {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+
+/* Login Button */
+#loginButtonInspeccion {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 1px;
+}
+
+/* Login Button Text */
+#loginButtonInspeccion span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+
+#loginButtonInspeccion:hover {
+	color: #FFF;
+
+}
+
+/* Login Box */
+#loginBoxInspeccion {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButtonInspeccion.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButtonInspeccion.active span {
+	background-position: 70px -73px;
+}
+
+/* A Line added to overlap the border */
+#loginButtonInspeccion.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+
+/* Login Form */
+#loginFormInspeccion {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+
+#loginFormInspeccion fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginFormInspeccion #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+
+#loginFormInspeccion #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginFormInspeccion input {
+	width: 96%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/* Sign In Button */
+#loginFormInspeccion #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+
+
+
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+
+/* Forgot your password */
+#loginFormInspeccion span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginFormInspeccion span a {
+	color: #000000;
+	font-size: 12px;
+}
+
+/*input:focus {
+    outline:none;
+}*/
+.login_txtInspeccion {
+	font-family: Fjalla One, sans-serif;
+}
+
+/*-------LOGIN STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+#loginContainerPermProv {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+
+/* Login Button */
+#loginButtonPermProv {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 1px;
+}
+
+/* Login Button Text */
+#loginButtonPermProv span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+
+#loginButtonPermProv:hover {
+	color: #FFF;
+
+}
+
+/* Login Box */
+#loginBoxPermProv {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButtonPermProv.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButtonPermProv.active span {
+	background-position: 70px -73px;
+}
+
+/* A Line added to overlap the border */
+#loginButtonPermProv.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+
+/* Login Form */
+#loginFormPermProv {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+
+#loginFormPermProv fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginFormPermProv #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+
+#loginFormPermProv #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginFormPermProv input {
+	width: 96%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/* Sign In Button */
+#loginFormPermProv #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+
+
+
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+
+/* Forgot your password */
+#loginFormPermProv span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginFormPermProv span a {
+	color: #000000;
+	font-size: 12px;
+}
+
+/*input:focus {
+    outline:none;
+}*/
+.login_txtPermProv {
+	font-family: Fjalla One, sans-serif;
+}
+
+/*-------LOGIN STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+#loginContainerTesoreria {
+	position: relative;
+	float: right;
+	font-size: 15px;
+}
+
+/* Login Button */
+#loginButtonTesoreria {
+	display: inline-block;
+	float: right;
+	-moz-border-radius: 3px;
+	position: relative;
+	z-index: 30;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 1px;
+}
+
+/* Login Button Text */
+#loginButtonTesoreria span {
+	color: #e1621a;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding: 9px 34px 9px 10px;
+	display: block;
+	background-image: url(../images/loginArrow.png);
+	background-repeat: no-repeat;
+	background-position: 70px 10px;
+}
+
+#loginButtonTesoreria:hover {
+	color: #FFF;
+
+}
+
+/* Login Box */
+#loginBoxTesoreria {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButtonTesoreria.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButtonTesoreria.active span {
+	background-position: 70px -73px;
+}
+
+/* A Line added to overlap the border */
+#loginButtonTesoreria.active em {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+}
+
+/* Login Form */
+#loginFormTesoreria {
+	width: 440px;
+	border: 1px solid #FCAB00;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 0 3px 3px;
+	margin-top: 2px;
+	padding: 6px;
+	background-color: #FCAB00;
+}
+
+#loginFormTesoreria fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginFormTesoreria #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+#body label {
+	color: #000000;
+	margin: 9px 0 0 0;
+	display: block;
+	float: left;
+}
+
+#loginFormTesoreria #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginFormTesoreria input {
+	width: 96%;
+	border: 1px solid #899caa;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #000000;
+	font-weight: bold;
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/* Sign In Button */
+#loginFormTesoreria #login {
+	width: auto;
+	float: left;
+	color: #fff;
+	padding: 7px 10px 8px 10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0 12px 0 0;
+	cursor: pointer;
+
+
+
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+	background-image: url(../images/loginbuttonbg.png);
+	background-repeat: repeat-x;
+}
+
+/* Forgot your password */
+#loginFormTesoreria span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginFormTesoreria span a {
+	color: #000000;
+	font-size: 12px;
+}
+
+/*input:focus {
+    outline:none;
+}*/
+.login_txtTesoreria {
+	font-family: Fjalla One, sans-serif;
+}
+
+

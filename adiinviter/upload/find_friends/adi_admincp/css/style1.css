@@ -1,0 +1,38 @@
+body{
+	background:#fff url(../images/scheme1/bg.jpg) repeat-x;
+	}
+	
+.button{
+	background:#a8b2c5 url(../images/highlight_line.gif) repeat-x top left;
+}
+
+.button:hover{
+	background:#a8b2c5;
+}
+#adiinviter_table {
+	width: 100%;
+	font-size: 12px;
+	margin:10px 2px;
+	border-left: 1px solid #959595;
+}
+#adiinviter_table th {
+	border-color:#959595;
+	border-style:solid;
+	border-width:1px;
+	background-color:#A8B2C5;
+	color:#fff;
+	padding:4px 4px 4px 6px;
+	text-align:left;
+}
+
+#adiinviter_table td {
+	width: 50%;
+	border-right: 1px solid #959595;
+	border-bottom: 1px solid #959595;
+	background: #fff;
+	padding: 4px 4px 4px 6px;
+	color: #484848;
+}
+#adiinviter_table .desc {
+	vertical_align: top;
+}

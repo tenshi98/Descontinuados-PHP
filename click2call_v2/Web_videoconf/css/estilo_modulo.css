@@ -1,0 +1,232 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.fondo {
+	background-color: #333333;
+	border: 1px solid #007899;
+	background-image: url(file:///C|/xampp/htdocs/click2call_v2/Web_videoconf/img/patt_a.jpg);
+	background-repeat: repeat;
+	background-position: center center;
+}
+.fondo2 {
+	background-color: #333333;
+	border: 1px solid #007899;
+	background-image: url(../img/blue_pattern02.jpg);
+	background-repeat: repeat;
+	background-position: right top;
+}
+
+.arial_bco_gd {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFF;
+}
+.arial_bco_ch {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: lighter;
+	color: #FFF;
+}
+
+.arial_yell_gd {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	color: #F90;
+}
+
+
+.borde10 {
+	border: 10px solid #FFF;
+}
+.padding_30 {
+	padding: 15px;
+}
+.padding_form {
+	padding-top: 0px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+}
+
+
+.contenedor {
+
+}
+.c2c {
+	background-image: url(../img/mic_inst.png);
+	background-repeat: no-repeat;
+	background-position: 5px 0px;
+	height: 243px;
+	position: relative;
+	margin-top: -20px;
+
+}
+.boton_c2c {
+	height: 250px;
+	width: 370px;
+	position: relative;
+	z-index: auto;
+	float: right;
+	margin-right: -5px;
+}
+
+
+.center {
+	margin:0 auto 0 auto;
+}
+
+.esquina_red {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.esquina_red_20 {
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 5px;
+	border-radius: 25px;
+}
+.esquina_red_20_sup {
+	-webkit-border-radius: 25px 25px 0px 0px;
+	-moz-border-radius: 25px 25px 0px 0px;
+	border-radius: 25px 25px 0px 0px;
+}
+
+
+.sombra {
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(153,153,153,0.75);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(153,153,153,0.75);
+	box-shadow: 0px 0px 3px 0px rgba(153,153,153,0.75);
+}
+
+.sombra_interior{
+	box-shadow: inset 5px 5px 17px -6px rgba(0,0,0,0.39),inset -2px -2px 47px -9px rgba(0,0,0,1); 
+}
+
+.sombra_full{
+	 box-shadow: inset 5px 5px 17px -6px rgba(0,0,0,0.39),inset -2px -2px 47px -9px rgba(0,0,0,1),-2px 0px 26px -8px rgba(0,0,0,0.88);  
+}
+.formulario {
+	position: relative;
+	z-index: auto;
+	height: auto;
+	width: auto;
+	top: -10px;
+}
+.vccenter {
+	position: relative;
+	z-index: auto;
+	height: auto;
+	width: auto;
+	top: -10px;
+}
+
+
+.empresa {
+	background-color: #333;
+	background-color: rgba(11,33,40,0.5);
+	margin-bottom: 20px;
+	}
+.text-shadow{
+	text-shadow: 0px 1px 5px #000000;
+}
+
+.cuadro_texto {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #333;
+	background-color: #FFF;
+	height: 20px;
+	width: 95%;
+	border: 1px solid #ccc;
+	margin-top: 5px;
+	margin-right: 5px;
+	padding-left: 5px;
+}
+.cuadro_multiple {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #333;
+	background-color: #FFF;
+	height: 95px;
+	width: 93%;
+	border: 1px solid #ccc;
+	margin-top: 5px;
+	text-align: left;
+	vertical-align: top;
+	padding-left: 5px;
+	padding-top: 5px;
+	resize: none;
+}
+.degra {
+background-image: -webkit-gradient(
+	linear,
+	right bottom,
+	right top,
+	color-stop(0.12, #FFFFFF),
+	color-stop(0.56, #F2F2F2)
+);
+background-image: -o-linear-gradient(top, #FFFFFF 12%, #F2F2F2 56%);
+background-image: -moz-linear-gradient(top, #FFFFFF 12%, #F2F2F2 56%);
+background-image: -webkit-linear-gradient(top, #FFFFFF 12%, #F2F2F2 56%);
+background-image: -ms-linear-gradient(top, #FFFFFF 12%, #F2F2F2 56%);
+background-image: linear-gradient(to top, #FFFFFF 12%, #F2F2F2 56%);
+}
+.hasPlaceholder {
+	color: #555;
+}
+.bot_blu {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #FFF;
+	background-color: #004966;
+	border: 1px solid #004966;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-right: 0px;
+	padding-top: 7px;
+	padding-bottom: 5px;
+	margin-left: 5px;
+}
+.bot_blu:hover {
+	cursor: hand;
+	cursor: pointer;
+	border-top-color: #223442;
+	border-right-color: #223442;
+	border-bottom-color: #223442;
+	border-left-color: #223442;
+	background-color: #223442;
+}
+.oculta {
+	display:none !important;
+}
+.fondo_vcc {
+	background-image: url(../img/vcc_fondo.png);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	height: 238px;
+	margin-top: -10px;
+}
+.fondo_ec {
+background-color: #333333;
+border: 1px solid #007899;
+background-image: url(../img/ecentral_bg.jpg);
+background-repeat: repeat;
+background-position: center center;
+}
+.laflorida_bg {
+background-color: #333333;
+border: 1px solid #007899;
+background-image: url(../img/laflorida_bg.jpg);
+background-repeat: repeat;
+background-position: center center;
+}

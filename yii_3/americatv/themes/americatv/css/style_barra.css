@@ -1,0 +1,129 @@
+/*contenido del menu*/
+@font-face{font-family:"Gotham Medium";src: url('../fonts/ghotammedium.eot');src: url('../fonts/ghotammedium.eot?#iefix') format('embedded-opentype'),url('../fonts/ghotammedium.svg#Gotham Medium') format('svg'),url('../fonts/ghotammedium.woff') format('woff'),url('../fonts/ghotammedium.ttf') format('truetype');font-weight: normal;font-style: normal;}
+.box-fluid {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.md_bar_b960{max-width:960px;}
+.md_bar_b1000{width:1000px;}
+.md_bar_b1190{width:1190px;}
+.md_bar_int{ background:#FFF;}
+.md_bar_content{margin: 0 auto;height: 35px;position: relative;background: white;}
+.md_bar_content ul li {float: left;border-left: 1px solid #EEEEEE;text-align: center;height:34px;}
+.md_bar_content ul li:first-child {border-left: 0px solid #EEEEEE !important; border-right:none;}
+.md_bar_content ul.md_bar_sideA li a{color:#666;padding: 6px 12px;height: 34px;display: block;line-height: 20px;margin-top: 2px;font-size: 18px;}
+ul.md_bar_subbar li{border-right: 1px solid #eee;border-left: 0;}
+.md_bar_sideA{margin: 0 auto; max-width: 578px}
+.md_bar_sideA li a{font-family: "Gotham Medium", arial; font-size:16px;}
+.md_bar_sideA li.md_bar_amtelevision a.active{color:#DA6600; text-decoration:none !important;-webkit-border-radius: 1px;-moz-border-radius: 1px;border-radius: 1px;}
+.md_bar_sideA li.md_bar_amnoticias a.active{color:#0057BB; text-decoration:none !important;-webkit-border-radius: 1px;-moz-border-radius: 1px;border-radius: 1px;}
+.md_bar_sideA li.md_bar_amdeportes a.active{color:#8C8C00; text-decoration:none !important;-webkit-border-radius: 1px;-moz-border-radius: 1px;border-radius: 1px;}
+.md_bar_sideA li.md_bar_amtvgo a.active{color:#222222; text-decoration:none !important;-webkit-border-radius: 1px;-moz-border-radius: 1px;border-radius: 1px;}
+.md_bar_sideA li.md_bar_amtelevision:hover a{color:#DA6600 !important; text-decoration:none !important;}
+.md_bar_sideA li.md_bar_amnoticias:hover a{color:#0057BB !important; text-decoration:none !important;}
+.md_bar_sideA li.md_bar_amdeportes:hover a{color:#8C8C00 !important; text-decoration:none !important;}
+.md_bar_sideA li.md_bar_amtvgo:hover a{color:#222222 !important; text-decoration:none !important;}
+.md_bar_sideA li a.active{position:relative;border: 1px solid #888888 !important;border-bottom: 0px !important;}
+.md_bar_sideA li a.active i{position:absolute; display:block;  width:100%;left:0px; top: 28px;height: 10px;background: #FFF;z-index: 0; font-style:normal !important;z-index: 99;}
+.md_bar_sideA li i{ display:none;}
+.md_bar_sideB{float:right}
+.md_bar_subbar{ float:right !important}
+.md_bar_subbar li{ padding:0px !important}
+.md_bar_content ul li a.busqueda{ text-indent:-9999px;display:block;float: right;}
+.md_bar_content ul li a.mail{text-indent:-9999px; display:block; margin: 8px 10px;}
+.md_bar_line{width:100%; height:6px; display:block; float:left;background: url(../img/border-americatv.png) repeat-x;}
+.fake_body img{ display:block; margin: 0 auto; width:100%;}
+#navigation-bar{position:relative;}
+.fake_input{position:absolute;right:0px;top:0px;border:1px solid #999999;width:100px;height:30px;width: 44px;z-index:1;}
+#search{position: relative;overflow: hidden;}
+#label{ width: 44px;height: 30px;}
+#search{width: 124px;height:30px; position:absolute;right:1px;top:1px;z-index:2;}
+.active_frm{ border:1px solid #CCC;}
+/**/
+.sb-search{position: relative;width: 0;min-width: 24px;height: 30px;float: right;-webkit-transition: width .3s;-moz-transition: width .3s;transition: width .3s;-webkit-backface-visibility: hidden;}
+.sb-search-input{position: absolute;top: 0;right: -5px;border: none;outline: 0;background: 0 0;width: 90%;height: 20px;margin: 0;z-index: 10;padding: 5px 2% 5px 4%;font-family: inherit;font-size: 14px;color: #999;text-indent: -9999px;display:block;font-family: arial;}
+.sb-search-submit {background: #fff;-ms-filter: "alpha(Opacity=0)";filter: alpha(opacity=0);opacity: 0;color: transparent;border: none;outline: 0;z-index: -1;}
+.sb-icon-search, .sb-search-submit {width: 24px;height: 24px;display: block;position: absolute;right: 0;top: 5px;padding: 0;margin: 0;line-height: 24px;text-align: center;cursor: pointer;}
+ul.cont_redes li.search_n span {background-position: 2px -139px;}
+.sb-icon-search {float: left;z-index: 9999;}
+.sb-icon-search, .sb-search-submit {width: 24px;height: 24px;display: block;position: absolute;right: 0;top: 5px;padding: 0;margin: 0;line-height: 24px;text-align: center;cursor: pointer;}
+.sb-search{position: relative;margin-top: 2px;margin-right: 10px;width: 0;min-width: 24px;height: 30px;float: right;-webkit-transition: width .3s;-moz-transition: width .3s;transition: width .3s;-webkit-backface-visibility: hidden;}
+.sb-search-open {width: 124px;}
+.sb-search-open  .sb-search-input{background:#F0F0F0;}
+.sb-search-open .sb-search-input {text-indent: 0;}
+button, html input[type=button], input[type=reset], input[type=submit]{-webkit-appearance: button;cursor: pointer;}
+.sb-search-submit {background: #fff;-ms-filter: "alpha(Opacity=0)";filter: alpha(opacity=0);opacity: 0;color: transparent;border: none;outline: 0;z-index: -1;}
+.sb-icon-search, .sb-search-submit {width: 24px;height: 24px;display: block;position: absolute;right: 0;top: 5px;padding: 0;margin: 0;line-height: 24px;text-align: center;cursor: pointer;}
+.no-js .sb-search .sb-search-submit, .sb-search.sb-search-open .sb-search-submit {z-index: 999;}
+.icon_bar{background: url(../img/icons_bar.png) no-repeat 0 0;}
+.icon_busqueda{ background-position: 0 0; width: 17px; height: 22px;}
+.icon_busqueda:hover{ background-position: 0 -56px; width: 17px; height: 22px;}
+.icon_mail{ background-position:  0 -112px; width: 21px; height: 18px;}
+.icon_mail:hover{ background-position: 0 -164px; width: 21px; height: 18px;}
+.sb-search-open .icon_bar{background: #F0F0F0 url(../img/icons_bar.png) no-repeat center center;background-position: 0 0;z-index: 99;}
+.border_amt{width: 100%;position: absolute;top: 35px;left: 0;right: 0;background: url(../img/border-americatv.png) repeat-x;height: 6px}
+.gif_tv{display: inline-block;width: 20px;height: 20px;}
+/*tvgo*/
+.tt_tvgo>div{text-align:left;background:#fff;width:166px;border: 1px solid #ddd;margin-top: -1px;-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px}
+.tt_tvgo{left:-45px;min-width:90px}
+.ico_tooltip{width:23px;height:10px;display:block;margin:0 auto;position: relative;z-index: 9;margin-top: -2px;}
+.tt_tvgo .ico_tooltip{background:url(../img/ico_tool.png) no-repeat;}
+.live_tooltip{font-size:12px;color:#e94106;text-align: center;}
+.md_bar_content .tooltip .live_tooltip a{text-align: center;}
+.live_tooltip a{font-size:12px;color:#e94106!important;}
+.tt_tvgo .box_tool{padding-top:2px!important}
+.box_tool_hi p{color: #000;font-size: 18px;font-family: "Gotham Medium", arial;text-align: center;line-height: 18px;margin-top: 5px;}
+.box_tool_hi{padding: 0 30px 10px 30px;}
+.hour_tooltip{font-size:14px;color:#212121;font-family:"Gotham Medium", arial;padding-bottom:0!important;text-align: center;}
+.md_bar_content .tooltip{position:absolute;color:#065a92;z-index:99999;display:none;min-height:28px;width:166px;font-size:12px;top:28px}
+.md_bar_content li.bx_tooltip{position:relative;display:block}
+/*ipad*/
+@media screen and (max-width:959px) {
+	#idbody .md_bar_b960{width: 100%;}
+}
+@media screen and (max-width:801px) {
+	.new_americanoticias_bm header{border-top: 0px solid #000!important;}
+}
+/*720*/
+@media screen and (max-width:758px) {
+	.new_america_bm .md_bar_sideA, .new_americanoticias_bm .md_bar_sideA, .new_americadeportes_bm .md_bar_sideA{max-width: 601px;}
+	.new_america_bm .md_bar_content ul.md_bar_sideA li a, .new_americanoticias_bm .md_bar_content ul.md_bar_sideA li a, .new_americadeportes_bm .md_bar_content ul.md_bar_sideA li a{padding: 6px 8px;}
+	.new_americanoticias_bm header{border-top: 0px solid #000!important;}
+}
+
+/*600*/
+@media screen and (max-width:600px) {
+	#idbody .border_amt{display: none;}
+
+	#idbody .md_bar_line, .new_america_bm .md_bar_line, .new_americanoticias_bm .md_bar_line, .new_americadeportes_bm .md_bar_line{display: none;}
+	#idbody .md_bar_sideA, .new_america_bm .md_bar_sideA, .new_americanoticias_bm .md_bar_sideA, .new_americadeportes_bm .md_bar_sideA{max-width: 100%;}
+	#idbody .md_bar_sideA li a, .new_america_bm .md_bar_sideA li a, .new_americanoticias_bm .md_bar_sideA li a, .new_americadeportes_bm .md_bar_sideA li a{font-size: 14px;}
+	#idbody .md_bar_content, .new_america_bm .md_bar_content, .new_americanoticias_bm .md_bar_content, .new_americadeportes_bm .md_bar_content{height: 30px;}
+	#idbody .md_bar_content ul.md_bar_sideA li a, .new_america_bm .md_bar_content ul.md_bar_sideA li a, .new_americanoticias_bm .md_bar_content ul.md_bar_sideA li a, .new_americadeportes_bm .md_bar_content ul.md_bar_sideA li a{padding: 6px 4px;}
+	#idbody .md_bar_content ul.md_bar_sideA li a, .new_america_bm .md_bar_content ul.md_bar_sideA li a, .new_americanoticias_bm .md_bar_content ul.md_bar_sideA li a, .new_americadeportes_bm .md_bar_content ul.md_bar_sideA li a{color: #999;}
+	#idbody .md_bar_sideA li.md_bar_amtelevision a.active, .new_america_bm .md_bar_sideA li.md_bar_amtelevision a.active, .new_americanoticias_bm .md_bar_sideA li.md_bar_amtelevision a.active, .new_americadeportes_bm .md_bar_sideA li.md_bar_amtelevision a.active{background: #dd640a;color: #fff;}
+	.new_america_bm .md_bar_sideA li.md_bar_amtelevision a.active:hover, .new_americanoticias_bm .md_bar_sideA li.md_bar_amtelevision a.active:hover, .new_americadeportes_bm .md_bar_sideA li.md_bar_amtelevision a.active:hover{color: #fff!important;}
+	#idbody .md_bar_sideA li.md_bar_amnoticias a.active, .new_america_bm .md_bar_sideA li.md_bar_amnoticias a.active, .new_americanoticias_bm .md_bar_sideA li.md_bar_amnoticias a.active, .new_americadeportes_bm .md_bar_sideA li.md_bar_amnoticias a.active{background-color: #0459b5;color: #fff;}
+	#idbody .md_bar_sideA li.md_bar_amnoticias a.active:hover, .new_america_bm .md_bar_sideA li.md_bar_amnoticias a.active:hover, .new_americanoticias_bm .md_bar_sideA li.md_bar_amnoticias a.active:hover, .new_americadeportes_bm .md_bar_sideA li.md_bar_amnoticias a.active:hover{color: #fff!important;}
+	#idbody .md_bar_sideA li.md_bar_amdeportes a.active, .new_america_bm .md_bar_sideA li.md_bar_amdeportes a.active, .new_americanoticias_bm .md_bar_sideA li.md_bar_amdeportes a.active, .new_americadeportes_bm .md_bar_sideA li.md_bar_amdeportes a.active{background: #20202F;color: #fff;}
+	#idbody .md_bar_sideA li.md_bar_amdeportes a.active:hover, .new_america_bm .md_bar_sideA li.md_bar_amdeportes a.active:hover, .new_americanoticias_bm .md_bar_sideA li.md_bar_amdeportes a.active:hover, .new_americadeportes_bm .md_bar_sideA li.md_bar_amdeportes a.active:hover{color: #fff!important;}
+	#idbody .md_bar_sideA li.md_bar_amtvgo a.active{color: #000;}
+
+	#idbody .fixed_zone, .new_america_bm .fixed_zone, .new_americanoticias_bm .fixed_zone, .new_americadeportes_bm .fixed_zone{display: block!important;}
+	#idbody .md_bar_int, .new_america_bm .md_bar_int, .new_americanoticias_bm .md_bar_int, .new_americadeportes_bm .md_bar_int{display: block!important;}
+	#idbody .md_bar_sideA li a, .new_america_bm .md_bar_sideA li a, .new_americanoticias_bm .md_bar_sideA li a, .new_americadeportes_bm .md_bar_sideA li a{font-size: 14px;}
+	#idbody .md_bar_b960, .new_america_bm .md_bar_b960, .new_americanoticias_bm .md_bar_b960, .new_americadeportes_bm .md_bar_b960{width: 100%!important}
+	#idbody .md_bar_sideA li a.active, .new_america_bm .md_bar_sideA li a.active, .new_americanoticias_bm .md_bar_sideA li a.active, .new_americadeportes_bm .md_bar_sideA li a.active{border:0!important;}
+	#idbody .md_bar_content ul.md_bar_sideA li a, .new_america_bm .md_bar_content ul.md_bar_sideA li a, .new_americanoticias_bm .md_bar_content ul.md_bar_sideA li a, .new_americadeportes_bm .md_bar_content ul.md_bar_sideA li a{line-height: 30px!important;height: auto!important;margin-top: 0;padding: 0px 6px;font-size: 14px;letter-spacing: -1px;}
+	#idbody .md_bar_content ul li, .new_america_bm .md_bar_content ul li, .new_americanoticias_bm .md_bar_content ul li, .new_americadeportes_bm .md_bar_content ul li{border-top: 0px solid #ddd;border-left: 0;height: auto;}
+	#idbody .md_bar_content ul li:first-child, .new_america_bm .md_bar_content ul li:first-child, .new_americanoticias_bm .md_bar_content ul li:first-child, .new_americadeportes_bm .md_bar_content ul li:first-child{border-top:1px solid #ddd;}
+	#idbody .md_bar_sideA li a.active i, .new_america_bm .md_bar_sideA li a.active i, .new_americanoticias_bm .md_bar_sideA li a.active i, .new_americadeportes_bm .md_bar_sideA li a.active i{display: none;}
+	.new_americanoticias_bm header{border-top: 0px solid #FFFFFF!important;}
+	.new_america_bm header{border-top: 0px solid #fff!important;}
+}
+
+/*movil 480*/
+@media screen and (max-width:480px) {
+
+}
+/*iphone*/
+@media screen and (max-width:320px) {
+
+}

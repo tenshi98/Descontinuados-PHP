@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en" id="mainWin">
+<head>
+	<meta charset="UTF-8">
+	<title>Transantiago - Planificador y Servicios</title>
+
+	<!--Estilos-->
+	<link rel="stylesheet" href="css/layout.css" media="all" />
+	<link rel="stylesheet" href="css/forms.css" media="all" />
+	<link rel="stylesheet" href="css/jscrollpane.css" media="all" />
+	<link href="css/default_mod.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/rutas.css" media="all" />
+	<link rel="stylesheet" href="css/tooltip.css" media="all" />
+	<link rel="stylesheet" href="css/selects.css" media="all" />
+	<link rel="stylesheet" href="css/poll.css" media="all" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/elements.css" media="all" />
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" media="all" />
+	<link rel="stylesheet" href="css/ui-lightness/custom.css" media="all" />
+
+	<link rel="stylesheet" href="css/tutorial.css" media="all" />
+	<link rel="stylesheet" href="js/tutorial/css/jcarousel.css" media="all" />
+	
+	<!--Meta Tags-->
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="diDigital.cl, OXUS.cl" />
+	<meta name="description" content="Planifica tu viaje y conoce cómo llegar, encuentra paraderos y puntos de recargas bip!, conoce los recorridos, sus horarios y paradas" />
+	<meta name="keywords" content="planificador, transantiago, como llegar, paraderos, puntos bip, recargar bip, recorridos, planificar viaje transantiago, tiempo de espera" />
+
+	<meta property="og:image" content="http://planifica.transantiago.cl/img/screenshot.jpg" />
+	<meta property="og:description" content="Planifica tu viaje y conoce cómo llegar, encuentra paraderos y puntos de recargas bip!, conoce los recorridos, sus horarios y paradas" />
+	<meta property="og:title" content="Transantiago - Planificador y servicios" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://planifica.transantiago.cl/" />
+	<meta property="og:site_name" content="Transantiago" />
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@transantiago">
+	<meta name="twitter:title" content="Transantiago - Planificador y servicios">
+	<meta name="twitter:description" content="Planifica tu viaje y conoce cómo llegar, encuentra paraderos y puntos de recargas bip!, conoce los recorridos, sus horarios y paradas">
+	<meta name="twitter:creator" content="@transantiago">
+	<meta name="twitter:image:src" content="http://planifica.transantiago.cl/img/screenshot.jpg">
+	<meta name="twitter:domain" content="http://planifica.transantiago.cl/">
+
+
+<!--[if IE 9]>
+	<link rel="stylesheet" href="css/ie9.css" media="all" />
+<![endif]-->
+
+	<!--Vendor-->
+	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+	<script src="js/ie.ajax.js" type="text/javascript"></script>
+	<script src="js/datepicker-es.js" type="text/javascript"></script>
+	<!--<script src="https://maps.googleapis.com/maps/api/js?client=gme-didigital&sensor=true&libraries=places,geometry&language=es&region=CL"></script>-->
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places,geometry&language=es&region=CL"></script>
+	<!--key=AIzaSyBmLRjbol1fECTwMthge7vV1JXwnumbhVw-->
+	<!--client=gme-didigital-->
+	<script src="js/html5.js" type="text/javascript"></script>
+	<script src="js/jquery-jscrollpane.min.js" type="text/javascript"></script>
+	<script src="js/jquery-mousewheel.js" type="text/javascript"></script>
+	<script src="js/infobox.js"></script>
+	<script src="js/autocomplete.js" type="text/javascript"></script>
+	
+	<!--Globales-->
+	<script src="js/global1-1.js" type="text/javascript"></script>
+	<script src="js/poll1-1.js" type="text/javascript"></script>
+	<script src="js/selects.js" type="text/javascript"></script>
+	<script src="js/util.js" type="text/javascript" async=true></script>
+	<script src="js/mapa1-1.js" type="text/javascript"></script>
+	<script src="js/marker.js" type="text/javascript"></script>
+	<script src="js/geocoder.js" type="text/javascript" async=true></script>
+	<script src="js/main1-1.js" type="text/javascript" async=true></script>
+	<script src="js/tooltip.js" type="text/javascript" async=true></script>
+
+	<!--Slider Tutorial-->
+	<script src="js/tutorial/jquery.jcarousel-core.min.js" type="text/javascript"></script>
+	<script src="js/tutorial/global.js" type="text/javascript"></script>
+	
+	<!--Como llegar-->
+	<script src="js/comoLlegar/main1-1.js" type="text/javascript"></script>
+	<script src="js/comoLlegar/indicaciones.js" type="text/javascript"></script>
+	<script src="js/comoLlegar/infoBox.js" type="text/javascript"></script>
+	<script src="js/comoLlegar/controles.js" type="text/javascript"></script>
+	<script src="js/comoLlegar/lineas1-1.js" type="text/javascript"></script>
+	
+	<!--Encuentra Paradas y Puntos Bip!-->
+	<script src="js/encuentraParadas/main1-1.js" type="text/javascript"></script>
+
+	<!--Conoce los recorridos-->
+	<script src="js/conoceRecorridos/main1-2.js" type="text/javascript"></script>
+	
+<!--[if IE 9]>
+	<script src="js/ie9.js" type="text/javascript"></script>
+<![endif]-->
+	
+
+
+</head>
+<body>
+	<div class="mainLoader"><img src="img/ajax-loader2.gif" alt="Cargando..."></div>
+	
+    
+    <div id="page">
+		<header id="header">
+			<h1><a href="http://www.transantiago.cl" title="Volver al sitio de DTPM"><img src="img/logo_dtpm.png" alt="Dirección de Transporte Público Metropolitano"></a></h1>
+			<nav>
+				<ul>
+					<li class="item-1" data-box="comoLlegar"><a href="#comoLlegar" title="Ver"><i>&nbsp;</i><span>¿Cómo llegar?</span></a><span class="upArrow none">&nbsp;</span></li>
+					<li class="item-2" data-box="comoLlegar"><a href="#encuentraParadas" title="Ver"><i>&nbsp;</i><span>Encuentra Paradas y Puntos BIP</span></a><span class="upArrow none">&nbsp;</span></li>
+					<li class="item-3" data-box="comoLlegar"><a href="#conocerRecorridos" title="Ver"><i>&nbsp;</i><span>Conoce los Recorridos</span></a><span class="upArrow none">&nbsp;</span></li>
+				</ul>
+			</nav>
+			<!--<div><a href="#" class="item-special"><span>¿Qué es esto?</span></a></div>-->
+		</header>
+	
+		<div id="main">
+			<div id="map-canvas">
+				<!-- Aquí va el mapa -->
+			</div>
+		</div>
+		
+		<div id="indications" class="hidden_js" style="display: block;">
+			<div class="hd">
+				<span class="logo_indi"><img src="img/indi_logo.png" alt="indicaciones"/></span>
+				<div class="head">
+					<h2>Indicaciones</h2>
+					<span class="hideShow" title="Mostrar/Ocultar" data-box="comoLlegar">Mostrar</span>
+				</div>
+			</div>
+			<div class="indi_wrap">
+				<div class="c" id="directions-panel">
+				</div>
+			</div>
+		</div>
+	
+		<footer>
+			<div id="upArrow" class="none"><img src="img/up_arrow.png" alt="Flecha Arriba" /></div>
+			<section id="comoLlegar" class="box none">				 
+				 <article class="step-1">
+					<header data-box="comoLlegar">
+						<h1>¿Cómo llegar?</h1>
+						<span title="Ocultar/Mostrar" class="hideShowBox hideBox" ></span>
+					</header>
+					<div class="c">
+						<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo tempora temporibus pariatur laudantium ipsam doloribus nisi dolor molestias hic sint.</p>-->
+					</div>
+					<div class="f">
+						<div class="fo collap_js">
+							<form action="" method="post" name="comoLlegar[step-2]" data-submit="buscarRuta" autocomplete="off">
+								<div class="input text line"  >
+									<div class="w">
+										<div class="cp">
+											<label for="step-2[desde]"><strong>Desde</strong></label>
+											<div class="ind ico_point min"><span>A</span></div>
+										</div>
+										<input type="text" name="step-1[desde]" id="start2" data-info='Ingresa la dirección de origen de tu recorrido, con el formato "Nombre de Calle (Número opcional), Comuna", o un lugar relevante' placeholder="Ej.: Plaza Italia"/><!-- class error-->
+									</div>
+								</div>
+								<div class="line">
+									<a href="#" title="Invertir ruta" class="invert" tabindex="999" data-info='Cambia la dirección de destino por la dirección de origen'>Invertir ruta <span class="ico ico_invert"></span></a>
+								</div>
+								<div class="input text line">
+									<div class="w">
+										<div class="cp">
+											<label for="step-2[hasta]"><strong>Hasta</strong></label>
+											<div class="ind ico_point min"><span>B</span></div>
+										</div>
+										<input type="text" name="step-1[hasta]" id="end2" data-info='Ingresa la dirección de destino de tu recorrido, con el formato "Nombre de Calle (Número opcional), Comuna", o un lugar relevante' placeholder="Ej.: Huelen, Providencia"/>
+									</div>
+								</div>
+								<div class="line preferencias" data-info='Cambia tus preferencias de viaje: más rápido, menos combinaciones o solo bus. También escoge el día y la hora en la que desees iniciar tu viaje'>
+									<div class="input select sel_pref">
+										<label for="comoLlegar[pref]"><strong>Preferencias</strong></label><br>
+										<select id="Preferencia" name="">
+											<option value="1">Más rápido</option>
+											<option value="2">Menos combinaciones</option>
+											<option value="3">Solo bus</option>
+										</select>
+									</div>
+									<div class="input select sel_temp">
+										<label class="dia_label" for="comoLlegar[tiempo]"><strong>Día de salida</strong></label>
+										<label for="comoLlegar[hora]"><strong>Hora</strong></label><br/>
+										<input type="text" class="datepicker" readonly="readonly" />
+										<select name="" id="Hora">
+											<option value="00:00">00:00</option><option value="00:30">00:30</option>
+											<option value="01:00">01:00</option><option value="01:30">01:30</option>
+											<option value="02:00">02:00</option><option value="02:30">02:30</option>
+											<option value="03:00">03:00</option><option value="03:30">03:30</option>
+											<option value="04:00">04:00</option><option value="04:30">04:30</option>
+											<option value="05:00">05:00</option><option value="05:30">05:30</option>
+											<option value="06:00">06:00</option><option value="06:30">06:30</option>
+											<option value="07:00">07:00</option><option value="07:30">07:30</option>
+											<option value="08:00">08:00</option><option value="08:30">08:30</option>
+											<option value="09:00">09:00</option><option value="09:30">09:30</option>
+											<option value="10:00">10:00</option><option value="10:30">10:30</option>
+											<option value="11:00">11:00</option><option value="11:30">11:30</option>
+											<option value="12:00">12:00</option><option value="12:30">12:30</option>
+											<option value="13:00">13:00</option><option value="13:30">13:30</option>
+											<option value="14:00">14:00</option><option value="14:30">14:30</option>
+											<option value="15:00">15:00</option><option value="15:30">15:30</option>
+											<option value="16:00">16:00</option><option value="16:30">16:30</option>
+											<option value="17:00">17:00</option><option value="17:30">17:30</option>
+											<option value="18:00">18:00</option><option value="18:30">18:30</option>
+											<option value="19:00">19:00</option><option value="19:30">19:30</option>
+											<option value="20:00">20:00</option><option value="20:30">20:30</option>
+											<option value="21:00">21:00</option><option value="21:30">21:30</option>
+											<option value="22:00">22:00</option><option value="22:30">22:30</option>
+											<option value="23:00">23:00</option><option value="23:30">23:30</option>
+										</select>
+									</div>
+								</div>
+								<div class="line tcenter submit">
+									<p class="tutorial" data-tutor="one"><span></span> Ver Tutorial</p>
+									<input type="submit" class="button yellow" value="Cómo llegar" id="btnComoLlegar"/>
+									<span class="loader"><img src="img/ajax-loader.gif" alt="Cargando..." /></span>
+								</div>
+							</form>
+						</div>
+						<div id="suggestCont" style="display:none">
+							<!--<hr class="simple"/>-->
+							<div id="resumen">
+							</div>
+						</div>
+					</div>
+				 </article> <!-- end paso-2 -->
+	
+			</section>
+			
+			<section id="encuentraParadas" class="box none">
+				 <article class="step-1">
+					<header data-box="encuentraParadas">
+						<div class="tit_min none">Encuentra Paradas y Puntos Bip</div>
+						<h1>Encuentra Paradas y Puntos Bip</h1>
+						<span title="Ocultar/Mostrar" class="hideShowBox hideBox"></span>
+					</header>
+					<div class="f collap_js">
+						<div class="form_c">
+							<form action="#" method="post" name="encuentraParadas[step-1]" data-submit="encuentraParadas" autocomplete="off">
+								<div class="input text line">
+									<div class="w">
+										<label for="step-1[4-direrccion]"><strong>Escribe una dirección o hito (museo, estadio, plaza, etc.)</strong></label><br/>
+										<input type="text" name="step-1[4-direrccion]" id="ubicacion" data-info='Ingresa una dirección específica o un lugar relevante para buscar paraderos y puntos bip! cercanos' placeholder="Ej.: Estación Mapocho, Santiago"/>
+										<a class="right clear small hide chg_js clickTog" href="#" title="Realizar otra búsqueda">Cambiar dirección</a>
+									</div>
+								</div>
+								<div class="line submit tcenter chg_js">
+									 <p class="tutorial" data-tutor="two"><span></span> Ver Tutorial</p>
+									<div class="w">
+										<input type="submit" class="button clickTog yellow inline chg_js " value="Buscar"/>
+										<span class="loader"><img src="img/ajax-loader.gif" alt="Cargando..." /></span>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="c hide chg_js">
+							<h2>Paraderos cercanos:</h2>
+							<div class="parRes scrollable">
+								<ol>
+									<li>
+										<div class="li">
+											<span class="parada"><img src="img/parada.png" alt="Parada" /></span>
+											<div><strong>Parada 11 - Plaza Italia</strong></div>
+											<div><span class="small min">Código de parada: PA384</span></div>
+										</div>
+									</li>
+									<li>
+										<div class="li">
+											<span class="parada"><img src="img/parada.png" alt="Parada" /></span>
+											<div><strong>Parada 11 - Plaza Italia</strong></div>
+											<div><span class="small min">Código de parada: PA384</span></div>
+										</div>
+									</li>
+				
+								</ol>
+							</div>
+						</div>
+					</div>
+				 </article>
+				 <article class="step-2 none">
+					<header>
+						<h1>Conoce los recorridos</h1>
+						<a href="#" class="help_inline" title="Seleccionar otro recorrido">Cambiar recorrido</a>
+					</header>
+					<div class="c">
+						<div class="recRes">
+							<span class="busColor" style="background-color: red;"><img src="img/logo_bus.png" alt="Bus"></span>
+							<div class="tit">Recorrido <span class="numColor" style="background: red">212</span> <a href="#" title="Empresa de buses SuBus">Empresa de buses SuBus</a></div>
+							<ol>
+								<li>
+									<div><span class="arrow"><img src="img/arrow_right.png" alt="Hacia" /></span> <strong>Hacia: Estación Central</strong></div>
+									<div><span class="hora1">Circula de Lunes a Viernes de 07:00 a 23:00 hrs.</span></div>
+									<div><span class="hora2">Sábado de 08:00 a 21:00 hrs.</span></div>
+									<div><span class="hora3">Domingo y Festivos de 07:00 a 23:00 hrs.</span></div>
+								</li>
+								<li>
+									<div><span class="arrow"><img src="img/arrow_left.png" alt="Hacia" /></span> <strong>Hacia: Estación Central</strong></div>
+									<div><span class="hora1">Circula de Lunes a Viernes de 07:00 a 23:00 hrs.</span></div>
+									<div><span class="hora2">Sábado de 08:00 a 21:00 hrs.</span></div>
+									<div><span class="hora3">Domingo y Festivos de 07:00 a 23:00 hrs.</span></div>
+								</li>
+							</ol>
+						</div>
+					</div>
+				 </article>
+			</section>
+	
+			
+			<section id="conocerRecorridos" class="box none steps">
+				 <article class="step-1">
+					<header>
+						<h1>Conoce los recorridos</h1>
+					</header>
+					<div class="f">
+						<form action="#" method="post" name="cuandoLlega[step-1]" autocomplete="off" data-submit="conoceTusRecorridos">
+							<div class="input text line">
+								<div class="w">
+									<label for="step-1[3-recorrido]"><strong>Ingresa el número de recorrido</strong></label>
+									<input type="text" name="step-1[3-recorrido]" id="recorrido" data-info='Ingresa el número de un servicio para conocer su recorrido' placeholder="Ej.: 123"/>
+								</div>
+							</div>
+							<div class="line submit tcenter ">
+								<p class="tutorial" data-tutor="three"><span></span> Ver Tutorial</p>
+								<div class="w">
+									<input type="submit" class="button yellow inline" value="Buscar" />
+									<span class="loader"><img src="img/ajax-loader.gif" alt="Cargando..." /></span>
+								</div>
+							</div>
+						</form>
+					</div>
+				 </article>
+				 <article class="step-2 none">
+					<header data-box="conocerRecorridos">
+						<h1>Conoce los recorridos</h1>
+						<a href="#" class="help_inline" title="Seleccionar otro recorrido">Cambiar recorrido</a>
+						<span title="Ocultar/Mostrar" class="hideShowBox hideBox" ></span>
+					</header>
+					<div class="c collap_js">
+						<div class="recRes">
+							<span class="busColor" style="background-color: red;"><img src="img/logo_bus.png" alt="Bus"></span>
+							<div class="tit"><strong>Recorrido</strong> <span class="numColor" style="background: red">212</span> <a href="#" title="Empresa de buses SuBus" target="_blank">Empresa de buses SuBus</a></div>
+							<ol>
+								<li>
+									<div class="rec"><span class="arrow"><img src="img/arrow_right.png" alt="Hacia" /></span> <strong>Hacia: Estación Central</strong></div>
+									<div><span class="hora1">Circula de Lunes a Viernes de 07:00 a 23:00 hrs.</span></div>
+									<div><span class="hora2">Sábado de 08:00 a 21:00 hrs.</span></div>
+									<div><span class="hora3">Domingo y Festivos de 07:00 a 23:00 hrs.</span></div>
+								</li>
+								<li>
+									<div class="rec"><span class="arrow"><img src="img/arrow_left.png" alt="Hacia" /></span> <strong>Hacia: Estación Central</strong></div>
+									<div><span class="hora1">Circula de Lunes a Viernes de 07:00 a 23:00 hrs.</span></div>
+									<div><span class="hora2">Sábado de 08:00 a 21:00 hrs.</span></div>
+									<div><span class="hora3">Domingo y Festivos de 07:00 a 23:00 hrs.</span></div>
+								</li>
+							</ol>
+						</div>
+					</div>
+				 </article>
+			</section>
+	
+			
+			<section id="cuandoLlega" class="box none steps">
+				 <article class="step-1">
+					<header>
+						<h1>¿Cuándo llega el bus?</h1>
+						<!--<a href="#" class="help_inline" title="Ayuda paso a paso">Ayuda paso a paso</a>-->
+					</header>
+					<div class="f">
+						<form action="#" method="post" name="cuandoLlega[step-1]" autocomplete="off">
+							<div class="input text line">
+								<div class="w">
+									<label for="step-1[2-codigo]"><strong>Código de Parada</strong></label>
+									<input type="text" name="step-1[2-codigo]" id="step-1[2-codigo]" />
+								</div>
+							</div>
+							<div class="input text line">
+								<div class="w">
+									<label for="step-1[2-recorrido]"><strong>Número de recorrido (opcional)</strong></label>
+									<input type="text" name="step-1[2-recorrido]" id="step-1[2-recorrido]" />
+								</div>
+							</div>
+							<div class="line submit special_button_cont">
+								<div class="w">
+									<span class="note">Más información en <a href="#" title="Encuentra tu paradero">Encuentra tu paradero</a></span>
+									<input type="submit" class="button yellow inline" value="Buscar" />
+									<span class="loader"><img src="img/ajax-loader.gif" alt="Cargando..." /></span>
+								</div>
+							</div>
+						</form>
+					</div>
+				 </article>
+				 <article class="step-2 none">
+					<header>
+						<h1>¿Cuándo llega el bus?</h1>
+					</header>
+					<div class="c">
+						<p>
+							<strong><span class="gray">Búsqueda para:</span><br/> "Código de Parada PA384 - Recorrido 406"</strong><br/>
+							<a href="#" title="Realizar nueva búsqueda">Realizar nueva búsqueda</a>
+						</p>
+					</div>
+				 </article>
+			</section>
+			
+			<section class="poll">
+				<article class="inside_poll">
+					<div class="content">
+						<span class="icon">
+							<i></i>
+						</span>
+						<span class="text">Queremos saber tu opinión</span>
+					</div>
+				</article>
+				<article class="msg_poll" id="enc_msj">
+					<div class="top"></div>
+					<div class="content_msg">
+						<div class="left">
+							<img src="img/check_msg.png" alt="check msg">
+						</div>
+						<div class="right">
+							<h3>¡Hola! Querémos conocer tu opinión.</h3>
+							<p>Querémos conocer tu opinión sobre este servicio, por favor responde unas preguntas para saber como podemos mejorar tu experiencia. Solo te tomará unos minutos:</p>
+							<button id="start_poll">¡Comenzar ahora!</button>
+							<button class="special" id="close_msg">Revisar más tarde</button>
+						</div>
+					</div>
+					<div class="bot"></div>
+				</article>
+			</section>
+			
+		</footer>
+
+<!-- 		<div class="infobox-wrapper"> -->
+<!--     <div id="infobox"> -->
+      
+<!--     </div> -->
+<!-- </div> -->
+	</div>
+	
+	
+
+	<script type="text/javascript"> 
+	var $buoop = {vs:{i:8,f:15,o:10.6,s:4,n:9}} 
+	$buoop.ol = window.onload; 
+	window.onload=function(){ 
+	 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+	 var e = document.createElement("script"); 
+	 e.setAttribute("type", "text/javascript"); 
+	 e.setAttribute("src", "http://browser-update.org/update.js"); 
+	 document.body.appendChild(e); 
+	} 
+	</script> 
+	
+
+
+	
+
+</body>
+</html>

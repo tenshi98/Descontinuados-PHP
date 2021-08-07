@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mensajes emergentes con JavaScript para una página web</title>
+<link rel="stylesheet" href="../../res/sty/base.css"/>
+<noscript><link rel="stylesheet" href="./res/sty/base-nojs.css"/></noscript>
+<link rel="stylesheet" href="./res/sty/form-emerge.css"/>
+<link rel="stylesheet" href="./res/sty/resaltador.css"/>
+<style>div#IDPREemerge8Dimensionar{display:none;}</style>
+
+<script src="./res/inc/general.js" async="async"></script>
+<script src="./res/inc/form-emerge.js" async="async"></script>
+</head>
+
+<body><aside><div class="desplegable"><button type="button" data-masmenos="data-masmenos">+</button><h4>Ejemplos integrados</h4><div id="ejemplos-integrados"><ol><li>Ver ejemplo <a href="ejemplos/integrado/default.htm">Formulario emergente</a>.</li><li>Descargar todos los recursos en un <a href="ejemplos/integrado/recursos.zip">archivo ZIP (27KB)</a>.</li></ol></div></div></aside><h2 class="num" id="introduccion">Introducción a los formularios emergentes</h2><p>El objeto <code>window</code> de Javascript permite abrir <b>ventanas emergentes</b> con el método <a href="../../temas/xhtml-css/script.html#ejemplo-window"><code>window.open()</code></a>. Un <b>mensaje emergente</b> puede ser simplemente el que suministra <code>window.alert(), window.confirm()</code> o <code>window.prompt()</code>. Ambos tienen la característica de situarse por encima de la página para que el usuario se obligue a interactuar con esa ventana o mensaje emergente. A veces se les llama <b>pop-up</b> a partir del término en inglés.</p><p>El abuso de las ventanas emergentes para publicidad ha ocasionado que los navegadores puedan bloquearlas a deseo del usuario. Particularmente no me gusta estar leyendo algo y que salte una de estas ventanas o que se oculten detrás sin saber lo que están haciendo. Sin embargo a veces son necesarias y no para dar publicidad, sino para aportar información adicional sobre el contenido con el que está interactuando el usuario. O bien para ayudarle a la hora de rellenar campos de formulario, como el clásico calendario emergente sobre el que eliges una fecha correcta.</p><p>Aquí creamos una ventana o mensaje emergente mediante objetos de Javascript y HTML dinámico. Al buscar un nombre adecuado para este objeto pensé que dado que se construía dentro de un elemento <code>&lt;form&gt;</code>, lo más adecuado sería llamarles <b>formularios emergentes</b>. De hecho este elemento sirve para enviar datos al servidor, lo que se puede hacer con nuestro formulario emergente, pero también es una manera de implementar una interfaz con los controles de formularios.</p><h2 class="num" id="requisitos">Requisitos del diseño de un formulario emergente</h2><p>Se trata de crear un objeto de JavaScript que denominaremos <code>formEmerge</code> para construir dinámicamente una porción de HTML que representa un formulario emergente. Los requisitos básicos de este objeto son:</p><ul><li>Construir dinámicamente un elemento <code>&lt;form&gt;</code> en el documento, inicialmente oculto. Su interior estará compuesto por:<ul><li>Un barra de encabezado con el título del emergente y con un botón para cerrarlo.</li><li>Un cuerpo interior donde el programador que use la clase pueda incluir HTML.</li><li>Posibilidad de construir el cuerpo interior con pestañas.</li><li>Una barra inferior o pie con botones aceptar, cancelar y aplicar, pudiendo ponerse 1, 2, 3 o ningún botón.</li></ul></li><li>La clase dispondrá de las siguientes funcionalidades:<ul><li>Abrir el formulario en una posición (x,y) cualquiera. Al abrirlo puede modificarse el título y el interior además de las dimensiones del formulario. Será capaz también de situar el foco en algún elemento del interior.</li><li>Modificar el interior del formulario incluso con una estructura de pestañas.</li><li>El usuario final podrá desplazar el formulario por la pantalla.</li><li>Podrán aplicarse eventos al abrir, al cerrar y al pulsar los botones aceptar, cancelar y aplicar.</li><li>Existirá la posibilidad de que puedan abrirse varios formularios a la vez, para lo cual tendrá que existir una forma de traer el que interese al frente.</li><li>Pero también ha de contemplarse que sólo pueda abrirse un único formulario, no pudiendo accederse al resto del documento hasta interaccionar con él.</li><li>El formulario también podrá servir para enviar datos al servidor.</li></ul></li></ul><p>El módulo <b>form-emerge.js</b> contiene esa clase <code>formEmerge</code> y algunas constantes, variables y funciones globales.</p><h2 class="num" id="constructor">El constructor del formulario emergente</h2><p>El constructor del formulario emergente tiene la siguiente sintaxis (vea la nota siguiente acerca de lo que está resaltado):</p><pre class="codigo-grande">
+<b><span class="resalte-lima">f</span>ormEmerge(</b>nombreForm
+[,cadenaTitulo
+[,conPantalla
+[,conBotones
+[,moverForm
+[,accionEnvio
+[,metodoEnvio
+[,dondePonerForm
+<span class="resalte-lima">[,ajustarAncho</span>]]]]]]]]<b>)</b></pre><div class="aclaracion" id="act-nov-13"><h4>Ajustar al ancho del dispositivo</h4>(Noviembre 2013)<p>Un problema importante para adaptar el formulario emergente a dispositivos móviles surge cuando el ancho supera al de la pantalla. Con el nuevo argumento <code class="resalte-lima">ajustarAncho</code> con valor <b>true</b> le damos estilo <code>max-width</code> al crear el emergente, específicamente a un elemento interior del formulario, para que no supere el ancho del elemento <code>body</code>. Pero como ese ancho puede variar si redimensionamos la ventana, en cada ejecución del método <code>abrir(..., ancho, ...)</code> portando el argumento <code>ancho</code> con algún valor consultamos el ancho de <code>body</code> y reajustamos el ancho del formulario para que no lo sobrepase. Si el argumento <code>ajustarAncho</code> del constructor no se declara, se pasa <b>null</b> o <b>false</b> no se realizará ningún tipo de ajuste.</p><p>Para probar este efecto puede ver el siguiente formulario que se abrirá con un ancho de <var>40em</var> (unos <var>640px</var>). Si la ventana es mayor se presentará sin modificar. Si es más estrecha el emergente se ajustará para no sobrepasarla:</p><input type="button" value="abrir emerge9" onclick="emerge9.abrir('', '', this.offsetLeft, this.offsetTop, '40em')"/><p>El código para crear el formulario es:</p><div class="codigo-resalte"><pre class="a">
+<span class="l">emerge9 = <span class="h">new</span> Wextensible.FormEmerge(<span class="m">"emerge9"</span>,
+    <span class="m">""</span>, <span class="h">true</span>, 3, <span class="m">"todo"</span>, <span class="m">""</span>, <span class="m">""</span>, <span class="m">""</span>, <span class="h resalte-lima">true</span>);
+emerge9.nuevoInterior(mensajeLoremIpsum); </span></pre></div><p>Al abrirlo hemos de especificar el ancho:</p><div class="codigo-resalte"><pre class="a">
+<span class="c">&lt;input</span> <span class="d">type</span>=<span class="e">"button"</span> <span class="d">value</span>=<span class="e">"abrir emerge9"</span>
+<span class="d">onclick</span>=<span class="e">"emerge9.abrir('', '',
+this.offsetLeft, this.offsetTop, <span class="resalte-lima">'40em'</span>)"</span><span class="c"> /&gt;</span></pre></div><h4>Nombrando constructores</h4>(Diciembre 2012)<p>Inicialmente declaraba los constructores de objetos como este <code><span class="resalte-lima">f</span>ormEmerge</code>, con la misma estructura que las variables: primera letra con minúsculas y usar una mayúscula al inicio de cada palabra (esto se le llama <i>lowerCamelCase</i>). Pero es mejor diferenciar los constructores de las instancias de los objetos, que no son otra cosa que variables. Así que ahora los constructores tienen la primera letra en mayúsculas (<i>UpperCamelCase</i>), por ejemplo <code>var instancia = new <span class="resalte-lima">F</span>ormEmerge(...)</code>.</p><p>El código fuente de estas páginas está minificado. Puede leerlo usando el botón <b>CÓDIGO</b> de la cabecera de este documento. Si observa la declaración de instancias de los ejemplos de esta página, verá también que estoy usando un <a href="../../temas/javascript-closure/espacio-nombres.html">espacio de nombres</a>, por ejemplo <code>emerge3 = new <span class="resalte-lima">Wextensible</span>.FormEmerge("emerge3")</code>.</p><p>Ambos cambios fueron agregados a todos los JavaScript de los ejemplos de esta serie de temas, pero no modifiqué los textos que siguen estando igual que al inicio. Estas dos diferencias no suponen una modificación sustancial en lo que pretendo exponer aquí.</p></div><p>Los argumentos opcionales se indican entre corchetes. El primero es obligatorio y todos los demás opcionales. Si se pasa alguno opcional y antes hay otros opcionales que no se pasan, deben pasarse con una cadena vacía "". Exponemos cada argumento aunque en este primer tema sólo veremos hasta <code>moverForm</code> y el último argumento <code>dondePonerForm</code>. Los argumentos <code>accionEnvio</code> y <code>metodoEnvio</code> se exponen en el <a href="aplicaciones-ejemplos.html#emergente-envio">tema 5</a> en relación con un ejemplo para enviar datos al servidor.</p><ul><li><code class="codigo-grande">nombreForm</code>: Un string obligatorio para el nombre de formulario que será exactamente igual que la variable declarada. Es un argumento obligatorio.</li><li><code class="codigo-grande">cadenaTitulo</code>: Un string opcional para el título que aparecerá en la cabecera de la ventana emergente. Si no se pasa el argumento se tomará el nombre de la variable anterior como título por defecto.</li><li><code class="codigo-grande">conPantalla</code>: Un booleano opcional. Con <b>true</b> se antepone a la ventana emergente una <b>pantalla</b> con transparencia para que el usuario se vea obligado a actuar con el formulario y no con otras partes de la página. Por defecto el valor será <b>false</b>, sin pantalla.</li><li><code class="codigo-grande">conBotones</code>: Un entero opcional. Con el valor <b>1</b> se incluye un botón <b>aceptar,</b> con <b>2</b> los botones <b>aceptar y cancelar</b>, con <b>3</b> se ponen los botones <b>aceptar, cancelar y aplicar.</b> Con <b>0</b> o cualquier otro valor o si no se pasa el argumento, no se incluyen botones.</li><li><code class="codigo-grande">moverForm</code>: Un string opcional. Con el valor "todo" se podrá mover el formulario arrastrándolo con el ratón. Con el valor "marco" aparecerá un rectángulo de igual tamaño que el formulario que nos permite moverlo y, al soltar el botón del ratón, se situará el formulario en ese sitio. Con el valor "nada" el formulario no podrá ser movido. El valor por defecto cuando no se pasa el argumento es "todo".</li><li><code class="codigo-grande">accionEnvio</code>: Un string opcional que representa una URL para incluir en el atributo <code>action</code> del <code>&lt;form&gt;</code> del emergente y que sirva para enviar los datos del formulario al servidor. Si se pasa una cadena vacía "" no se usa el formulario para enviar datos.</li><li><code class="codigo-grande">metodoEnvio</code>: Un string opcional con los valores "get" y "post" para incluir en el atributo <code>method</code> del formulario. Se usará "post" por defecto si no se pasa o es una cadena "" o un valor no válido.</li><li><code class="codigo-grande">dondePonerForm</code>: Un string opcional que supone el identificador <code>id</code> de un elemento de bloque donde se construirá el formulario emergente. Si no se pasa se construye en el <code>body</code> del documento. En principio este es el lugar más adecuado, pues como se configuran en una capa superior con <code>z-index</code>, no interfiere en la presentación.</li></ul><p>Para probar este objeto hemos creado varias instancias en esta misma página que hemos incluido en un <code>&lt;script&gt;</code> en el <code>&lt;head&gt;</code>:</p><pre>
+&lt;script&gt;
+var emerge1 = null;
+var emerge2 = null;
+var emerge2a = null;
+var emerge2b = null;
+var emerge3 = null;
+var emerge4 = null;
+var emerge5 = null;
+var emerge6 = null;
+var emerge7 = null;
+window.onload = function() {
+    emerge1 = new formEmerge("emerge1", "un título", false, 0);
+    emerge2 = new formEmerge("emerge2", "", true, 1, "todo");
+    emerge2a = new formEmerge("emerge2a", "", true, 2, "marco");
+    emerge2b = new formEmerge("emerge2b", "", true, 3, "nada");
+    emerge3 = new formEmerge("emerge3");
+    emerge4 = new formEmerge("emerge4");
+    emerge5 = new formEmerge("emerge5");
+    emerge6 = new formEmerge("emerge6");
+    emerge7 = new formEmerge("emerge7", "", "",
+        "", "", "poner-aqui-form");
+}
+&lt;/script&gt;</pre><p>Se observan las variables <code>emerge1, emerge2, ...</code> cuyos nombres se pasan exactamente igual en el primer argumento del constructor. El primer objeto se creó con todos los argumentos de forma explícita. Otros objetos tienen el argumento <code>conPantalla</code> igual a true, por lo que al disponer este argumento el anterior hay que pasarlo como una cadena vacía si es que no se necesita.</p><p>En este tema veremos unos ejemplos muy simples que mostrarán un uso básico de estos formularios emergentes mediante un método para abrir el formulario. El resto de métodos y usos se verá en los temas siguientes.</p><h2 class="num" id="metodo-abrir">El método para abrir el formulario emergente</h2><pre class="codigo-grande">
+<b>abrir(</b>[interior
+[,titulo
+[,izquierda
+[,arriba
+[,ancho
+[,alto
+[,sobresale
+[,foco]]]]]]]]<b>)</b></pre><p>Si no se pasa ningún argumento se abre un formulario sin nada en su interior y se sitúa en el punto (0,0) de la página. Los argumentos no pasados que estén antes de otros que si se pasan deben llevar una cadena vacía ("") para que sean ignorados (o bien el valor <b>null</b>).</p><ul><li><code class="codigo-grande">interior</code>: Un string para poner en el interior del formulario. Admite literales HTML pues se usa <code>innerHTML</code> para incorporar esa cadena al formulario. Si no se pasa este argumento no se actualiza nada en el interior del formulario.</li><li><code class="codigo-grande">titulo</code>: String para cambiar el título del formulario.</li><li><code class="codigo-grande">izquierda, arriba</code>: Un entero que indica píxeles de la ubicación izquierda y arriba. Si no se pasan valores se sitúa en el punto (0,0) de la página.</li><li><code class="codigo-grande">ancho, alto</code>: String que será el estilo de las propiedades <code>width</code> y <code>height</code> del interior del formulario, siendo por lo tanto valores como "5em", "100px", etc.</li><li><code class="codigo-grande">sobresale</code>: String para el estilo de la propiedad <code>overflow</code> con sus valores <b>visible, hidden, scroll, auto</b>.</li><li><code class="codigo-grande">foco</code>: Poner el foco en un elemento de control del formulario que sea capaz de recibir el foco. Puede ser un número entero correspondiente al número de orden dentro de la matriz de controles del formulario, una referencia a un elemento HTML o un string del identificador <code>id</code> del elemento. (Esto lo veremos en el siguiente tema).</li></ul><p>Como se trata de formularios que actúan como ventanas emergentes, es obvio que los argumentos que lo posicionan no forman parte de las propiedades del objeto, sino que son valores provisionales para situar el mismo en pantalla. Por eso no se incluyen con el constructor <code>formEmerge()</code>. Igual consideración tienen el contenido del interior y el cambio de título que son valores específicos para cuando se vaya a abrir el formulario. Así un mismo formulario puede servir para abrirlo con diferentes mensajes, títulos y posiciones en una misma página web.</p><p>Por la misma razón el ancho, alto y el control de lo que sobresale forman parte de las condiciones específicas de cada uso cuando abrimos el formulario, pues depende del interior que se incluya con el método para abrirlo. De esta forma podemos construir formularios con <code>new formEmerge()</code> y luego darle múltiples usos mediante este método, o incluso la reescritura de sus propiedades y otros métodos como veremos más adelante.</p>
+<h2 class="num" id="situar-mover">Ejemplo para abrir, situar y mover un formulario emergente en la página</h2>
+<p>Ahora hacemos una utilización de este método que nos permite abrir el formulario emergente mediante el evento <code>onclick</code> de estos botones situados aquí mismo a continuación:</p>
+<section>
+<div class="ejemplo-linea"><h4>Ejemplo<span>:</span></h4>
+<input type="button" value="abre emerge1 sin argumentos en x=0, y=0" onclick="emerge1.abrir()"/> <input type="button" value="abre emerge1 con argumentos" onclick="emerge1.abrir('Esto es un 1er &lt;b&gt;mensaje&lt;/b&gt; emergente', '', this.offsetLeft, this.offsetTop + this.offsetHeight)"/> <br/> <input type="button" value="abre emerge2" onclick="emerge2.abrir('Esto es un 2º &lt;b&gt;mensaje&lt;/b&gt; emergente&lt;br /&gt;con botón aceptar&lt;br /&gt;y una pantalla de transparencia.&lt;br /&gt; Se mueve completamente.', 'mensaje de emerge2', this.offsetLeft, this.offsetTop + this.offsetHeight)"/> <input type="button" value="abre emerge2a" onclick="emerge2a.abrir('Esto es un 3er &lt;b&gt;mensaje&lt;/b&gt; emergente&lt;br /&gt;con botones aceptar y cancelar&lt;br /&gt;y una pantalla de transparencia.&lt;br /&gt; Se mueve con un marco.', 'mensaje de emerge2a', this.offsetLeft, this.offsetTop + this.offsetHeight)"/> <input type="button" value="abre emerge2b" onclick="emerge2b.abrir('Esto es un 4º &lt;b&gt;mensaje&lt;/b&gt; emergente&lt;br /&gt;con botones aceptar, cancelar y aplicar&lt;br /&gt;y una pantalla de transparencia.&lt;br /&gt; No se puede mover.', 'mensaje de emerge2b', this.offsetLeft, this.offsetTop + this.offsetHeight)"/></div></section>
+
+
+
+<h2 class="num" id="redimensionar">Ejemplo para redimensionar el ancho y alto de un formulario emergente al abrirlo</h2><p>El método <code>abrir()</code> tenía además los argumentos <code>ancho, alto</code> y <code>sobresale</code>. Veámos como actúan con estos tres botones que ejecutan el método abrir sobre los formularios <code>emerge3</code>, <code>emerge4</code> y <code>emerge5</code>:</p><script> var mensajeLargo="Este es un mensaje muy largo que si no "+"se tiene en cuenta el ancho y alto del <b>formulario emergente</b> acabará "+"ocupando la pantalla. Esto se puede arreglar si lo abrimos especificando "+"el ancho de tal forma que el alto será ajustado al texto. Si especificamos "+"también el alto, debemos controlar lo que sobresale.";</script><section><div class="ejemplo-linea"><h4>Ejemplo<span>:</span></h4><input type="button" value="abre emerge3" onclick="emerge3.abrir(mensajeLargo, '', this.offsetLeft, this.offsetTop + this.offsetHeight)"/> <input type="button" value="abre emerge4" onclick="emerge4.abrir(mensajeLargo, '', this.offsetLeft, this.offsetTop + this.offsetHeight, '20em')"/> <input type="button" value="abre emerge5" onclick="emerge5.abrir(mensajeLargo, '', this.offsetLeft, this.offsetTop + this.offsetHeight, '20em', '4em', 'auto')"/></div></section><p>Veámos el código relacionado con estos botones. En primer lugar hemos situado a esta altura de la página el siguiente script para almacenar una cadena de texto muy larga que representa un literal HTML para insertar en el interior del formulario. La hemos cortado pues no tiene mayor interés y su propósito es usarla con los botones:</p><pre>
+&lt;script&gt;
+    var mensajeLargo = "Este es un &lt;big&gt;&lt;big&gt;mensaje&lt;/big&gt;&lt;/big&gt; muy largo...";
+&lt;/script&gt;</pre><p>Ese <code>mensajeLargo</code> lo vamos a pasar al botón <code>emerge3</code>:</p><pre>
+&lt;input type="button" value="abre emerge3" 
+onclick = "emerge3.abrir(
+mensajeLargo, 
+'', 
+this.offsetLeft, 
+this.offsetTop + this.offsetHeight
+)" /&gt;</pre><p>El resultado es que el texto del mensaje, que recordemos que se inserta como HTML mediante el comando <code>innerHTML</code>, se expandirá a la derecha hasta ocupar todo el ancho de su contenedor. Esta es la forma de actuar por defecto de los elementos de bloque en HTML, pues se trata de los propiedades de estilo <code>width</code> y <code>height</code>, que si no están especificadas se asumen con valor <code>auto</code>. Así el ancho de un bloque se ajusta al de su contenedor y el alto se ajusta al contenido.</p><div class="aclaracion"><h4>Alineado derecha y redimensionamiento ventana</h4><p>(Noviembre 2013)</p><p>Con las actualizaciones llevadas a cabo para adaptar el formulario emergente a los dispositivos móviles, ahora antes de abrir un formulario se observa que su borde derecho no sobrepase el de la pantalla, en cuyo caso se se alinea a la derecha. Esto es especialmente útil en dispositivos móviles de anchos de pantalla reducidos, pues así evitamos que el <code>body</code> se alargue por la derecha y al mismo tiempo tendremos acceso a la parte derecha del formulario donde está el botón para cerrarlo o los botones de aceptar, cancelar y aplicar.</p><p>Otra actualización está relacionada con el redimensionamiento del ancho de la ventana o el cambio de orientación en móviles. Si hay un formulario abierto estará posicionado en un <code>left, top</code> determinado y relativo a un elemento padre o en última instancia al <code>body</code>. Al modificar el ancho del <code>body</code> esos valores <code>left, top</code> siguen siendo iguales pero no se corresponden con el punto donde antes estaba localizado el formulario. Así éste puede alejarse mucho del punto inicial e incluso salirse del área de cliente (superficie visible de la ventana) o incrementar el alto del <code>body</code>. Hay que recordar que la mayor parte de los elementos de una página pueden tener posicionamiento estático, de tal forma que al incrementar el ancho de la ventana se disminuye el alto de esos elementos y en consecuencia también el alto del <code>body</code>. Para evitar este efecto usamos el evento <code>window.onresize</code> que detectará si hay cambio en el ancho y cerrará todos los formularios abiertos.</p><p></p></div><p>Se podía haber evitado con elementos <code>&lt;br /&gt;</code> en el texto que son saltos de línea HTML, pero podemos hacer uso de los argumentos que especifican el ancho y el alto como vemos en el segundo botón para <code>emerge4</code>:</p><pre>
+&lt;input type="button" value="abre emerge4" 
+onclick = "emerge4.abrir(
+mensajeLargo, 
+'', 
+this.offsetLeft, 
+this.offsetTop + this.offsetHeight,
+'20em'
+)" /&gt;</pre><p>Recuerde que los argumentos <code>ancho</code> y <code>alto</code> son valores de estilo CSS para las propiedades <code>width</code> y <code>height</code>. Le dimos a este botón un ancho de <b>20em</b>, es decir, 20 veces el valor del tamaño de su fuente.</p><p>Por último también podemos especificar el alto para el botón que abre el formulario <code>emerge5</code>:</p><pre>
+&lt;input type="button" value="abre emerge5" 
+onclick = "emerge5.abrir(mensajeLargo, 
+'', 
+this.offsetLeft, 
+this.offsetTop + this.offsetHeight, 
+'20em', 
+'4em', 
+'auto'
+)" /&gt;
+    </pre><p>Le damos un alto de <b>4em</b> a propósito para ver el efecto con el valor <b>auto</b> para controlar lo que sobresale con la propiedad de estilo <code>overflow</code>. De esa forma el navegador incluirá una barra de desplazamiento vertical para acceder al contenido oculto.</p><p>Otro aspecto que puede observarse cuando no se usa la pantalla de transparencia, con lo que podemos tener varios emergentes en pantalla como los de esos tres últimos ejemplos, es que haciendo click en cualquier parte del formulario lo traemos al frente.</p><h2 class="num" id="diversos-usos">Un mismo formulario para diversos usos</h2><p>En este primer tema estamos presentando el método para abrir el formulario emergente, para lo cual hemos usado 5 instancias de la clase <code>formEmerge</code>. Pero el método <code>abrir()</code> nos permite adaptar el formulario a cada momento. Veámos un ejemplo de como un único formulario nos sirve para esto. Usaremos otra instancia <code>emerge6</code> que fue creada con <code>emerge6 = new formEmerge("emerge6")</code> sin más argumentos, con lo que es un simple mensaje emergente sin botones aceptar/cancelar y sin pantalla.</p><p>Se trata de un simple cuadro de texto que recoge a modo de ejemplo la introducción de un nombre de usuario para una hipotética alta en un registro. De alguna forma queremos controlar lo que el usuario introduce. Para simplificar el ejemplo queremos que el usuario introduzca una cadena de texto que tenga entre 4 y 8 caracteres:</p><script>function validaUsuario(inpute){var texto=inpute.value;var mensaje="";var titulo="error";if(texto==""){mensaje="con error: <big>cadena de texto vacía</big>.";}else if(texto.length>8){mensaje="con error: <big>cadena mayor de 8 caracteres</big>.";}else if(texto.length<4){mensaje="con error: <big>cadena menor de 4 caracteres</big>.";}else{mensaje="correcto";titulo="usuario validado";}mensaje="Nombre de usuario "+mensaje;var izquierda=inpute.offsetLeft;var arriba=inpute.offsetTop+inpute.offsetHeight;emerge6.abrir(mensaje,titulo,izquierda,arriba,"12em");}</script><section><div class="ejemplo-linea"><h4>Ejemplo<span>:</span></h4><label>Introduzca nuevo usuario: <input type="text" value="" onblur="validaUsuario(this)"/> </label></div></section><p>Para este ejemplo usamos el elemento <code>&lt;input type="text"&gt;</code> siguiente:</p><pre>
+&lt;label&gt;Introduzca nuevo usuario: &lt;input type="text" value=""
+onblur = "validaUsuario(this)"/&gt;
+&lt;/label&gt;    
+    </pre><p>El script que controla la entrada de texto es el siguiente, que hemos situado a esta altura de la página pero que recordamos que en un uso real es recomendable ubicarlo en archivos externos:</p><pre>
+&lt;script&gt;
+    function validaUsuario(inpute) {
+        var texto = inpute.value;
+        var mensaje = "";
+        var titulo = "error";
+        if (texto == "") {
+            mensaje = "con error: &lt;big&gt;cadena de texto vacía&lt;/big&gt;.";
+        } else if (texto.length &gt; 8) {
+            mensaje = "con error: &lt;big&gt;cadena mayor de 8 caracteres&lt;/big&gt;.";
+        } else if (texto.length &lt; 4) {
+            mensaje = "con error: &lt;big&gt;cadena menor de 4 caracteres&lt;/big&gt;.";
+        } else {
+            mensaje = "correcto";
+            titulo = "usuario validado";
+        }
+        mensaje = "Nombre de usuario " + mensaje;
+        var izquierda = inpute.offsetLeft;
+        var arriba = inpute.offsetTop + inpute.offsetHeight;
+        <span class="azul">emerge6.abrir(mensaje, titulo, izquierda, arriba, "12em");</span>
+        //A continuación debería ejecutarse algo si la entrada 
+        //fue correcta como dar de alta al usuario en un registro.
+    }
+&lt;/script&gt;</pre><p>Podemos volver a abrir <code>emerge6</code> para otra cosa</p><section><div class="ejemplo-linea"><h4>Ejemplo<span>:</span></h4><label>Otro mensaje con <code>emerge6</code>: <input type="button" value="emerge6" onclick="emerge6.abrir('Otro mensaje de emerge6','EMERGE6', this.offsetLeft, this.offsetTop + this.offsetHeight)"/> </label></div></section><p>usando el código</p><pre>
+&lt;input type="button" value="emerge6"
+onclick = "<span class="azul">emerge6.abrir('Otro mensaje de emerge6','EMERGE6', 
+this.offsetLeft, this.offsetTop + this.offsetHeight)</span>" /&gt;</pre><p>por lo que el mismo formulario emergente sirve para diversos propósitos Si hemos de usar ventanas como mensajes emergentes en una página, sólo hace falta declarar un formulario y adaptar sus características con el método <code>abrir()</code>.</p><h2 class="num" id="ubicando">Ubicando el formulario dentro de un elemento de bloque</h2><p>El último argumento del constructor es <code>dondePonerForm</code>. Si no se pasa este argumento, el elemento <code>&lt;form&gt;</code> que encierra todo el emergente se ubica en el <code>&lt;body&gt;</code> del documento. Esta es la mejor opción, pero dejamos la posibilidad abierta de elegir cualquier elemento de bloque para construirlo ahí. La instancia <code>emerge7</code> la construimos así:</p><pre>
+emerge7 = new formEmerge("emerge7", "", "", "", "", 
+"poner-aqui-form") ;       
+    </pre><p>Se observa el primer argumento obligatorio y el último <code>dondePonerForm</code> igual al identificador <code>"poner-aqui-form"</code>, que es el <code>id</code> de un elemento de bloque <code>&lt;div&gt;</code> que está a continuación, con borde azul:</p><section><div class="ejemplo-linea"><h4>Ejemplo<span>:</span></h4><input type="button" value="emerge7.abrir()" onclick="emerge7.abrir()"/><div id="poner-aqui-form" style="border:blue solid 1px;position:relative;"><p>Este elemento de bloque <code>&lt;div&gt;</code> lo usamos para tener un lugar donde poner el formulario. Eso significa que el posicionamiento inicial, es decir, cuando abrimos con <code>emerge7.abrir()</code>, será el (0,0). Pero para que sea relativo a este elemento hay que darle el estilo <code>position: relative</code>. El código de ese elemento y del botón previo que abre el formulario es:</p><pre>
+&lt;input type="button" value="emerge7.abrir()"
+onclick = "emerge7.abrir()" /&gt;
+&lt;div id="poner-aqui-form"
+style="border: blue solid 1px;
+<span class="azul">position: relative</span>; "&gt;&lt;/div&gt;</pre><p>Se observa que le damos el posicionamiento del que habíamos hablado. Esto realmente no hace falta para otro objetivo que establecer la apertura en (0,0), pues el formulario no está contenido en el elemento desde un punto de vista formal, aunque si estructuralmente hablando, porque de hecho está en una capa superior. Se observa que podemos desplazarlo incluso fuera del bloque.</p><p style="text-align:left">Por ejemplo, con esto otro botón lo abrimos 
+<input type="button" value="aquí mismo" onclick="emerge7.abrir('','',this.offsetLeft,this.offsetTop)"/> usando <br/> <code>emerge7.abrir('','',this.offsetLeft,this.offsetTop)</code>, lo cual es indiferente de que el bloque contenedor tenga o no posición relativa.</p></div></div></section>
+<p>Pero como hemos dicho, <b>estructuralmente</b> si está dentro de ese <code>&lt;div id="poner-aqui-form"&gt;</code>, lo que puede observarse si se quita el estilo a la página. Entonces se verán en primer lugar todos los formularios mientras que este <code>emerge7</code> estará hacia esta altura de la página.</p>
+</article></div>
+
+
+<script>
+var wxG;var emerge1=null;
+var emerge2=null;
+var emerge2a=null;
+var emerge2b=null;
+var emerge3=null;
+var emerge4=null;
+var emerge5=null;
+var emerge6=null;
+var emerge7=null;
+var emerge8=null;
+var emerge9=null;
+var mensajeLoremIpsum="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae "+"ipsum sem. Curabitur euismod nisl justo, sit amet suscipit nibh porttitor id. Vestibulum nec nibh "+"at tellus vehicula malesuada iaculis non leo. Cras dapibus molestie magna gravida pretium. Quisque "+"sed odio augue. Nullam tempus erat vel purus vulputate, condimentum dignissim velit blandit. Sed "+"nec venenatis turpis. Nullam euismod eros eu odio dictum vestibulum.";
+window.onload=function(){
+	wxG=Wextensible.general;wxG.adjudicarEventosGenerales();wxG.cargarModulos(["form-emerge.js"]);
+	emerge1=new Wextensible.FormEmerge("emerge1","un título",false,0);
+	emerge2=new Wextensible.FormEmerge("emerge2","",true,1,"todo");
+	emerge2a=new Wextensible.FormEmerge("emerge2a","",true,2,"marco");
+	emerge2b=new Wextensible.FormEmerge("emerge2b","",true,3,"nada");
+	emerge3=new Wextensible.FormEmerge("emerge3");
+	emerge4=new Wextensible.FormEmerge("emerge4");
+	emerge5=new Wextensible.FormEmerge("emerge5");
+	emerge6=new Wextensible.FormEmerge("emerge6");
+	emerge7=new Wextensible.FormEmerge("emerge7","",false,2,"todo","","","poner-aqui-form");
+	emerge8=new Wextensible.FormEmerge("emerge8","",true,0,"marco");
+	emerge9=new Wextensible.FormEmerge("emerge9","",true,3,"todo","","","",true);
+	emerge9.nuevoInterior(mensajeLoremIpsum);
+	var unaCelda=document.getElementById("una-celda");
+	wxG.agregarEventListener(null,[[unaCelda,"outer"]]);
+	unaCelda.addEventListener("click",function(){
+	var unaTabla=document.getElementById("una-tabla");
+	emerge2a.abrir("Mensaje","emerge2a",this.offsetLeft+unaTabla.offsetLeft,this.offsetTop+unaTabla.offsetTop+this.offsetHeight);},false);
+};
+</script>
+</body>
+</html>

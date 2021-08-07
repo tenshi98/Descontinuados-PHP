@@ -1,0 +1,37 @@
+@charset "utf-8";
+body , html{
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	background-color: #FFF;
+
+}
+
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=1 );
+
+}
+
+.red_bot_ancho_bottom:hover {
+	background-color: #001217;
+	cursor: pointer;
+	cursor: hand;
+}
+.bg_guerra {
+	background-image: url(images/bg_guerra.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.bg_deportes {
+	background-image: url(images/bg_deportes.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+}
+.bg_noticias {
+	background-image: url(images/bg_noticias.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+}

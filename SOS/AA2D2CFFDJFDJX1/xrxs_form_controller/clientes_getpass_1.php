@@ -1,0 +1,28 @@
+<?php 
+/**********************************/
+/*       Bloque de seguridad      */
+/**********************************/
+if( ! defined('XMBCXRXSKGC')) {
+    die('No tienes acceso a esta carpeta o archivo.');
+}
+/**********************************/
+/*     Ejecucion del Codigo       */
+/**********************************/
+// completamos la variable error si es necesario
+	if ( empty($email) ) 	       $errors[1] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'><b>Error!</b> No ha ingresado un correo.</p>
+	</div>";
+	
+	//Verifica si el mail corresponde
+	if(isset($email)){
+		if(validaremail($email)){ }else{ 
+			$errors[1] 	  = "
+	<div class='alert fcenter ".$config_app['msg_error_color_body']." ".$config_app['msg_error_color_text']." ".$config_app['msg_error_width']." ".$config_app['msg_error_border']." ".$config_app['msg_error_border_color'] ."'>
+	<i class='fa fa-ban'></i>
+	<p class='long_txt'><b>Error!</b> El correo ingresado no es valido.</p>
+	</div>";
+		}
+	}	
+?>

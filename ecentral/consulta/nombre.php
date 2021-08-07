@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+session_start();
+    include("conectar_bd.php"); 
+    conectar_bd();
+    include("conectar_np.php"); 
+?>
+<?php
+//VALIDACION
+    $sql = "SELECT * FROM tbl_users WHERE id_usuario = '".$_SESSION['uid']."'"; 
+    $result =mysql_query($sql,$conexio);
+$numeroRegistros=mysql_num_rows($result); 
+if ($numeroRegistros==0)  {
+	?>
+        <form name="formulario" method="post" action="index.php">
+            <input type="hidden" name="msg_error" value="1">
+        </form>
+		<script type="text/javascript">
+    //Redireccionar con el formulario creado
+    document.formulario.submit();
+</script>
+<? }
+
+//VALIDACION
+
+ $fecha = date("d/m/Y"); 
+/* $rut = '001771377-9'; */
+$rut= $_GET["r"];  
+$rut1="0".$rut;
+$rut2="00".$rut;
+require_once('./conexion3.php');
+// require_once('./conexion3_al41.php');
+
+$dato_nombre_1='';
+$dato_nombre_2='';
+if ($_POST["nombre1"]<>'') {
+	$dato_nombre_1=$dato_nombre_1.$_POST["nombre1"]." ";
+}
+if ($_POST["nombre2"]<>'') {
+	$dato_nombre_1=$dato_nombre_1.$_POST["nombre2"]." ";
+}
+if ($_POST["apellido1"]<>'') {
+	$dato_nombre_1=$dato_nombre_1.$_POST["apellido1"]." ";
+}
+if ($_POST["apellido2"]<>'') {
+	$dato_nombre_1=$dato_nombre_1.$_POST["apellido2"];
+}
+
+if ($_POST["apellido1"]<>'') {
+	$dato_nombre_2=$dato_nombre_2.$_POST["apellido1"]." ";
+}
+if ($_POST["apellido2"]<>'') {
+	$dato_nombre_2=$dato_nombre_2.$_POST["apellido2"]." ";
+}
+if ($_POST["nombre1"]<>'') {
+	$dato_nombre_2=$dato_nombre_2.$_POST["nombre1"]." ";
+}
+if ($_POST["nombre2"]<>'') {
+	$dato_nombre_2=$dato_nombre_2.$_POST["nombre2"];
+}
+//echo $dato_nombre_1."<br>";
+//echo $dato_nombre_2."<br>";
+?>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title><?=$g_pagina?></title>
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/tabla.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/FuncJScript.js"></script>
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='js/infogrid.js'></script>
+    <script src="./scripts/jquery171.js" type="text/javascript"></script>
+    <script src="./scripts/jquery.alerts.js" type="text/javascript"></script>
+    <link href="./scripts/jquery.alerts.css" rel="stylesheet" type="text/css" />   
+
+</head>
+
+
+
+<body >
+<div align="center">
+<div align="center">
+<table align="center" width="960" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="middle" class="Arial1">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tabla_sup">
+        <tr>
+          <td width="17%" height="50" align="center" valign="middle"><img src="images/logo_sm.png" width="158" height="48" /><br /></td>
+          <td width="67%" align="center" valign="middle">Consulta Vecinos</td>
+          <td width="16%" align="center" valign="middle" class="fecha"><?php echo $fecha ?></td>
+        </tr>
+        <tr>
+          <td colspan="3" >
+		  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><table width="100%" border="0" cellpadding="0" cellspacing="0" class="tabla_margin">
+                <tr>
+                  <!-- td width="106" align="left" class="Arial2">&nbsp;<input type="submit" class="rojo_sombra_print" value="Imprimir" /></td>
+                  <td width="77" align="center">&nbsp;</td -->
+				  <td width="106" align="left" class="Arial2">&nbsp;<input type="submit" class="rojo_sombra" value="&laquo; Volver" onclick="location='pidenombre.php'"/></td>
+                  <td width="77" align="center">&nbsp;</td>
+				  
+                  <td width="258" align="right"><!--span class="Arial2">Buscar otra Direcci&oacute;n&nbsp; :&nbsp;</span--></td>
+                  <td width="23" align="center" class="Arial2"><!--img src="images/icons/id.png" width="20" height="20" /--></td>
+				  <!--form name="form1" method="post" action="calles.php" -->
+                  <td width="269" align="center" valign="middle" ><!--input name="calle" type="text" class="campo_txt" id="calle" size="80" maxlength="100" onkeypress="return isAlpha2(event);"value=""  placeholder="Ej: Tannembaum" style="width:320px !important;"/--></td>
+				  <td width="50" align="center" valign="middle" ><!--input name="numero" type="text" class="campo_txt" id="calle" size="50" maxlength="20" onkeypress="return isAlpha(event);" value=""  placeholder="Ej: 12345" style="width:100px !important;"/--></td>
+                  <td width="50" align="right"><!--input type="submit" class="rojo_sombra_search" value="Buscar" /--></td></form>
+				  <td width="77" align="center">&nbsp;</td>
+				  <td width="106" align="right" class="Arial2">&nbsp;<input type="submit" class="rojo_sombra" value="Terminar &Theta;" onclick="location='Logout.php'"/></td> 
+                </tr>
+              </table>
+                <p class="borde_bottom">&nbsp;</p></td>
+            </tr>
+          </table>
+</td></tr></table>
+<table width="960" border="0" cellpadding="0" cellspacing="0" class="tabla_sup">
+     <tr>
+       <td>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tabla_int">
+			 <tr><td>
+			 <div align="left"><span class='pestana'>Patentes Comerciales</span></div>
+
+             <table width='100%' border='1' cellspacing='0' cellpadding='0' class='bordered' ><thead><tr>
+			<th>Nombre</th><th>Rut</th><th>Direcci&oacute;n</th><th>&Uacute;ltimo Pago</th><th width="80">Ir al detalle</th></tr></thead>
+<?
+
+	  $result = mssql_query("SELECT * FROM MAESTRO_CONTRIBUYENTE WITH (NOLOCK) WHERE NOMBRE like '%".$dato_nombre_1."%' or NOMBRE like '%".$dato_nombre_2."%'   order by NOMBRE asc ", $lnk_patcom) or die("MS-Query Error en la consulta a la BD");
+	while($row = mssql_fetch_array($result)) {
+		$Rut=$row["RUT"];
+		$nombrecompleto=$row["NOMBRE"];
+		$direccion=$row["DIRECCION"]. ", ".$row["COMUNA"];
+if ($Rut<>'') {
+list($numero, $dv) = split('[-]', $Rut);
+$rut_votacion = (int) $numero;
+$Rut=$rut_votacion."-".$dv;
+$rut1="0".$Rut;
+$rut2="00".$Rut;
+			 $result_pago = mssql_query("SELECT TOP 1 * FROM MAESTRO_VALORES WITH (NOLOCK) WHERE RUT='".$Rut."' OR RUT='".$rut1."' OR RUT='".$rut2."' ORDER BY FECHA_PAGO DESC", $lnk_patcom);
+			 if (mssql_num_rows($result_pago)>0){
+			 while($row_pago = mssql_fetch_array($result_pago)) {
+			$ultimopago=substr($row_pago["FECHA_PAGO"],0,12)." / $".number_format($row_pago["PAGADO"] , 0 ,',' , '.' );
+			 }
+			 }
+	}
+		?>
+<tr>
+<td><?=$nombrecompleto?></td><td><?=$Rut?></td><td><?=$direccion?></td><td><?=$ultimopago?></td><td><input type="submit" class="rojo_sombra" value="&laquo; Ver Detalle"
+onclick="window.open('mostrardatos.php?r=<?=$Rut?>&donde=1', 'San Miguel==Consulta Vecinos', 'width=1000,height=700,scrollbars=1'); return false;" /></td>
+</tr>
+<?}?>
+</table>
+	</td>
+     </tr>
+</table>
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tabla_int">
+			 <tr><td>
+			 <div align="left"><span class='pestana'>Tesorer&iacute;a / Obras</span></div>
+
+             <table width='100%' border='1' cellspacing='0' cellpadding='0' class='bordered' ><thead><tr>
+			<th>Nombre</th><th>Rut</th><th>Direcci&oacute;n</th><th width="80">Ir al detalle</th></tr></thead>
+<?
+
+	$result = mssql_query("SELECT Rut, Nombre, Domicilio, Comuna FROM Encabezado_Orden_Ingreso WITH (NOLOCK) WHERE NOMBRE like '%".$dato_nombre_1."%' or NOMBRE like '%".$dato_nombre_2."%'   order by NOMBRE asc", $lnk_comun) or die("MS-Query Error en la consulta a la BD");
+	while($row = mssql_fetch_array($result)) {
+		$Rut=$row["Rut"];
+		$nombrecompleto=trim($row["Nombre"]);
+		$direccion=trim($row["Domicilio"]) ." ".trim($row["Comuna"]);
+if ($Rut<>'') {
+list($numero, $dv) = split('[-]', $Rut);
+$rut_votacion = (int) $numero;
+$Rut=$rut_votacion."-".$dv;
+	}
+		?>
+<tr>
+<td><?=$nombrecompleto?></td><td><?=$Rut?></td><td><?=$direccion?></td><td><input type="submit" class="rojo_sombra" value="&laquo; Ver Detalle"
+onclick="window.open('mostrardatos.php?r=<?=$Rut?>&donde=1', 'San Miguel==Consulta Vecinos', 'width=1000,height=700,scrollbars=1,resizable=1'); return false;" /></td>
+</tr>
+<?}?>
+</table>
+	</td>
+     </tr>
+</table>
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tabla_int">
+			 <tr><td>
+			 <div align="left"><span class='pestana'>Permisos Provisorios</span></div>
+
+             <table width='100%' border='1' cellspacing='0' cellpadding='0' class='bordered' ><thead><tr>
+			<th>Nombre</th><th>Rut</th><th>Direcci&oacute;n</th><th width="80">Ir al detalle</th></tr></thead>
+<?
+
+    $result = mssql_query("SELECT RUT, NOMBRES, DIRECCION, NUMERO, COMUNA  FROM Contribuyentes WITH (NOLOCK) WHERE  NOMBRES like '%".$dato_nombre_1."%' or NOMBRES like '%".$dato_nombre_2."%'   order by NOMBRES asc", $lnk_provisorio) or die("MS-Query Error en la consulta a la BD");
+	while($row = mssql_fetch_array($result)) {
+		$Rut=$row["RUT"];
+		$nombrecompleto=trim($row["NOMBRES"]);
+		$direccion=trim($row["DIRECCION"]). " ".trim($row["NUMERO"]).", ". trim($row["COMUNA"]);
+if ($Rut<>'') {
+list($numero, $dv) = split('[-]', $Rut);
+$rut_votacion = (int) $numero;
+$Rut=$rut_votacion."-".$dv;
+
+
+
+	}
+		?>
+<tr>
+<td><?=$nombrecompleto?></td><td><?=$Rut?></td><td><?=$direccion?></td><td><input type="submit" class="rojo_sombra" value="&laquo; Ver Detalle"
+onclick="window.open('mostrardatos.php?r=<?=$Rut?>&donde=1', 'San Miguel==Consulta Vecinos', 'width=1000,height=700,scrollbars=1,resizable=1'); return false;" /></td>
+</tr>
+<?}?>
+</table>
+	</td>
+     </tr>
+</table>
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tabla_int">
+			 <tr><td>
+			 <div align="left"><span class='pestana'>Inspecciones (Infracciones)</span></div>
+
+             <table width='100%' border='1' cellspacing='0' cellpadding='0' class='bordered' ><thead><tr>
+			<th>Nombre</th><th>Rut</th><th>Direcci&oacute;n</th><th width="80">Ir al detalle</th></tr></thead>
+<?
+	  $result = mssql_query("SELECT  * FROM Parte_M WITH (NOLOCK) where NombreInfractor like '%".$dato_nombre_1."%' or NombreInfractor like '%".$dato_nombre_2."%'   order by NombreInfractor asc", $lnk_inspec) or die("MS-Query Error en la consulta a la BD");
+	while($row = mssql_fetch_array($result)) {
+		$Rut=trim($row["RutInfractor"]);
+		$nombrecompleto=trim($row["NombreInfractor"]);
+		$direccion=trim($row["DireccionInfractor"]). ", ".trim($row["ComunaInfractor"]);
+if ($Rut<>'') {
+list($numero, $dv) = split('[-]', $Rut);
+$rut_votacion = (int) $numero;
+$Rut=$rut_votacion."-".$dv;
+	}
+		?>
+<tr>
+<td><?=$nombrecompleto?></td><td><?=$Rut?></td><td><?=$direccion?></td><td><input type="submit" class="rojo_sombra" value="&laquo; Ver Detalle"
+onclick="window.open('mostrardatos.php?r=<?=$Rut?>&donde=1', 'San Miguel==Consulta Vecinos', 'width=1000,height=700,scrollbars=1,resizable=1'); return false;" /></td>
+</tr>
+<?}?>
+</table>
+	</td>
+     </tr>
+</table>
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tabla_int">
+			 <tr><td>
+			 <div align="left"><span class='pestana'>Aseo Contribuyente</span></div>
+
+             <table width='100%' border='1' cellspacing='0' cellpadding='0' class='bordered' ><thead><tr>
+			<th>Nombre</th><th>Rut</th><th>Direcci&oacute;n</th><th>&Uacute;ltimo Pago</th><th width="80">Ir al detalle</th></tr></thead>
+<?
+
+      $result = mssql_query("SELECT Cont_Propietario, Cont_Direccion, Cont_Rut, Cont_Rol, Cont_Exencion, Cont_FechaDecExen FROM AsContribuyente WITH (NOLOCK) where Cont_propietario like '%".$dato_nombre_1."%' or Cont_propietario like '%".$dato_nombre_2."%'   order by Cont_propietario asc", $lnk_aseo) or die("MS-Query Error en la consulta a la BD");
+	while($row = mssql_fetch_array($result)) {
+		$Rut=$row["Cont_Rut"];
+		$nombrecompleto=trim($row["Cont_Propietario"]);
+		$numrol=trim($row["Cont_Rol"]);
+		$direccion=trim($row["Cont_Direccion"]);
+		$Cont_Exencion=trim($row["Cont_FechaDecExen"]);
+if ($Rut<>'') {
+list($numero, $dv) = split('[-]', $Rut);
+$rut_votacion = (int) $numero;
+$Rut=$rut_votacion."-".$dv;
+}
+
+if (is_null($row["Cont_FechaDecExen"])) {
+
+					$result_pago_as="SELECT TOP 1 Pag_Ano,Pag_FechaVen,Pag_Total FROM AsPagos WITH (NOLOCK) WHERE Pag_Rol='". $numrol."' ORDER BY Pag_Ano DESC, Pag_FechaVen DESC";
+					$sql3_as = mssql_query($result_pago_as, $lnk_aseo);
+					if (mssql_num_rows($sql3_as)>0){
+					while($row_pago_as = mssql_fetch_array($sql3_as)) {
+						$ultimopago_as=substr($row_pago_as["Pag_FechaVen"],0,12)." / $".number_format($row_pago_as["Pag_Total"] , 0 ,',' , '.' );
+
+					}
+					}
+
+} else {
+		$ultimopago_as="EX. ".substr($Cont_Exencion,0,11);
+}
+
+	
+		?>
+<tr>
+<td><?=$nombrecompleto?></td><td><?=$Rut?></td><td><?=$direccion?></td><td><?=$ultimopago_as?></td><td><input type="submit" class="rojo_sombra" value="&laquo; Ver Detalle"
+onclick="window.open('mostrardatos.php?r=<?=$Rut?>&donde=1', 'San Miguel==Consulta Vecinos', 'width=1000,height=700,scrollbars=1,resizable=1'); return false;" /></td>
+</tr>
+<?}?>
+</table>
+	</td>
+     </tr>
+</table>
+
+
+
+
+ <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tabla_int">
+			 <tr><td>
+			 <div align="left"><span class='pestana'>Propietarios Vehiculo (Permiso Circulacion)</span></div>
+
+             <table width='100%' border='1' cellspacing='0' cellpadding='0' class='bordered' ><thead><tr>
+			<th>Nombre</th><th>Rut</th><th>Direcci&oacute;n</th><th width="80">Ir al detalle</th></tr></thead>
+<?php
+    $result = mssql_query("SELECT Rut, Nombre, Direccion, Comuna FROM Propietarios WITH (NOLOCK) where Nombre like '%".$dato_nombre_1."%' or Nombre like '%".$dato_nombre_2."%'   order by Nombre asc", $lnk_permcirc) or die("MS-Query Error en la consulta a la BD");
+	while($row = mssql_fetch_array($result)) {
+		$Rut=$row["Rut"];
+		$nombrecompleto=trim($row["Nombre"]);
+		$direccion=trim($row["Direccion"]). ", ".trim($row["Comuna"]);
+if ($Rut<>'') {
+list($numero, $dv) = split('[-]', $Rut);
+$rut_votacion = (int) $numero;
+$Rut=$rut_votacion."-".$dv;
+	}
+
+		
+		?>
+<tr>
+<td><?=$nombrecompleto?></td><td><?=$Rut?></td><td><?=$direccion?></td><td><input type="submit" class="rojo_sombra" value="&laquo; Ver Detalle"
+onclick="window.open('mostrardatos.php?r=<?=$Rut?>&donde=1', 'San Miguel==Consulta Vecinos', 'width=1000,height=700,scrollbars=1,resizable=1'); return false;" /></td>
+</tr>
+<?}?>
+</table>
+	</td>
+     </tr>
+</table>
+
+
+    
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+    </td></tr>
+</table>
+
+
+</div>
+</body>
+
+</html>

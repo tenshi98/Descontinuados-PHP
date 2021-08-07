@@ -1,0 +1,213 @@
+<?php session_start();
+  
+    // HEAD --->
+        require_once('inc/head.php');         
+     // HEAD --->
+include('openinviter.php');
+
+
+$id=$_GET['id'];
+$logonform = <<< _end_lform
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor=#e6e4e4>
+<div align="center">
+  <table id="Tabla_01" width="1000" height="600" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+	    <td width="1000" height="600" rowspan="7" align="left" valign="top" >
+	    <table width="1000" border="0" cellspacing="0" cellpadding="0" height="598">
+          <tr>
+            <td height="90%" valign="middle" colspan="2" align="center">
+           <img src="http://$nombreurl/images/logo_negro.png"  alt="">
+_end_lform;
+echo $logonform;
+$inviter=new OpenInviter();
+$oi_services=$inviter->getPlugins();
+
+if (isset($_POST['provider_box'])) 
+{
+	if (isset($oi_services['email'][$_POST['provider_box']])) $plugType='email';
+	elseif (isset($oi_services['social'][$_POST['provider_box']])) $plugType='social';
+	else $plugType='';
+}
+else $plugType = '';
+
+function ers($ers)
+	{
+	if (!empty($ers))
+		{
+		require('../nombre_pag.php');
+		$contents="<table cellspacing='0' cellpadding='0' style='border:1px solid red;' align='center' class='tbErrorMsgGrad'><tr><td valign='middle' style='padding:3px' valign='middle' class='tbErrorMsg'><img src='http://{$nombreurl}/images/bad.png'></td><td valign='middle' style='color:red;padding:5px;'>";
+		foreach ($ers as $key=>$error)
+			$contents.="{$error}";
+		if ($_GET['nombre_video']!="") {
+		$contents.="<br><br><br> <a href='http://".$nombreurl."/personas/video_mail/multiple.php?nombre_video=".$_GET['nombre_video']."'><img border='0' src='http://".$nombreurl."/images/volver.png' ></a></td></tr></table>";
+		}else{
+		$contents.="<br><br><br> <a href='http://".$nombreurl."/personas/manten_mail.php'><img border='0' src='http://".$nombreurl."/images/volver.png' ></a></td></tr></table>";
+		}
+
+		return $contents;
+		}
+	}
+	
+function oks($oks)
+	{
+	if (!empty($oks))
+		{
+		require('../nombre_pag.php');
+		$contents="<table border='0' cellspacing='0' cellpadding='10' style='border:1px solid #5897FE;' align='center' class='tbInfoMsgGrad'><tr><td valign='middle' valign='middle' class='tbInfoMsg'><img src='http://{$nombreurl}/images/ok.png' ><br></td><td valign='middle' style='color:#5897FE;padding:5px;'>	";
+		foreach ($oks as $key=>$msg)
+			$contents.="{$msg}";
+		if ($_GET['nombre_video']!="") {
+		$contents.="<br><br><br> <a href='http://".$nombreurl."/personas/video_mail/multiple.php?nombre_video=".$_GET['nombre_video']."'><img border='0' src='http://".$nombreurl."/images/volver.png' ></a></td></tr></table>";
+		}else{
+		$contents.="<br><br><br> <a href='http://".$nombreurl."/personas/manten_mail.php'><img border='0' src='http://".$nombreurl."/images/volver.png' ></a></td></tr></table>";
+		}
+		return $contents;
+		}
+	}
+
+if (!empty($_POST['step'])) $step=$_POST['step'];
+else $step='get_contacts';
+
+$ers=array();$oks=array();$import_ok=false;$done=false;
+if ($_SERVER['REQUEST_METHOD']=='POST')
+	{
+	if ($step=='get_contacts')
+		{
+		if (empty($_POST['email_box']))
+			$ers['email']="E-mail No enviado.";
+		if (empty($_POST['password_box']))
+			$ers['password']="Password errónea o nula.";
+		if (empty($_POST['provider_box']))
+			$ers['provider']="Proveedor erróneo.";
+		if (count($ers)==0)
+			{
+			$inviter->startPlugin($_POST['provider_box']);
+			$internal=$inviter->getInternalError();
+			if ($internal)
+				$ers['inviter']=$internal;
+			elseif (!$inviter->login($_POST['email_box'],$_POST['password_box']))
+				{
+				$internal=$inviter->getInternalError();
+				$ers['login']=($internal?$internal:"Fallo en el Login. Por favor , revise su e-mail o login y la password y trate nuevamente más tarde.");
+				}
+			elseif (false===$contacts=$inviter->getMyContacts())
+				$ers['contacts']="Imposible de capturar sus contactos en este momento, trate más tarde.";
+			else
+				{
+				$import_ok=true;
+				$step='send_invites';
+				$_POST['oi_session_id']=$inviter->plugin->getSessionID();
+				$_POST['message_box']=$mensaje;
+				}
+			}
+		}
+	else {
+	}}
+else
+	{
+	$_POST['email_box']='';
+	$_POST['password_box']='';
+	$_POST['provider_box']='';
+	}
+
+$contents="<script type='text/javascript'>
+	function toggleAll(element) 
+	{
+	var form = document.forms.openinviter, z = 0;
+	for(z=0; z<form.length;z++)
+		{
+		if(form[z].type == 'checkbox')
+			form[z].checked = element.checked;
+	   	}
+	}
+</script>";
+
+
+
+$contents.="<form action='' method='POST' name='openinviter'>".ers($ers).oks($oks);
+if (!$done)
+
+	{
+	if ($step=='get_contacts')
+		{
+	
+		$contents.="<img src='http://$nombreurl/images/iconos_mail_texto.png' /><table align='center' class='TablaCV_t' cellspacing='0' cellpadding='0' style='border:none;' width=500 >";
+		$contents.= "<tr ><td align='right'  height=30><span class='arial_10_33'>Email o Login de Red Social&nbsp;&nbsp;&nbsp;&nbsp;</label></td><td><input class='formmail' type='text' name='email_box' value='{$mi_mail}'></td></tr>";
+		$contents.= "<tr ><td align='right' height=30><span class='arial_10_33'>Password de Tu Correo&nbsp;&nbsp;&nbsp;&nbsp;</label></td><td><input class='formmail' type='password' name='password_box' value='{$_POST['password_box']}'></td></tr>";
+		$contents.= "<tr ><td align='right' height=30><span class='arial_10_33'>Selecciona Correo Electrónico/Red Social&nbsp;&nbsp;&nbsp;&nbsp;</label></td><td><select class='formmail' name='provider_box'><option value=''></option>";
+		
+		foreach ($oi_services as $type=>$providers)	
+			{
+			$contents.="<option disabled>".$inviter->pluginTypes[$type]."</option>";
+			foreach ($providers as $provider=>$details)
+				$contents.="<option value='{$provider}'".($_POST['provider_box']==$provider?' selected':'').">{$details['name']}</option>";
+			}
+		$contents.="</select></td></tr><tr ><td align='right'></td><td align='right'></td></tr><br></br><br></br><tr class='thTableImportantRow'><td colspan='2' align='center' valign='middle'><br></br><input type='image' src='http://$nombreurl/images/importar_contactos.png'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+		if ($_GET['nombre_video']!="") {
+		$contents.="<a href='http://".$nombreurl."/personas/video_mail/multiple.php?nombre_video=".$_GET['nombre_video']."'><img border='0' src='http://".$nombreurl."/images/volver.png' >";
+		}else{
+		$contents.="<a href='http://".$nombreurl."/personas/manten_mail.php'><img border='0' src='http://".$nombreurl."/images/volver.png' >";
+		}
+		$contents.="</a></td></tr></table><input type='hidden' name='step' value='get_contacts'>";
+		}
+	else
+		$contents.="<table class='thTable' cellspacing='0' cellpadding='0' style='border:none;'><tr class='thTableRow'><td align='right' valign='top'></td><td><img src='http://{$nombreurl}/images/ok.png' ><br></td><p>&nbsp;</p><p>&nbsp;</p></tr></table>";
+	}
+
+if (!$done)
+	{
+	if ($step=='send_invites')
+		{
+		if ($inviter->showContacts())
+			{
+			$contents.="<table class='thTable' align='center' cellspacing='0' cellpadding='0'><tr class='blanco'><td colspan='".($plugType=='email'? "3":"2")."'>Tus Contactos han sido Cargados</td></tr>";
+			if (count($contacts)==0)
+				$contents.="<tr class='thTableOddRow'><td align='center' style='padding:20px;' colspan='".($plugType=='email'? "3":"2")."'>Tu no tienes contactos en esta direccion.</td></tr>";
+			else
+				{
+				$contents.="<tr class='thTableDesc'><td><br> Puedes continuar <br></td></tr>";
+				$odd=true;$counter=0;
+				foreach ($contacts as $email=>$name)
+					{
+					$counter++;
+					if ($odd) $class='thTableOddRow'; else $class='thTableEvenRow';
+//******************
+        $email_check = "SELECT * FROM correos  WHERE origen ='".$_POST['email_box']."' and destino='".$email."'  and usuario='".$_GET['receptor']."'";
+
+
+
+
+        if (!($email_check)) print mysql_error(); 
+        $result = mysql_query($email_check ,$base); 
+        $num_rows = mysql_num_rows($result); 
+     
+        if ($num_rows == 0) 
+            { 
+			$sql = "insert into correos (usuario,origen,destino,estado) values ('{$_GET['receptor']}','{$_POST['email_box']}','{$email}','1')";
+			$ejecuta = mysql_query($sql ,$base);
+			}
+
+
+//******************
+					}
+				$contents.="<tr class='thTableFooter'><td colspan='".($plugType=='email'? "3":"2")."' style='padding:3px;'>";
+		if ($_GET['nombre_video']!="") {
+				$contents.="<a href='http://".$nombreurl."/personas/video_mail/multiple.php?nombre_video=".$_GET['nombre_video']."'><img border='0' src='http://".$nombreurl."/images/volver.png' ></a></td></tr>";
+		}else{
+				$contents.="<a href='http://".$nombreurl."/personas/manten_mail.php'><img border='0' src='http://".$nombreurl."/images/volver.png' ></a></td></tr>";
+
+		}
+				}
+			$contents.="</table>";
+			}
+			
+	
+		}
+	}
+$contents.="</td>";
+$contents.="</tr>";
+$contents.="</table>";
+
+echo $contents;
+?>

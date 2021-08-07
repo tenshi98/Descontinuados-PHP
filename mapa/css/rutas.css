@@ -1,0 +1,16 @@
+#resumen ol{list-style:none;margin:0;padding:0;}
+#resumen li{padding:2px 8px 4px 8px !important;background:#FCF7E4;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;margin-bottom:4px;padding-bottom:8px !important;}#resumen li div>span{display:inline-block;}
+#resumen img{width:auto;height:18px;position:relative;top:5px;}
+#resumen .recorrido{margin-left:-19px;}#resumen .recorrido span{padding:2px 4px 3px 20px !important;color:white !important;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+#resumen .metro{padding:2px 4px 3px!important;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;color:white;margin-left:2px;}#resumen .metro.ml1{background-color:#F20726;}
+#resumen .metro.ml2{background-color:#F27000;}
+#resumen .metro.ml4{background-color:#1A1D6A;}
+#resumen .metro.ml4a{background-color:#0A5FCA;}
+#resumen .metro.ml5{background-color:#008A63;}
+#resumen .gm-arrow{width:16px;height:18px;background:url(../img/icon/r_flecha.png) no-repeat center center transparent !important;}
+#resumen .adp-summary-duration{width:80px;height:26px;text-align:center;padding:0 0 0 12px;margin-top:1px;line-height:26px;font-weight:bold;background:url(../img/clock_white.png) no-repeat 6px center rgba(0, 0, 0, 0.8);position:absolute;right:-82px;z-index:100;color:white;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 0 8px rgba(0, 0, 0, 0.2);-moz-box-shadow:0 0 8px rgba(0, 0, 0, 0.2);box-shadow:0 0 8px rgba(0, 0, 0, 0.2);display:none;}#resumen .adp-summary-duration:before{display:block;width:0;height:0;left:-5px;top:7.5px;position:absolute;z-index:101;content:"&larr;";border-bottom:5px solid transparent;border-right:5px solid rgba(0, 0, 0, 0.8);border-top:5px solid transparent;overflow:hidden;text-indent:-9999px;}
+#resumen .adp-listsel,#resumen li:hover{background:#F7E8AE;cursor:pointer;}#resumen .adp-listsel .adp-summary-duration,#resumen li:hover .adp-summary-duration{display:block;}
+#resumen .adp-listheader{padding:0;margin-bottom:4px;font-weight:bold;font-size:14px;}
+#resumen .estimado{display:none;}
+#suggestCont.no-border .adp-listsel .adp-summary-duration{display:none;}
+#suggestCont.no-border .adp-listsel:hover .adp-summary-duration{display:block;}

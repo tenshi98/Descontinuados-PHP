@@ -1,0 +1,6 @@
+
+<div id="imagenFlotante">
+<a href="#" onclick="javascript:window.open('http://www.click2call.cl/inter/botonc2c.asp?id_eje=37','click2call','height=600px,width=560px,help=no,scrollbars=no,menubar=no,status=no,titlebar=no,toolbar=no');">
+<img  border=0  src="http://<?=$nombreurl?>/images/llamanos_bot.png">
+</A>
+</div>

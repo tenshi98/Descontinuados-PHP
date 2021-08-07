@@ -1,0 +1,140 @@
+<?
+require("../conexion.php");
+require("../nombre_pag.php");
+//echo "lon  ".$_GET["longitud"]."  lat  ".$_GET["latitud"]."  imei     ".$_GET["imei"]."  gm     ".$_GET["id"];
+
+if ( !empty($_POST['rutpersona']) )  {
+list($uno, $dos) = split('-', $_POST['rutpersona']);
+$sql ="SELECT REGION,NOMBRE,DOMICILIO,Comuna,fono_celular,domicilio_2,comuna_2,region_2,tipo_domicilio2,correo,rut_compara FROM padron_electoral_CL WHERE rut_compara='" . $uno.$dos . "'";
+
+
+	$res=mysql_query($sql,$base_padron); 
+	$numeroRegistros=mysql_num_rows($res); 
+	if ($numeroRegistros==1)  {
+	//echo $sql."<br>".$numeroRegistros;	
+	?>
+
+
+	<form name="formulario" method="post" action="http://<?=$nombreurl?>/app/crea_usuario.php?longitud=<?=$_GET["longitud"]?> &latitud=<?=$_GET["latitud"]?>
+	&imei=<?=$_GET["imei"]?> &id=<?=$_GET["id"]?>">
+
+	<?
+		$rowusr = mysql_fetch_assoc ($res);
+
+		?>
+		<input type="hidden" name="rut" value="<?=$_POST['rutpersona']?>">
+		<input type="hidden" name="rut_compara" value="<?=$uno.$dos?>">
+		<input type="hidden" name="nom_ejecutiv" value="<?=$rowusr['NOMBRE']?>">
+		<input type="hidden" name="fono_ejecutiv" value="<?=$rowusr['fono_celular']?>">
+
+		<? if ($rowusr['region_2']!="") {?>
+			<input type="hidden" name="region" value="<?=$rowusr['region_2']?>">
+		<?}else{?>
+			<input type="hidden" name="region" value="<?=$rowusr['REGION']?>">
+		<?}?>
+
+		<? if ($rowusr['comuna_2']!="") {?>
+			<input type="hidden" name="comuna" value="<?=$rowusr['comuna_2']?>">
+		<?}else{?>
+			<input type="hidden" name="comuna" value="<?=$rowusr['Comuna']?>">
+		<?}?>
+
+		<? if ($rowusr['domicilio_2']!="") {?>
+			<input type="hidden" name="dir_ejecutiv" value="<?=$rowusr['domicilio_2']?>">
+		<?}else{?>
+			<input type="hidden" name="dir_ejecutiv" value="<?=$rowusr['DOMICILIO']?>">
+		<?}?>
+		<input type="hidden" name="login" value="<?=$rowusr['correo']?>">
+
+	</form>
+	<script type="text/javascript">
+    //Redireccionar con el formulario creado
+    document.formulario.submit();
+	</script>
+
+<?}
+else{
+}?>
+	<form name="formulario2" method="post" action="http://<?=$nombreurl?>/app/crea_usuario2.php?longitud=<?=$_GET["longitud"]?> &latitud=<?=$_GET["latitud"]?>
+	&imei=<?=$_GET["imei"]?> &id=<?=$_GET["id"]?>">
+
+		<input type="hidden" name="rut" value="<?=$_POST['rutpersona']?>">
+		<input type="hidden" name="rut_compara" value="">
+		<input type="hidden" name="nom_ejecutiv" value="">
+		<input type="hidden" name="fono_ejecutiv" value="">
+		<input type="hidden" name="comuna" value="">
+		<input type="hidden" name="dir_ejecutiv" value="">
+		<input type="hidden" name="region" value="">
+	</form>
+	<script type="text/javascript">
+    //Redireccionar con el formulario creado
+    document.formulario2.submit();
+	</script>
+	<?
+}
+?>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SosClick</title>
+<script type="text/javascript" src="../scripts/FuncJScript.js"></script>
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script src="../scripts/jquery.alerts.js" type="text/javascript"></script>
+    <link href="../scripts/jquery.alerts.css" rel="stylesheet" type="text/css" />   
+<link href="css/reset.css"  rel="stylesheet" type="text/css" />
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+
+function nif(dni) {
+  numero = dni.substr(0,dni.length-1);
+  let = dni.substr(dni.length-1,1);
+  numero = numero % 23;
+  letra='TRWAGMYFPDXBNJZSQVHLCKET';
+  letra=letra.substring(numero,numero+1);
+  if (letra!=let) 
+    alert('Dni erroneo');
+}
+
+</script>
+</head>
+
+<body>
+<div class="height100 widht100">
+    <div class="widht80 fcenter perfil">
+        <h1>Crear usuario</h1>
+	<br>	<br>
+
+	<table width="100%" border="0" height="80%" cellspacing="0" cellpadding="0"  valign="middle"  class="table_msg">
+  <tr>
+    <td width="64%" height="49%"  align="center" >
+	<form name="form1" method="post" >
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td height="25"  class="Arial4">Ingrese el n&uacute;mero DNI</td>
+                      </tr>
+                    <tr><td width="20">&nbsp;</td></tr>
+                    <tr><td><label>N&deg; DNI (Ej: 12345678-B)</label></td> </tr>
+					<tr>
+                      <td height="25">
+					  <input name="rutpersona" type="text"  id="rutpersona" size="50" maxlength="20" onblur="nif(this.value)" placeholder="Ej: 12345678-B" style="width:220px !important;"/>
+					  </td>
+                    </tr>
+                      <tr><td width="20">&nbsp;</td></tr>
+                      <tr><td width="20">&nbsp;</td></tr>
+                       <tr><td><input name="submit" type="submit" value="Continuar" id="post_button" /></td></tr>
+                  </table>
+                </form>
+</td>
+    </tr>
+</table>
+
+</div></div>
+
+
+
+
+
+</body>
+</html>
+

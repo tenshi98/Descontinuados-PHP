@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en" id="mainWin">
+<head>
+	<meta charset="UTF-8">
+	<title>Transantiago - Planificador y Servicios</title>
+
+	<!--Estilos-->
+	<link rel="stylesheet" href="css/layout.css" media="all" />
+	<link rel="stylesheet" href="css/forms.css" media="all" />
+	<link rel="stylesheet" href="css/jscrollpane.css" media="all" />
+	<link href="css/default_mod.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/rutas.css" media="all" />
+	<link rel="stylesheet" href="css/tooltip.css" media="all" />
+	<link rel="stylesheet" href="css/selects.css" media="all" />
+	<link rel="stylesheet" href="css/poll.css" media="all" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/elements.css" media="all" />
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" media="all" />
+	<link rel="stylesheet" href="css/ui-lightness/custom.css" media="all" />
+
+	<link rel="stylesheet" href="css/tutorial.css" media="all" />
+	<link rel="stylesheet" href="js/tutorial/css/jcarousel.css" media="all" />
+	
+	<!--Meta Tags-->
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="diDigital.cl, OXUS.cl" />
+	<meta name="description" content="Planifica tu viaje y conoce cómo llegar, encuentra paraderos y puntos de recargas bip!, conoce los recorridos, sus horarios y paradas" />
+	<meta name="keywords" content="planificador, transantiago, como llegar, paraderos, puntos bip, recargar bip, recorridos, planificar viaje transantiago, tiempo de espera" />
+
+	<meta property="og:image" content="http://planifica.transantiago.cl/img/screenshot.jpg" />
+	<meta property="og:description" content="Planifica tu viaje y conoce cómo llegar, encuentra paraderos y puntos de recargas bip!, conoce los recorridos, sus horarios y paradas" />
+	<meta property="og:title" content="Transantiago - Planificador y servicios" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://planifica.transantiago.cl/" />
+	<meta property="og:site_name" content="Transantiago" />
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@transantiago">
+	<meta name="twitter:title" content="Transantiago - Planificador y servicios">
+	<meta name="twitter:description" content="Planifica tu viaje y conoce cómo llegar, encuentra paraderos y puntos de recargas bip!, conoce los recorridos, sus horarios y paradas">
+	<meta name="twitter:creator" content="@transantiago">
+	<meta name="twitter:image:src" content="http://planifica.transantiago.cl/img/screenshot.jpg">
+	<meta name="twitter:domain" content="http://planifica.transantiago.cl/">
+
+
+<!--[if IE 9]>
+	<link rel="stylesheet" href="css/ie9.css" media="all" />
+<![endif]-->
+
+	<!--Vendor-->
+	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+	<script src="js/ie.ajax.js" type="text/javascript"></script>
+	<script src="js/datepicker-es.js" type="text/javascript"></script>
+	<!--<script src="https://maps.googleapis.com/maps/api/js?client=gme-didigital&sensor=true&libraries=places,geometry&language=es&region=CL"></script>-->
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places,geometry&language=es&region=CL"></script>
+	<!--key=AIzaSyBmLRjbol1fECTwMthge7vV1JXwnumbhVw-->
+	<!--client=gme-didigital-->
+	<script src="js/html5.js" type="text/javascript"></script>
+	<script src="js/jquery-jscrollpane.min.js" type="text/javascript"></script>
+	<script src="js/jquery-mousewheel.js" type="text/javascript"></script>
+	<script src="js/infobox.js"></script>
+	<script src="js/autocomplete.js" type="text/javascript"></script>
+	
+	<!--Globales-->
+	<script src="js/global1-1.js" type="text/javascript"></script>
+	<script src="js/poll1-1.js" type="text/javascript"></script>
+	<script src="js/selects.js" type="text/javascript"></script>
+	<script src="js/util.js" type="text/javascript" async=true></script>
+	<script src="js/mapa1-1.js" type="text/javascript"></script>
+	<script src="js/marker.js" type="text/javascript"></script>
+	<script src="js/geocoder.js" type="text/javascript" async=true></script>
+	<script src="js/main1-1.js" type="text/javascript" async=true></script>
+	<script src="js/tooltip.js" type="text/javascript" async=true></script>
+
+	<!--Slider Tutorial-->
+	<script src="js/tutorial/jquery.jcarousel-core.min.js" type="text/javascript"></script>
+	<script src="js/tutorial/global.js" type="text/javascript"></script>
+	
+	<!--Como llegar-->
+	<script src="js/comoLlegar/main1-1.js" type="text/javascript"></script>
+	<script src="js/comoLlegar/indicaciones.js" type="text/javascript"></script>
+	<script src="js/comoLlegar/infoBox.js" type="text/javascript"></script>
+	<script src="js/comoLlegar/controles.js" type="text/javascript"></script>
+	<script src="js/comoLlegar/lineas1-1.js" type="text/javascript"></script>
+	
+	<!--Encuentra Paradas y Puntos Bip!-->
+	<script src="js/encuentraParadas/main1-1.js" type="text/javascript"></script>
+
+	<!--Conoce los recorridos-->
+	<script src="js/conoceRecorridos/main1-2.js" type="text/javascript"></script>
+	
+<!--[if IE 9]>
+	<script src="js/ie9.js" type="text/javascript"></script>
+<![endif]-->
+	
+
+
+</head>
+<body>
+<div id="page">
+<header id="header">       
+<form action="#" method="post" name="cuandoLlega[step-1]" autocomplete="off" data-submit="conoceTusRecorridos"  id="form1">
+<input type="text" name="step-1[3-recorrido]" id="recorrido"  placeholder="Ej.: 123" value="<?php echo $_GET["recorrido"] ?>"/>						
+</form>       
+<section id="conocerRecorridos" class="">
+<article class="step-2">
+<div class="c collap_js">
+<div class="recRes">
+<div class="tit"><strong>Recorrido</strong> <span class="numColor" style="background: red">212</span> <a href="#" title="Empresa de buses SuBus" target="_blank">Empresa de buses SuBus</a></div>
+<ol>
+<li><div id="ida" class="rec">Hacia: Estación Central</div></li>
+<li><div id="vuelta" class="rec">Hacia: Estación Central</div></li>
+</ol>
+</div>
+</div>
+</article>
+
+
+</section>      
+</header>
+	
+<div id="main"><div id="map-canvas"></div></div>
+
+
+</div>
+	
+
+<script type="text/javascript"> 
+window.onload=function(){
+	var timeout = 0;
+	var myVar = setInterval(function(){myTimer()},1000);
+	function myTimer() {
+		switch(timeout) {
+			case 2:
+				$("#form1").submit();
+				break;
+			case 4:
+				$('#<?php if ($_GET["ruta"]==1){echo 'ida';}else{echo 'vuelta';} ?>').trigger('click');
+				break;
+			case 6:
+				transMarker();
+				break;
+			case 8:
+				window.clearInterval(myVar);
+				break;		
+		}
+		timeout++;
+	}			
+}
+/*
+original
+function transMarker() {
+var transMarker = {
+		name: 'transMarkers',
+		animation: google.maps.Animation.DROP,
+		icon: 'img/icon/trans.png',
+		title: 'Origen',
+		visible: true
+	}
+transporte = $.addMarker(transMarker);
+
+transporte.show().setPosition(new google.maps.LatLng(-33.61351032224987, -70.58690059387209));
+map.panTo(transporte.position);
+}
+*/
+var locations = [ 
+['1', -33.63337919388144, -70.61153400146486], 
+['2', -33.63141395215598, -70.61166274749758], 
+['3', -33.62952013134229, -70.61196315490724],
+['4', -33.62709026252547, -70.61222064697267], 
+['5', -33.62419577052017, -70.61260688507082], 
+['6', -33.62255194164295, -70.61260688507082], 
+['7', -33.62005040274305, -70.61273563110353], 
+['8', -33.61847796969279, -70.61299312316896], 
+['9', -33.617298626075886, -70.61307895385744], 
+['10', -33.61665534093699, -70.61183440887453], 
+['11', -33.61640517319733, -70.61003196441652], 
+['12', -33.61622648151013, -70.60827243530275], 
+['13', -33.61594057403998, -70.60604083740236], 
+['14', -33.61561892700234, -70.60329425537111], 
+['15', -33.61526153999711, -70.600933911438], 
+['16', -33.615047107082624, -70.59861648284914], 
+['17', -33.614761195700076, -70.59659946166994], 
+['18', -33.61501136821167, -70.5956553240967], 
+['19', -33.615654665621356, -70.59445369445802], 
+['20', -33.616583864514034, -70.59355247222902], 
+['21', -33.6174415776769, -70.59346664154054], 
+['22', -33.61837075730361, -70.59329498016359], 
+['23', -33.61897829241198, -70.59312331878664], 
+['24', -33.619299926911836, -70.59466827117922], 
+['25', -33.619621560211236, -70.59634196960451], 
+['26', -33.619621560211236, -70.59694278442385], 
+['27', -33.62046137483339, -70.59687841140743], 
+['28', -33.62131904940395, -70.59668529235836], 
+['29', -33.622105243594255, -70.59653508865352], 
+['30', -33.622891430611155, -70.59636342727657], 
+['31', -33.62369547809491, -70.59623468124386], 
+['32', -33.62442804815869, -70.59614885055538], 
+['33', -33.624320843172576, -70.59507596694942], 
+['34', -33.624267240629486, -70.59419620239254], 
+['35', -33.62496407108839, -70.59398162567135], 
+['36', -33.62558942695811, -70.59387433731075], 
+['37', -33.62639344926363, -70.59374559127804], 
+['38', -33.627233197882546, -70.59357392990108], 
+['39', -33.628046138215765, -70.59337008201595], 
+['40', -33.62872507151624, -70.59323060714718], 
+['41', -33.62924320122449, -70.5931447764587], 
+['42', -33.6299489246069, -70.5929838439178], 
+['43', -33.63053851186054, -70.59289801322933],
+['44', -33.63113702812668, -70.59279072486873],
+['45', -33.63173554023402, -70.59268343650814],
+['46', -33.631789138130294, -70.59194314682003],
+['47', -33.631860601940105, -70.59120285713192],
+['48', -33.63193206569064, -70.59029090606685],
+['49', -33.631976730504604, -70.5895077010345],
+['50', -33.63151221530722, -70.58935749732967],
+['51', -33.63083330397405, -70.58938968383785],
+['52', -33.62993999143566, -70.58947551452633],
+['53', -33.62893947039418, -70.58958280288692],
+['54', -33.62809973840773, -70.5896149893951],
+['55', -33.62714386331217, -70.58975446426388],
+['56', -33.626134376229004, -70.58978665077206],
+['57', -33.625214213980975, -70.58986175262447],
+['58', -33.62423150558224, -70.58996904098507],
+['59', -33.62386522049338, -70.58963644706722],
+['60', -33.62382055147358, -70.5887674113464],
+['61', -33.62374908099371, -70.5876516123962],
+['62', -33.623632941337505, -70.58648216926571],
+['63', -33.62346319848143, -70.58539855682369],
+['64', -33.62319518276467, -70.58388579093929],
+['65', -33.622980769590995, -70.5826627036285],
+['66', -33.62279315762634, -70.58152544700619],
+['67', -33.622587677386804, -70.58010924064632], 
+['68', -33.6224179324715, -70.57906854354854],
+['69', -33.62230179102099, -70.57827460968014],
+['70', -33.622105243594255, -70.57726609909054],
+['71', -33.62193549772854, -70.57631123268123],
+['72', -33.62174788348792, -70.5752061625671],
+['73', -33.62162280710056, -70.57436931335445],
+['74', -33.62148879648405, -70.57373631202694],
+['75', -33.62089914729541, -70.57383287155147],
+['76', -33.62016654722814, -70.57395088874813],
+['77', -33.61931779545996, -70.57410109245296],
+['78', -33.61843329788018, -70.57417619430538],
+['79', -33.61766493907877, -70.57422983848568],
+['80', -33.616985918622, -70.5743585845184],
+['81', -33.61620861232104, -70.57447660171505],
+['82', -33.61537769093636, -70.574648263092],
+['83', -33.61453782677255, -70.57477700912472],
+['84', -33.614028543453195, -70.57455170356747],
+['85', -33.6134120385667, -70.57417619430538],
+['86', -33.61256322027602, -70.57429421150204],
+['87', -33.6117948091412, -70.57449805938717],
+['88', -33.611258704292794, -70.57461607658382],
+['89', -33.610365188802774, -70.57477700912472],
+['90', -33.609686110836215, -70.57495939933773],
+['91', -33.60919466949764, -70.57506668769832]
+];
+
+
+var icon_transMarker = {
+		name: 'transMarkers',
+		//animation: google.maps.Animation.DROP,
+		icon: 'img/icon/trans.png',
+		title: 'Origen',
+		visible: true
+}
+
+
+
+function transMarker() {
+	var myVar = setInterval(function(){myTimer2()},5000);
+}
+var i = 0;	
+function myTimer2() {
+	$.hideMarkers('transMarkers');
+	$.deleteMarkers('transMarkers');
+	transporte = $.addMarker(icon_transMarker);
+	transporte.show().setPosition(new google.maps.LatLng(locations[i][1], locations[i][2]));
+	map.panTo(transporte.position);
+	i++;
+}
+
+
+</script> 
+	
+
+
+	
+
+</body>
+</html>

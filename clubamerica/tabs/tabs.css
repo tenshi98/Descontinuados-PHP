@@ -1,0 +1,219 @@
+.tabberlive .tabbertabhide {
+ display:none;
+}
+
+.tabber {
+
+}
+
+.tabberlive {
+position: absolute; left: 5px; top: -30px; 
+width: 66.3865546218%;
+}
+ul.tabbernav
+{
+float: left; 
+font-size: 
+11px; 
+margin-right: 
+1px; 
+font-family: "Gotham-Medium", arial;
+
+}
+
+ul.tabbernav li
+{
+ list-style: none;
+ margin: 0;
+ display: inline;
+}
+
+ul.tabbernav li a
+{
+ padding: 3px 0.5em;
+ margin-left: 3px;
+ border-bottom: none;
+ background: #DDE;
+ text-decoration: none;
+}
+
+ul.tabbernav li a:link { background-color: #E0D3ED; float: left; padding: 10px 20px 8px; color: #5B3580; }
+/*ul.tabbernav li a:visited { color: #667; }*/
+
+ul.tabbernav li a:hover
+{
+ color: #000;
+ background: #AAE;
+ border-color: #227;
+}
+
+ul.tabbernav li.tabberactive a
+{
+background-color: #fff; color: #FF4606; border-top: 2px solid #FF4606; padding-top: 8px;
+}
+
+ul.tabbernav li.tabberactive a:hover
+{
+ color: #000;
+ background: white;
+ border-bottom: 1px solid white;
+}
+.tabberlive .tabbertab {
+position: absolute; 
+left: 0px; 
+top: 40px;
+float: left; 
+font-size: 11px; 
+margin-right: 1px; 
+font-family: "Gotham-Medium",arial;
+background-color: #fff; 
+padding: 10px 20px 8px; 
+color: #5B3580; 
+}
+
+
+.tabberlive .tabbertab h7 {
+ display:none;
+}
+.tabberlive .tabbertab h8 {
+ display:none;
+}
+
+/* Example of using an ID to set different styles for the tabs on the page */
+.tabberlive#tab1 {
+}
+.tabberlive#tab2 {
+}
+.tabberlive#tab2 .tabbertab {
+ height:200px;
+ overflow:auto;
+}
+.wrapper_casting { background: #EEEEEE; display: inline-block; width: 100%; padding: 0; margin-top: 40px; position: relative; float: left; }
+.wrapper_casting ul.tab_prin { position: absolute; left: 5px; top: -30px; }
+.wrapper_casting ul.tab_prin li, .tabs_md ul.tab_prin li, .cont_descarga>ul li { float: left; font-size: 11px; margin-right: 1px; font-family: "Gotham-Medium", arial; }
+.wrapper_casting ul.tab_prin li a, .tabs_md ul.tab_prin li a, .cont_descarga>ul li a { background-color: #E0D3ED; float: left; padding: 10px 20px 8px; color: #5B3580; }
+.wrapper_casting ul.tab_prin li.active_tab a, .sort_semana ul.princ_sem li.active a, .video_talento ul li.active a, .tabs_md ul.tab_prin li.active_tab a, .cont_descarga>ul li.active_tab a { background-color: #fff; color: #FF4606; border-top: 2px solid #FF4606; padding-top: 8px; }
+.wrapper_casting .cont_casting { padding: 1%; display: inline-block; width: 98%; float: left; background-color: #fff; }
+
+
+/* SEGUNDO TAB */
+
+
+/* $Id: example.css,v 1.5 2006/03/27 02:44:36 pat Exp $ */
+
+/*--------------------------------------------------
+  REQUIRED to hide the non-active tab content.
+  But do not hide them in the print stylesheet!
+  --------------------------------------------------*/
+.dos_tabberlive .dos_tabberdos_tabhide {
+ display:none;
+}
+
+/*--------------------------------------------------
+  .dos_tabber = before the dos_tabber interface is set up
+  .dos_tabberlive = after the dos_tabber interface is set up
+  --------------------------------------------------*/
+.dos_tabber {
+
+}
+
+.dos_tabberlive {
+position: absolute; left: 5px; top: -30px; 
+width: 66.3865546218%;
+}
+/*--------------------------------------------------
+  ul.dos_tabbernav = the dos_tab navigation list
+  li.dos_tabberactive = the active dos_tab
+  --------------------------------------------------*/
+ul.dos_tabbernav
+{
+float: left; 
+font-size: 
+11px; 
+margin-right: 
+1px; 
+font-family: "Gotham-Medium", arial;
+
+}
+
+ul.dos_tabbernav li
+{
+ list-style: none;
+ margin: 0;
+ display: inline;
+}
+
+ul.dos_tabbernav li a
+{
+ padding: 3px 0.5em;
+ margin-left: 3px;
+ border-bottom: none;
+ background: #DDE;
+ text-decoration: none;
+}
+
+ul.dos_tabbernav li a:link { background-color: #E0D3ED; float: left; padding: 10px 20px 8px; color: #5B3580; }
+/*ul.dos_tabbernav li a:visited { color: #667; }*/
+
+ul.dos_tabbernav li a:hover
+{
+ color: #000;
+ background: #AAE;
+ border-color: #227;
+}
+
+ul.dos_tabbernav li.dos_tabberactive a
+{
+background-color: #fff; color: #FF4606; border-top: 2px solid #FF4606; padding-top: 8px;
+}
+
+ul.dos_tabbernav li.dos_tabberactive a:hover
+{
+ color: #000;
+ background: white;
+ border-bottom: 1px solid white;
+}
+
+/*--------------------------------------------------
+  .dos_tabberdos_tab = the dos_tab content
+  Add style only after the dos_tabber interface is set up (.dos_tabberlive)
+  --------------------------------------------------*/
+.dos_tabberlive .dos_tabbertab {
+position: absolute; 
+left: 0px; 
+top: 40px;
+float: left; 
+font-size: 11px; 
+margin-right: 1px; 
+font-family: "Gotham-Medium",arial;
+background-color: #fff; 
+padding: 10px 20px 8px; 
+color: #5B3580; 
+ /* If you don't want the dos_tab size changing whenever a dos_tab is changed
+    you can set a fixed height */
+
+ /* height:200px; */
+
+ /* If you set a fix height set overflow to auto and you will get a
+    scrollbar when necessary */
+
+ /* overflow:auto; */
+}
+
+/* If desired, hide the heading since a heading is provided by the dos_tab */
+.dos_tabberlive .dos_tabbertab h7 {
+ display:none;
+}
+.dos_tabberlive .dos_tabbertab h8 {
+ display:none;
+}
+
+/* Example of using an ID to set different styles for the dos_tabs on the page */
+.dos_tabberlive#tab1 {
+}
+.dos_tabberlive#tab2 {
+}
+.dos_tabberlive#tab2 .dos_tabbertab {
+ height:200px;
+ overflow:auto;
+}

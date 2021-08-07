@@ -1,0 +1,26 @@
+
+	<table width="980" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="217" align="center" valign="middle" bgcolor="#FFFFFF"><img src="http://<?=$nombreurl?>/images/logo_jootes.png" width="189" height="107" class="logo_flot" /></td>
+        <td width="763">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="celda_neg_ama">
+          <tr>
+            <td align="center" valign="middle">
+			<table width="95%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="10%" align="center" valign="middle"></td>
+                <td width="20" align="center" valign="middle"><input name="button2" type="submit" class="google_bot_txt_bco" id="button2" onclick="javascript:window.location.href='http://<?=$nombreurl?>/administracion.php';" value="Administraci&oacute;n" /></td>
+                <td width="20%" align="center" valign="middle"><input name="button3" type="submit" class="google_bot_txt_bco" id="button3" onclick="javascript:window.location.href='http://<?=$nombreurl?>/ultimas_llamadas.php';" value="Mis Llamadas" /></td>
+                <td width="20%" align="center" valign="middle"><input name="button4" type="submit" class="google_bot_txt_bco" id="button4" onclick="javascript:window.open('pop_descarga.php','Telefonía','height=400px,width=480px,help=no,scrollbars=no,menubar=no,status=no,titlebar=no,toolbar=no');" value="Descarga" /></td>
+                <td width="20%" align="center" valign="middle"><input name="button3" type="submit" class="google_bot_txt_bco" id="button3" onclick="javascript:window.location.href='http://<?=$nombreurl?>/sube_foto.php';" value="Sube tu Foto" /></td>
+                <td width="10%" align="left" valign="middle"><input name="button" type="submit" class="google_bot_txt_bco" id="button" onclick="javascript:window.location.href='http://<?=$nombreurl?>/index.php?cierro=si';" value="Cerrar Sesi&oacute;n" />
+               
+                </td> 
+              </tr>
+            </table>
+            </td>
+          </tr>
+        </table>
+		</td>
+      </tr>
+    </table>

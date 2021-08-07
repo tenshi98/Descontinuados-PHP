@@ -1,0 +1,108 @@
+/***********************************************************************************************************
+* Facebook Style Auto Scroll Pagination using jQuery and PHP
+* Written by Vasplus Programming Blog
+* Website: www.vasplus.info
+* Email: info@vasplus.info
+
+**********************************Copyright Information*****************************************************
+* This script has been released with the aim that it will be useful.
+* Please, do not remove this copyright information from the top of this page.
+* This script must not be sold.
+* All Copy Rights Reserved by Vasplus Programming Blog
+*************************************************************************************************************/
+
+#vpb_loading_box {
+	padding: 10px 20px;
+	display: block;
+	text-align: center;
+	box-shadow: inset 0px -45px 30px -40px rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+	margin: 20px 0;
+	font-size: 18px;
+	font-family: "museo-sans", sans-serif;
+	border: 1px solid #ddd;
+	margin-right: 1px;
+	font-weight: bold;
+	cursor: pointer;
+	position: relative;
+	display:none;
+}
+
+#vpb_loading_box:hover {
+	box-shadow: inset 0px 45px 30px -40px rgba(0, 0, 0, 0.05);
+}
+
+#loaded_data {
+	width: 90%;
+	margin: 0px auto;
+}
+
+#loaded_data h2 {
+	font-family: "chaparral-pro", sans-serif;
+	color: #444;
+	font-size: 24px;
+	margin-bottom:0px;
+}
+
+#loaded_data p {
+	font-size: 14px;
+	line-height: 24px;
+	font-family: "museo-sans", sans-serif;
+	text-align: justify;	
+}
+
+#loaded_data hr {
+	border-bottom: 1px solid #eee;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+#vpbconetnts { 
+padding:5px;
+padding-top:5px;
+width:100%;
+border:1px solid #E2E2E2;
+border-bottom:0px solid #E2E2E2;
+background:#F9F9F9;
+font: 0.8125em/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*font-family:Verdana, Geneva, sans-serif; font-size:10px;*/
+cursor:pointer;
+
+}
+#vpbconetnts:hover { background-color:#FFF; }
+
+.vpb_show_more_or_the_end 
+{
+	text-decoration:none;
+	padding:10px;
+	width:90%;
+	background: #EAEAEA;
+	color:blue;
+	text-align:center;
+	border:1px solid #CCC;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:12px;
+	cursor:pointer;
+}
+
+.vpb_show_more_or_the_end:hover 
+{
+	background: #E2E2E2;
+	color:blue;
+}
+
+
+.vpb_show_more_or_the_ends 
+{
+	text-decoration:none;
+	padding:10px;
+	width:90%;
+	background:#E9E9E9;
+	color:black;
+	text-align:center;
+	border-left:0px solid #fff;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:12px;
+	cursor:pointer;
+}

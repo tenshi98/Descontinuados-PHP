@@ -1,0 +1,184 @@
+@charset "utf-8";
+body, html{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	
+}
+.chat_area {
+	height: 85%;
+	width: 100%;
+
+}
+.chat_area #chat_area {
+	height: 100%;
+	width: 100%;
+}
+#chat{
+	margin: 0;
+	width: 100%;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #fafafa;
+	height: 85%;
+}
+#chat h2{
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #333;
+	text-decoration: none;
+	text-align: center;
+	margin-bottom: 10px;
+}
+		
+		
+#caja-mensaje{
+	margin: 0 auto;
+
+	width: 100%;
+}
+#caja-mensaje input{
+	width: 95%;
+    height: 30px;
+    background: none repeat scroll 0% 0% #FCFCFC;
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1) inset;
+    font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    color: #888;
+    font-size: 16px;
+}
+#caja-mensaje button{
+background: none repeat scroll 0% 0% #654187 !important;
+cursor: pointer !important;
+width: 95% !important;
+margin-top: 5px !important;
+border-radius: 3px !important;
+border: 0px none !important;
+box-shadow: 0px 15px 30px 0px rgba(255, 255, 255, 0.1) inset !important;
+font-family: "PT Sans",Helvetica,Arial,sans-serif !important;
+font-size: 16px !important;
+font-weight: 400 !important;
+color: #FFF !important;
+text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) !important;
+transition: all 0.2s ease 0s !important;
+padding-top: 11px;
+padding-right: 0px;
+padding-bottom: 10px;
+float: left;
+}
+#chat #messages{
+	height: 380px;
+	overflow: hidden;
+	overflow-y: scroll;
+	width: 95%;
+    background: none repeat scroll 0% 0% #FCFCFC;
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1) inset;
+    font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    color: #888;
+    font-size: 16px;
+	height: 100%;
+}
+
+#chat #messages .mensaje-autor{
+	margin-bottom: 20px;
+
+}
+#chat #messages .mensaje-autor img, #chat #mensajes .mensaje-amigo img{
+	display: inline-block;
+	vertical-align: top;
+	height: 45px;
+	width: 45px;
+}
+#chat #messages .mensaje-autor .contenido{
+	background-color: #eaeaea;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+	display: inline-block;
+	font-size: 13px;
+	padding: 15px;
+	vertical-align: top;
+	width: 68%;
+}
+#chat #messages .mensaje-autor .fecha{
+	color: #777;
+	font-style: italic;
+	font-size: 13px;
+	text-align: right;
+	margin-right: 35px;
+	margin-top: 10px;
+}
+#chat #messages .mensaje-autor .flecha-izquierda{
+	display: inline-block;
+	margin-right: -6px;
+	margin-top: 10px;
+	width: 0;
+	height: 0;
+	border-top: 0px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid #eaeaea;
+}
+#chat #messages .mensaje-amigo{
+	margin-bottom: 20px;
+}
+#chat #messages .mensaje-amigo .contenido{
+	background-color: #3990BF;
+	border-radius: 5px;
+	color: white;
+	display: inline-block;
+	font-size: 13px;
+	padding: 15px;
+	vertical-align: top;
+	width: 68%;
+}
+#chat #messages .mensaje-amigo .flecha-derecha{
+	display: inline-block;
+	margin-left: -6px;
+	margin-top: 10px;
+	width: 0; 
+	height: 0; 
+	border-top: 0px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid #3990BF;
+}
+#chat #messages .mensaje-amigo img, 
+#chat #mensajes .mensaje-autor img{
+	border-radius: 5px;
+	height: 45px;
+	width: 45px;
+}
+#chat #messages .mensaje-amigo .fecha{
+	color: #777;
+	font-style: italic;
+	font-size: 13px;
+	text-align: left;
+	
+	margin-top: 10px;
+}
+#make-call{
+	background: none repeat scroll 0% 0% #654187 !important;
+	cursor: pointer !important;
+	width: 95% !important;
+	margin-top: 5px !important;
+	border-radius: 3px !important;
+	border: 0px none !important;
+	box-shadow: 0px 15px 30px 0px rgba(255, 255, 255, 0.1) inset !important;
+	font-family: "PT Sans", Helvetica, Arial, sans-serif !important;
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	color: #FFF !important;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) !important;
+	transition: all 0.2s ease 0s !important;
+	padding-top: 11px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+}
+

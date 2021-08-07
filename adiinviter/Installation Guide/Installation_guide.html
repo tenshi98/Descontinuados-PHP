@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Installation Guide - Standalone Version</title>
+
+<link rel="stylesheet" type="text/css" href="assets/installation.css">
+<script type="text/javascript">
+var opened_block=null;
+var opened_link = null;
+function mn_clicked(m,id)
+{
+	var t=null;
+	if(opened_block) {
+		opened_block.style.display = 'none';
+	}
+	if(opened_link != null)
+	{
+		opened_link.className = opened_link.className.replace(/\s?current/i,'');
+	}
+	switch(id)
+	{
+		case 'introduction':
+			t=document.getElementById('introduction_div');
+			opened_link = document.getElementById('introduction_lnk');
+		break;
+		case 'uploading':
+			t=document.getElementById('uploading_div');
+			opened_link = document.getElementById('uploading_lnk');
+		break;
+		case 'installation':
+			t=document.getElementById('installation_div');
+			opened_link = document.getElementById('installation_lnk');
+		break;
+		case 'integration':
+			t=document.getElementById('integration_div');
+			opened_link = document.getElementById('integration_lnk');
+		break;
+		case 'configuration':
+			t=document.getElementById('configuration_div');
+			opened_link = document.getElementById('configuration_lnk');
+		break;
+		/*case 'oauth_applications':
+			t=document.getElementById('oauth_applications_div');
+			opened_link = document.getElementById('oauth_applications_lnk');
+		break;*/
+		case 'test_run':
+			t=document.getElementById('test_run_div');
+			opened_link = document.getElementById('test_run_lnk');
+		break;
+	}
+	if(t)
+	{
+		t.style.display = 'block';
+		opened_block = t;
+		opened_link.className += ' current';
+	}
+	return false;
+}
+</script>
+</head>
+<body>
+
+<table cellpadding="0" cellspacing="0" width="100%" style="height:100%;"><tr><td style="vertical-align:top;">
+
+
+<div class="tp_banner"><center>
+	<div class="pg_area">
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td style="vertical-align:middle;"><a href="https://www.adiinviter.com"><img src="https://www.adiinviter.com/images/11/adiinviter_pro_logo.png"></a></td>
+				<td class="tp_lnk_out">
+					<a class="hover-green" href="https://www.adiinviter.com/support">Contact Support</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</center></div>
+
+<div class="mn_banner"><center>
+	<div class="pg_area">
+		<table cellpadding="0" cellspacing="0" width="100%" class="lft_mnu">
+			<tr>
+				<td><a href="#" class="current" id="introduction_lnk" onclick="return mn_clicked(this,'introduction');">Introduction</a></td>
+				<td class="vsep"></td>
+				<td><a href="#" id="uploading_lnk" onclick="return mn_clicked(this,'uploading');">Uploading</a></td>
+				<td class="vsep"></td>
+				<td><a href="#" id="installation_lnk" onclick="return mn_clicked(this,'installation');">Installation</a></td>
+				<td class="vsep"></td>
+				<td><a href="#" id="integration_lnk" onclick="return mn_clicked(this,'integration');">Integration</a></td>
+				<td class="vsep"></td>
+				<td><a href="#" id="configuration_lnk" onclick="return mn_clicked(this,'configuration');">Configuration</a></td>
+				<td class="vsep"></td>
+				<td><a href="#" id="test_run_lnk" onclick="return mn_clicked(this,'test_run');">Run</a></td>
+			</tr>
+		</table>
+	</div>
+</center></div>
+
+
+<div class="rt_panel" style="display:block;" id="introduction_div">
+<center><div class="pg_area doc_area">
+	<div class="dc_head">Introduction</div>
+	<div class="dc_cnt">This guide will help you through the installation process and get AdiInviter Pro running on your website.</div>
+	<div class="dc_cnt">Before you begin, you will need an FTP client, if you do not have one, some popular solutions include <a class="dc_link" href="https://filezilla-project.org/">FileZilla</a> (free) or <a class="dc_link" href="http://www.cuteftp.com/trial.aspx">CuteFTP</a> (trial).</div>
+	<div class="dc_cnt">This guide assumes that you have successfully downloaded the latest release of AdiInviter Pro and have the zip file "unzipped" and ready to go. If not, you can download the package from our customer downloads section.</div>
+	<div class="dc_cnt">The instructions will term the zip file you have downloaded as "adiInviter_pro_v1_1_standalone.zip".</div>
+
+	<div class="dc_head dc_h_tp">Developer Recommendations</div>
+	<div class="dc_cnt">1. This guide is best viewed in <a href="http://www.google.com/intl/en_uk/chrome/browser/" class="dc_link">Google Chrome</a> browser (in Windows). Mac users, you won't find a difference.</div>
+	<div class="dc_cnt">2. We recommend <a href="http://www.sublimetext.com" class="dc_link">Sublime Text Editor</a> for coding and editing files because we use it too and its really awesome.</div>
+	<div class="dc_cnt">3. Before You proceed with the installation, you might wanna grab yourself a cup of coffee at this moment.</div>
+
+	<div style="text-align:right;margin-top:60px;">
+		<a href="#" class="dc_next_btn" onclick="return mn_clicked(this,'uploading');"><span>Uploading</span></a>
+	</div>
+</div></center>
+</div>
+
+<div class="rt_panel" id="uploading_div">
+<center><div class="pg_area doc_area">
+	<div class="dc_head">Uploading</div>
+	<div class="dc_cnt">At this point, you should have the zip archive "adiInviter_pro_v1_1_standalone.zip".</div>
+	<div class="dc_cnt">Using your FTP client, upload/copy the contents of "Upload" folder inside product zip to your website root (Do not copy "Upload" folder itself).</div>
+	<div class="dc_cnt">The "webroot" directory is usually 'public_html' or 'www', but this varies from server to server so if you're unsure, contact your hosting provider.</div>
+	<div class="dc_cnt">You can upload the contents in any sub directory on your server. Please make sure to follow your sub directory upload URL while referring to this documentation.</div>
+	<div class="dc_cnt"><span class="dc_note">Note -</span> After uploading files to your server, assign "Write Permission" to following file on your server -</div>
+	<div class="embed_cd_out embed_cd_single"><span class="ec_quotes">root</span>/find_friends/adi_admincp/config.php</div>
+	<div style="margin-top:60px;">
+	<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td  style="text-align:left;">
+				<a href="#" class="dc_prev_btn" onclick="return mn_clicked(this,'introduction');"><span>Introduction</span></a>
+			</td>
+			<td  style="text-align:right;">
+				<a href="#" class="dc_next_btn" onclick="return mn_clicked(this,'installation');"><span>Installation</span></a>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div></center>
+</div>
+
+
+<div class="rt_panel" id="installation_div">
+<center><div class="pg_area doc_area">
+	<div class="dc_head">Installation</div>
+	<div class="dc_cnt dc_cnt_blk">At this point, you should have uploaded AdiInviter Pro package files to your server.</div>
+
+	<div class="dc_subhead">Step 1</div>
+	<div class="dc_cnt">Visit following URL in your web browser (replace yourdomain.com with your website address) -</div>
+	<div class="embed_cd_out embed_cd_single">http://www.<span class="ec_quotes">yourdomain.com</span>/find_friends/adi_admincp/index.php</div>
+	<div class="dc_cnt dc_cnt_blk">You will be asked to set "Username" and "Password" for AdiInviter Pro Admin Control Panel.</div>
+
+	<div class="dc_subhead">Step 2</div>
+	<div class="dc_cnt">In the next step, you will be asked to enter "Database Connection Details".</div>
+	<div class="dc_cnt"><span class="dc_note">Note -</span> Enter connection details for your website database. Do not create a new or separate database for AdiInviter Pro.</div>
+	<div class="dc_cnt dc_cnt_blk">If the installation was completed successfully, you will see a message saying "AdiInviter Pro installed successfully" .</div>
+
+	<div class="dc_subhead">Step 3</div>
+	<div class="dc_cnt">Using your FTP client, remove the installer file located at following location on your server -</div>
+	<div class="embed_cd_out embed_cd_single">http://www.<span class="ec_quotes">yourdomain.com</span>/find_friends/adi_admincp/db_installer.php</div>
+	<div style="margin-top:60px;">
+	<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td  style="text-align:left;">
+				<a href="#" class="dc_prev_btn" onclick="return mn_clicked(this,'uploading');"><span>Uploading</span></a>
+			</td>
+			<td  style="text-align:right;">
+				<a href="#" class="dc_next_btn" onclick="return mn_clicked(this,'integration');"><span>Integration</span></a>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div></center>
+</div>
+
+
+<div class="rt_panel" id="integration_div">
+<center><div class="pg_area doc_area">
+	<div class="dc_head">Integration</div>
+	<div class="dc_cnt">Login to AdiInviter Pro Admin Control Panel and go to "DATABASE INTEGRATION" tab. Specify database table details for various systems in your website.</div>
+	<div class="dc_cnt dc_cnt_blk"><span class="dc_note">Note -</span> If you do not have any of the systems in your website under "DATABASE INTEGRATION" tab, please leave their fields blank (For e.g. User System, Usergroup System, Friends/Followers/Subscribers system etc).</div>
+	<div class="dc_cnt">If you have specified "User Table Details" under "DATABASE INTEGRATION" tab, then perform following steps - </div>
+	<div class="dc_cnt">1. Using your FTP client, download the following file from your server and open it in any text editor -</div>
+	<div class="embed_cd_out embed_cd_single dc_cnt_blk">http://www.<span class="ec_quotes">yourdomain.com</span>/find_friends/adiinviter_platform_settings.php</div>
+
+	<div class="dc_cnt">2. Search for following PHP variable -</div>
+	<div class="embed_cd_out embed_cd_single">$default_usergroupid</div>
+	<div class="dc_cnt dc_cnt_blk">Set above variable to not loggedin or guest usergroup id in your website. By default it is set to 0 (zero).</div>
+
+	<div class="dc_cnt">3. Search for following PHP function in "adiinviter_platform_settings.php" file -</div>
+	<div class="embed_cd_out embed_cd_single">get_loggedin_userid()</div>
+	<div class="dc_cnt dc_cnt_blk">Write your own code under "get_loggedin_userid()" function to return currently loggedin user's userid in your website. For not loggedin users, return the value 0 (zero).</div>
+
+	<div style="margin-top:60px;"><table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td  style="text-align:left;">
+				<a href="#" class="dc_prev_btn" onclick="return mn_clicked(this,'installation');"><span>Installation</span></a>
+			</td>
+			<td  style="text-align:right;">
+				<a href="#" class="dc_next_btn" onclick="return mn_clicked(this,'configuration');"><span>Configuration</span></a>
+			</td>
+		</tr>
+	</table></div>
+</div></center>
+</div>
+
+
+
+
+<div class="rt_panel dc_oauth_blk2" id="configuration_div">
+<center><div class="pg_area doc_area">
+	<div class="dc_head">Configuration</div>
+	<div class="dc_cnt">Login to AdiInviter Pro Admin Control Panel, go to "GLOBAL SETTINGS" tab and specify your website details.</div>
+	<div class="dc_cnt dc_cnt_blk">Go to "INVITATION MAIL" tab. Customize various invitation templates to suit your website design and niche. </div>
+	<div class="dc_head">Setup OAuth Applications</div>
+	<div class="dc_cnt dc_cnt_blk">Refer to following steps to setup and obtain OAuth application keys for required services.</div>
+</div></center>
+
+<div class="dc_oauth_blk1">
+	<center><div class="pg_area doc_area">
+		<div class="dc_subhead">Gmail</div>
+		<div class="dc_cnt">1. Visit following URL in your web browser and login with your Google account.</div>
+		<div class="embed_cd_out embed_cd_single dc_cnt_blk">https://console.developers.google.com/project</div>
+		<div class="dc_cnt dc_cnt_blk">2. Click on "Create Project" button and specify "Project Name" (This can be your website name) and "Project Id". Click on "Create" button.</div>
+		<div class="dc_cnt dc_cnt_blk">3. Click on your project. Go to "APIS & AUTH" menu under left navigation bar (Located at extreme left side). Under "APIS & AUTH", click on "APIs" menu. </div>
+		<div class="dc_cnt dc_cnt_blk">4. You will see a huge list of Google APIs. Look for "Contacts API" there and turn it ON (ON/OFF button is located at extreme right side). </div>
+		<div class="dc_cnt dc_cnt_blk">5. Under "APIS & AUTH" menu (Located at extreme left side), click on "Credentials" menu. Click on "Create new Client ID" button and specify following settings - </div>
+		<div class="dc_cnt">- Set "APPLICATION TYPE" to "Web application".</div>
+		<div class="dc_cnt">- Ignore "AUTHORIZED JAVASCRIPT ORIGINS" option.</div>
+		<div class="dc_cnt">- Under "AUTHORIZED REDIRECT URI", specify following URIs (replace yourdomain.com with your website address) -</div>
+		<div class="embed_cd_out dc_multiple_lns">http://www.<span class="ec_quotes">yourdomain.com</span>/find_friends/adi_js.php?adi_do=oauth_login&adi_service=gmail<br>
+  http://<span class="ec_quotes">yourdomain.com</span>/find_friends/adi_js.php?adi_do=oauth_login&adi_service=Gmail
+		</div>
+		<div class="dc_cnt"><span class="dc_note">Note -</span> Please note that "http://" or "https://" is required in above URIs. We are specifying your website URIs with and without www. Enter one URI per line.</div>
+		<div class="dc_cnt dc_cnt_blk">- Click on "Create Client ID" button.</div>
+		<div class="dc_cnt dc_cnt_blk">6. Under "Client ID for web application" details, copy "CLIENT ID" and "CLIENT SECRET" (Make sure you are not selecting any blank spaces around those keys while copying).</div>
+		<div class="dc_cnt dc_cnt_blk">Go to "OAUTH APPLICATIONS TAB" under AdiInviter Pro Admin Control Panel and specify above keys under Google Services "Client ID" and "Client Secret".</div>
+		<div class="dc_cnt">7. Lets go back to Google Developers Console (Where we created above application) and go to "Consent Screen" menu under "APIS & AUTH" menu (Located at extreme left side). Specify following details there -</div>
+		<div class="dc_cnt">- Specify your email address under "EMAIL ADDRESS" field.</div>
+		<div class="dc_cnt">- "PRODUCT NAME" can be your website name.</div>
+		<div class="dc_cnt">- Specify "HOMEPAGE URL" and "LOGO".</div>
+		<div class="dc_cnt">- Specify working URLs under "PRIVACY POLICY URL" and "TERMS OF SERVICE URL" even though they are optional. If you specify wrong or blank URLs here, the application might not work properly.</div>
+		<div class="dc_cnt">- You can ignore "GOOGLE+ PAGE" option if your website does not have page on Google+.</div>
+		<div class="dc_cnt dc_cnt_blk">- Click on "Save" button.</div>
+	</div></center>
+</div>
+
+<div class="dc_oauth_blk2">
+	<center><div class="pg_area doc_area">
+		<div class="dc_subhead">Yahoo</div>
+		<div class="dc_cnt">1. Visit following URL in your web browser and login with your Yahoo account.</div>
+		<div class="embed_cd_out embed_cd_single ">https://developer.apps.yahoo.com/dashboard/createKey.html</div>
+		<div class="dc_cnt">Specify following settings there -</div>
+		<div class="dc_cnt">- "Application Name" can be your website name.</div>
+		<div class="dc_cnt">- Set "Application Type" option to "Web-based".</div>
+		<div class="dc_cnt">- Write short description about your website under "Description" field.</div>
+		<div class="dc_cnt">- Specify "Home Page URL" as your website's domain URL.</div>
+		<div class="dc_cnt">- Under "Access Scopes" option, choose "This app requires access to private user data".</div>
+		<div class="dc_cnt">- Under "Callback Domain" field, specify your domain URL. You can enter same value as "Home Page URL".</div>
+		<div class="dc_cnt">- Under "Select APIs for private user data access", check/tick "Contacts" and choose "Read" option.</div>
+		<div class="dc_cnt">- Do not check/tick "Premium API services" option.</div>
+		<div class="dc_cnt dc_cnt_blk">- Check/Tick "I have read and agree to the Yahoo! Developer Network Terms of Use." and click on "Create Project" button.</div>
+		
+		<div class="dc_cnt">2. Copy "Consumer Key" and "Consumer Secret" (You have to click and then copy these keys. Make sure there are no dots "..." in your keys).</div>
+		<div class="dc_cnt dc_cnt_blk">Go to "OAUTH APPLICATIONS TAB" under AdiInviter Pro Admin Control Panel and specify above keys under Yahoo "Consumer Key" and "Consumer Secret" fields.</div>
+
+		<div class="dc_cnt">3. Lets go back to Yahoo Developer Network (Where we created above application). Click on "Verify Domain" button next to your "Callback Domain".</div>
+		<div class="dc_cnt dc_cnt_blk">Click on "Verify" button next to your domain and follow the instructions provided in popup.</div>
+
+	</div></center>
+</div>
+
+<div class="dc_oauth_blk1">
+	<center><div class="pg_area doc_area">
+		<div class="dc_subhead">Outlook, Hotmail, Live, MSN</div>
+		<div class="dc_cnt">1. Visit following URL in your web browser and login with your outlook account.</div>
+		<div class="embed_cd_out embed_cd_single ">https://account.live.com/developers/applications/index</div>
+		<div class="dc_cnt">Click on "Create application" link. Specify "Application name" (this can be your website name) and click on "I accept" button.</div>
+		<div class="dc_cnt dc_cnt_blk">Specify all Basic Settings which are pretty much self explanatory. Make sure to provide working URLs for "Terms of service URL" and "Privacy URL". If you provide blank or non-working URLs, the application might not work.</div>
+
+		<div class="dc_cnt">2. Go to "API Settings" under left navigation menu and specify following settings -</div>
+		<div class="dc_cnt">- Choose "No" under "Mobile or desktop client app" setting.</div>
+		<div class="dc_cnt">- Choose "Yes" under "Restrict JWT issuing" setting.</div>
+		<div class="dc_cnt">- Under "Redirect URLs" setting, specify following URL replacing yourdomain.com with your website address:</div>
+		<div class="embed_cd_out embed_cd_single ">http://www.<span class="ec_quotes">yourdomain.com</span>/find_friends/hotmail_redirect.php</div>
+		<div class="dc_cnt dc_cnt_blk">- Click on "Save" button.</div>
+
+		<div class="dc_cnt">3. Go to "App Settings" under left navigation menu and copy "Client ID" & "Client secret (v1)" keys. Make sure you are not selecting any blank spaces around those keys while copying.</div>
+		<div class="dc_cnt dc_cnt_blk">Go to "OAUTH APPLICATIONS TAB" under AdiInviter Pro Admin Control Panel and specify above keys under Outlook "Client ID" and "Client secret (v1)" fields.</div>
+	</div></center>
+</div>
+
+<div class="dc_oauth_blk2">
+	<center><div class="pg_area doc_area">
+		<div class="dc_subhead">Twitter</div>
+		<div class="dc_cnt">1. Visit following URL in your web browser and login with your Twitter account.</div>
+		<div class="embed_cd_out embed_cd_single ">https://apps.twitter.com</div>
+		<div class="dc_cnt">Click on "Create New App" button and specify following settings -</div>
+		<div class="dc_cnt">- Specify name for your application under "Name" field. This can be your website name.</div>
+		<div class="dc_cnt">- Write short description about your website under "Description" field.</div>
+		<div class="dc_cnt">- Under "Website" field, specify your website root domain URL.</div>
+		<div class="dc_cnt">- Under "Callback URL" field, specify following URL replacing yourdomain.com with your website address -</div>
+		<div class="embed_cd_out embed_cd_single ">http://www.<span class="ec_quotes">yourdomain.com</span>/find_friends/adi_js.php?adi_do=oauth_login&adi_service=twitter</div>
+		<div class="dc_cnt dc_cnt_blk">- Click on "Create your Twitter application" button.</div>
+
+		<div class="dc_cnt dc_cnt_blk">2. Go to "Permissions" tab and set "Access" setting to "Read and Write". Click on "Update settings" button.</div>
+		<div class="dc_cnt dc_cnt_blk">3. Go to "API Keys" tab and copy "API key" & "API secret". Make sure you are not selecting any blank spaces around those keys while copying.</div>
+		<div class="dc_cnt dc_cnt_blk">Go to "OAUTH APPLICATIONS TAB" under AdiInviter Pro Admin Control Panel and specify above keys under Twitter "API key" and "API secret" fields.</div>
+	</div></center>
+</div>
+
+<div class="dc_oauth_blk1">
+	<center><div class="pg_area doc_area">
+		<div class="dc_subhead">Linkedin</div>
+		<div class="dc_cnt">1. Visit following URL in your web browser and login with your Linkedin account.</div>
+		<div class="embed_cd_out embed_cd_single">https://www.linkedin.com/secure/developer?newapp=s</div>
+		<div class="dc_cnt">- Specify "Company Info" settings according to your requirements.</div>
+		<div class="dc_cnt">- Under "Application Info" settings, Specify "Application Name" (this can be your website name).</div>
+		<div class="dc_cnt">- Write short description about your website under "Description" field.</div>
+		<div class="dc_cnt">- Specify your website URL at "Website URL" field.</div>
+		<div class="dc_cnt">- Under "Application Use", select "Networking".</div>
+		<div class="dc_cnt">- Ignore "Application Developers" field if you do not want to add any additional developers.</div>
+		<div class="dc_cnt">- Set "Live Status" option to "Live".</div>
+		<div class="dc_cnt">- Specify "Contact Info" settings according to your requirements.</div>
+		<div class="dc_cnt">- For "Default Scope" setting under "OAuth User Agreement" settings, check/tick "r_basicprofile", "r_network", "w_messages"</div>
+		<div class="dc_cnt">- For "OAuth 2.0 Redirect URLs", "OAuth 1.0 Accept Redirect URL" and "OAuth 1.0 Cancel Redirect URL",  specify following URL replacing yourdomain.com with your website address -</div>
+		<div class="embed_cd_out embed_cd_single">http://www.<span class="ec_quotes">yourdomain.com</span>/find_friends/adi_js.php?adi_do=oauth_login&adi_service=linkedin</div>
+		<div class="dc_cnt">- Specify your website logo URL under "App Logo Secure URL" field.</div>
+		<div class="dc_cnt">- Under "Agreement Language" option, select "Browser Locale Setting".</div>
+		<div class="dc_cnt">- Ignore "JavaScript API Domains" and "OS X Application Bundle Id" options.</div>
+		<div class="dc_cnt dc_cnt_blk">- Click on "Add Application" button.</div>
+
+		<div class="dc_cnt dc_cnt_blk">2. Click on your application and copy "API Key" & "Secret Key" specified under "OAuth Keys". Make sure you are not selecting any blank spaces around those keys while copying.</div>
+
+		<div class="dc_cnt dc_cnt_blk">Go to "OAUTH APPLICATIONS TAB" under AdiInviter Pro Admin Control Panel and specify above keys under Linkedin "API Key" and "Secret Key" fields.</div>
+	</div></center>
+</div>
+
+<div class="dc_oauth_blk2">
+	<center><div class="pg_area doc_area">
+		<div class="dc_subhead">MailChimp</div>
+		<div class="dc_cnt">1. Visit following URL in your web browser and login with your MailChimp account.</div>
+		<div class="embed_cd_out embed_cd_single">https://us4.admin.mailchimp.com/account/oauth2/</div>
+		<div class="dc_cnt">- Click on "Register An App" button. Specify following settings there:</div>
+		<div class="dc_cnt">- Specify "App name" (this can be your website name).</div>
+		<div class="dc_cnt">- Write short description about your website under "Description" field.</div>
+		<div class="dc_cnt">- Specify your company or organisation name under "Company / organisation" field.</div>
+		<div class="dc_cnt">- Under "App website" field, specify your website URL.</div>
+		<div class="dc_cnt">- Upload your website logo under "Upload a logo" field.</div>
+		<div class="dc_cnt">- For "Redirect uri" field under "Functional details", specify following URL replacing yourdomain.com with your website address -</div>
+		<div class="embed_cd_out embed_cd_single">http://www.<span class="ec_quotes">yourdomain.com</span>/find_friends/adi_js.php?adi_do=oauth_login&adi_service=mailchimp</div>
+		<div class="dc_cnt dc_cnt_blk">- Click on "Create" button.</div>
+
+		<div class="dc_cnt">2. Click on "Edit" button next to your application and copy "client_id" & "Client secret" keys.</div>
+		<div class="dc_cnt dc_cnt_blk">Go to "OAUTH APPLICATIONS TAB" under AdiInviter Pro Admin Control Panel and specify above keys under MailChimp "client_id" and "Client secret" fields.</div>
+
+		<div class="dc_cnt">3. Lets go back to MailChimp Developer Network (Where we created above application). Click on "Extras" drop down menu and select "API keys".</div>
+		<div class="dc_cnt dc_cnt_blk">Click on "Create A Key" button and copy "API Key".</div>
+		<div class="dc_cnt dc_cnt_blk">Go to "OAUTH APPLICATIONS TAB" under AdiInviter Pro Admin Control Panel and specify above key under MailChimp "API Key" field.</div>
+
+	<div style="margin-top:60px;"><table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td  style="text-align:left;">
+				<a href="#" class="dc_prev_btn" onclick="return mn_clicked(this,'integration');"><span>Integration</span></a>
+			</td>
+			<td  style="text-align:right;">
+				<a href="#" class="dc_next_btn" onclick="return mn_clicked(this,'test_run');"><span>Run</span></a>
+			</td>
+		</tr>
+	</table></div>
+	</div></center>
+</div>
+
+</div>
+
+
+<div class="rt_panel" id="test_run_div">
+
+<div class="dc_oauth_blk2">
+<center><div class="pg_area doc_area">
+	<div class="dc_head">Embed and Run</div>
+	<div class="dc_cnt">At this point, you have successfully finished installing, integrating and configuring AdiInviter Pro for your website.</div>
+	<div class="dc_cnt">You may want to take a look at various system configuration tabs under AdiInviter Pro Admin Control Panel.</div>
+	<div class="dc_cnt">Go to "GLOBAL SETTINGS" tab under Admin Control Panel and turn "ON" AdiInviter Pro system.</div>
+	<div class="dc_cnt dc_cnt_blk">Following instructions will show you how to embed and run various AdiInviter Pro interfaces into your website -</div>
+</div></center>
+</div>
+
+<div class="dc_oauth_blk1">
+<center><div class="pg_area doc_area">
+	<div class="dc_subhead">Initial Modification</div>
+	<div class="dc_cnt">1. If you do not have <span class="code_font ec_orange">&lt;meta&gt;</span> tag added to your web page, add following line under <span class="code_font ec_orange">&lt;head&gt;</span> tag of your web page -</div>
+		<div class="embed_cd_out embed_cd_single">
+			&lt;meta http-equiv=<span class="ec_quotes">"Content-Type"</span> content=<span class="ec_quotes">"text/html; <span class="ec_orange">charset=utf-8</span>"</span>&gt;
+		</div>
+		<div class="dc_cnt dc_cnt_blk"><span class="dc_note">Note -</span> If you already have <span class="code_font ec_orange">&lt;meta&gt;</span> tag added to your web page, then make sure <span class="ec_orange code_font">"charset"</span> is set to <span class="ec_orange code_font">"utf-8"</span>.</div>
+
+	<div class="dc_cnt">2. Add following code under <span class="code_font ec_orange">&lt;head&gt;</span> tag of your web page -</div>
+	<div class="embed_cd_out dc_multiple_lns">
+	&lt;link rel=<span class="ec_quotes">"stylesheet"</span> type=<span class="ec_quotes">"text/css"</span> href=<span class="ec_quotes">"/find_friends/adi_css.php"</span>&gt;<br>
+	<span class="ec_orange">&lt;script type="text/javascript" src="/find_friends/adiinviter/js/jquery.min.js"&gt;&lt;/script&gt;</span><br>
+	&lt;script type=<span class="ec_quotes">"text/javascript"</span> src=<span class="ec_quotes">"/find_friends/adiinviter/js/adiinviter.js"</span>&gt;&lt;/script&gt;<br>
+	&lt;script type=<span class="ec_quotes">"text/javascript"</span> src=<span class="ec_quotes">"/find_friends/adi_params.php"</span>&gt;&lt;/script&gt;<br>
+	</div>
+	<div class="dc_subhead">Caveats -</div>
+	<div class="dc_cnt">If you have uploaded AdiInviter Pro under sub directory (not your website root like "public_html" or "www"), then update "src" URLs in above code.</div>
+	<div class="dc_cnt">If you already have jQuery 1.4 or above included in your web page, perform following steps -</div>
+	<div class="dc_cnt">- Remove second line from above code (highlighted in dark orange color).</div>
+	<div class="dc_cnt dc_cnt_blk">- Add above code after jQuery library loading <span class="code_font ec_orange">&lt;/script&gt;</span> tag.</div>
+</div></center>
+</div>
+
+<div class="dc_oauth_blk2">
+<center><div class="pg_area doc_area">
+		<div class="dc_subhead">Popup Model</div>
+		<div class="dc_cnt">You can access default AdiInviter Pro popup interface at following location in your website.</div>
+		<div class="embed_cd_out embed_cd_single">http://www.<span class="ec_quotes">yourdomain.com</span>/adiinviter_popup.php</div>
+		<div class="dc_cnt">To embed popup interface model into your webpage, perform the following steps -</div>
+		<div class="dc_cnt">1. Make sure you have done initial modification stated above.</div>
+		<div class="dc_cnt">2. Use any of the following codes to open popup interface in your webpage -</div>
+		<div class="dc_cnt">- To open default popup -</div>
+		<div class="embed_cd_out embed_cd_single dc_cnt_blk">
+			&lt;a href=<span class="ec_quotes">"#"</span> class=<span class="ec_quotes">"adi_open_popup_model"</span>&gt;Find/Invite Friends&lt;/a&gt;
+		</div>
+		<div class="dc_cnt">- To open popup interface with default service Gmail (you can replace <span class="ec_orange code_font">"gmail"</span> in below code with any other service id) -</div>
+		<div class="embed_cd_out embed_cd_single dc_cnt_blk" style="margin-bottom: 30px;">
+			&lt;a href=<span class="ec_quotes">"#"</span> class=<span class="ec_quotes">"adi_open_popup_model"</span> adi_service_id=<span class="ec_orange">"gmail"</span>&gt;Find/Invite Friends&lt;/a&gt;
+		</div>
+</div></center>
+</div>
+
+<div class="dc_oauth_blk1">
+	<center><div class="pg_area doc_area">
+		<div class="dc_subhead">Inpage Model</div>
+		<div class="dc_cnt">You can access default AdiInviter Pro inpage interface at following location in your website.</div>
+		<div class="embed_cd_out embed_cd_single">http://www.<span class="ec_quotes">yourdomain.com</span>/adiinviter.php</div>
+		<div class="dc_cnt">To embed inpage interface model into your webpage, perform the following steps -</div>
+		<div class="dc_cnt dc_cnt_blk">1. Make sure you have done initial modification stated above.</div>
+		<div class="dc_cnt">2. Add following PHP code in your web page -</div>
+		<div class="embed_cd_out dc_multiple_lns">
+			&lt;?php<br>
+			<span class="ec_brw">if</span>(!<span class="ec_red">headers_sent</span>())<br>
+			{<br>
+			&nbsp;&nbsp;<span class="ec_brw">include_once</span>(<span class="ec_quotes">'find_friends/adi_inpage.php'</span>);<br>
+			}<br>
+			?&gt;
+		</div>
+		<div class="dc_cnt"><span class="dc_note">Note -</span> If you have uploaded AdiInviter Pro under sub directory on your server (not your website root like "public_html" or "www"), then update <span class="ec_brw code_font">"include_once"</span> path in above code.</div>
+		<div class="dc_cnt dc_cnt_blk"><span class="dc_note">Note -</span> Make sure to add above PHP code before anything is printed on your web page (i.e. before any HTTP headers are sent).</div>
+
+		<div class="dc_cnt">3. Add following PHP code in your web page where your want to print AdiInviter Pro Inpage Model interface -</div>
+		<div class="embed_cd_out dc_multiple_lns dc_cnt_blk" style="margin-bottom: 30px;">
+			&lt;?php<br>
+			<span class="ec_red">echo</span> $contents;<br>
+			?&gt;
+		</div>
+</div></center>
+</div>
+
+<div class="dc_oauth_blk2">
+	<center><div class="pg_area doc_area">
+		<div class="dc_subhead">Invite History</div>
+		<div class="dc_cnt">You can access default AdiInviter Pro invite history interface at following location in your website.</div>
+		<div class="embed_cd_out embed_cd_single">http://www.<span class="ec_quotes">yourdomain.com</span>/invite_history.php</div>
+		<div class="dc_cnt">To embed invite history interface into your webpage, perform the following steps -</div>
+		<div class="dc_cnt dc_cnt_blk">1. Make sure you have done initial modification stated above.</div>
+		<div class="dc_cnt">2. Add following PHP code in your web page -</div>
+		<div class="embed_cd_out dc_multiple_lns">
+			&lt;?php<br>
+			<span class="ec_brw">if</span>(!<span class="ec_red">headers_sent</span>())<br>
+			{<br>
+			&nbsp;&nbsp;<span class="ec_brw">include_once</span>(<span class="ec_quotes">'find_friends/adi_invite_history.php'</span>);<br>
+			}<br>
+			?&gt;
+		</div>
+		<div class="dc_cnt"><span class="dc_note">Note -</span> If you have uploaded AdiInviter Pro under sub directory on your server (not your website root like "public_html" or "www"), then update <span class="ec_brw code_font">"include_once"</span> path in above code.</div>
+		<div class="dc_cnt dc_cnt_blk"><span class="dc_note">Note -</span> Make sure to add above PHP code before anything is printed on your web page (i.e. before any HTTP headers are sent).</div>
+
+		<div class="dc_cnt">3. Add following PHP code in your web page where your want to print AdiInviter Pro invite history interface -</div>
+		<div class="embed_cd_out dc_multiple_lns dc_cnt_blk" style="margin-bottom: 30px;">
+			&lt;?php<br>
+			<span class="ec_red">echo</span> $contents;<br>
+			?&gt;
+		</div>
+</div></center>
+</div>
+
+<div class="dc_oauth_blk1">
+	<center><div class="pg_area doc_area">
+		<div class="dc_subhead">Verify Invitation</div>
+		<div class="dc_cnt">You can access default AdiInviter Pro verify invitation interface at following location in your website.</div>
+		<div class="embed_cd_out embed_cd_single">http://www.<span class="ec_quotes">yourdomain.com</span>/verify_invitation.php</div>
+		<div class="dc_cnt">To embed verify invitation interface into your webpage, perform the following steps -</div>
+		<div class="dc_cnt dc_cnt_blk">1. Make sure you have done initial modification stated above.</div>
+		<div class="dc_cnt">2. Add following PHP code in your web page -</div>
+		<div class="embed_cd_out dc_multiple_lns">
+			&lt;?php<br>
+			<span class="ec_brw">if</span>(!<span class="ec_red">headers_sent</span>())<br>
+			{<br>
+			&nbsp;&nbsp;<span class="ec_brw">include_once</span>(<span class="ec_quotes">'find_friends/adi_verify.php'</span>);<br>
+			}<br>
+			?&gt;
+		</div>
+		<div class="dc_cnt"><span class="dc_note">Note -</span> If you have uploaded AdiInviter Pro under sub directory on your server (not your website root like "public_html" or "www"), then update <span class="ec_brw code_font">"include_once"</span> path in above code.</div>
+		<div class="dc_cnt dc_cnt_blk"><span class="dc_note">Note -</span> Make sure to add above PHP code before anything is printed on your web page (i.e. before any HTTP headers are sent).</div>
+
+		<div class="dc_cnt">3. Add following PHP code in your web page where your want to print AdiInviter Pro verify invitation interface -</div>
+		<div class="embed_cd_out dc_multiple_lns dc_cnt_blk">
+			&lt;?php<br>
+			<span class="ec_red">echo</span> $contents;<br>
+			?&gt;
+		</div>
+		<div style="margin-top:60px;"><table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td  style="text-align:left;">
+					<a href="#" class="dc_prev_btn" onclick="return mn_clicked(this,'configuration');"><span>Configuration</span></a>
+				</td>
+			</tr>
+		</table></div>
+</div></center>
+</div>
+
+
+</div>
+
+<script type="text/javascript">
+	opened_block = document.getElementById('introduction_div');
+	opened_link = document.getElementById('introduction_lnk');
+</script>
+
+</td></tr>
+<tr><td style="height: 75px;">
+
+<div class="ft_banner"><center>
+	<div class="pg_area">
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td style="vertical-align:middle;color:#FFF;font-size: 14px;height: 55px;"><a href="https://www.adiinviter.com" class="hover-green">AdiInviter &copy; 2008 - 2014</a></td>
+				<td class="tp_lnk_out">
+				<td class="tp_lnk_out">
+					<a class="hover-green" href="https://www.adiinviter.com/tour" style="margin-left:45px;">Features</a>
+					<a class="hover-green" href="https://www.adiinviter.com/contacts-importer-and-tell-a-friend-script-demo" style="margin-left:45px;">Demo</a>
+					<a class="hover-green" href="https://www.adiinviter.com/pricing" style="margin-left:45px;">Pricing</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</center></div>
+
+
+</td></tr>
+</table>
+</body>
+</html>

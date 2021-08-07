@@ -1,0 +1,45 @@
+<?php
+/**********************************/
+/*       Bloque de seguridad      */
+/**********************************/
+if( ! defined('XMBCXRXSKGC')) {
+    die('No tienes acceso a esta carpeta o archivo.');
+}
+/**********************************/
+/*     Ejecucion del Codigo       */
+/**********************************/
+// si no hay errores ejecuto el codigo	
+if ( !isset($errors[1]) && !isset($errors[2])&& !isset($errors[3])&& !isset($errors[4])&& !isset($errors[5])&& !isset($errors[6]) && !isset($errors[7]) && !isset($errors[8]) && !isset($errors[9]) && !isset($errors[10]) && !isset($errors[11])&& !isset($errors[12])&& !isset($errors[13])&& !isset($errors[14])&& !isset($errors[15])&& !isset($errors[16])&& !isset($errors[17])  ) {
+
+			
+		//Filtro para idRoom
+        $a = "idRoom='".$idRoom."'" ;
+		//filtro de Nombre
+		if(isset($Nombre) && $Nombre != ''){ 
+        	$a .= ",Nombre='".$Nombre."'" ;
+        }
+		//filtro de Fecha
+		if(isset($Fecha) && $Fecha != ''){ 
+        	$a .= ",Fecha='".$Fecha."'" ;
+        }
+		//filtro de Hora
+		if(isset($Hora) && $Hora != ''){ 
+        	$a .= ",Hora='".$Hora."'" ;
+        }
+		//filtro de Tipo
+		if(isset($Tipo) && $Tipo != ''){ 
+        	$a .= ",Tipo='".$Tipo."'" ;
+        }
+		//filtro de idUsuario
+		if(isset($idUsuario) && $idUsuario != ''){ 
+        	$a .= ",idUsuario='".$idUsuario."'" ;
+        }
+		
+
+		// inserto los datos de registro en la db
+		$query  = "UPDATE `rooms_listado` SET ".$a." WHERE idRoom = '$idRoom'";
+		$result = mysql_query($query, $dbConn);
+		
+		header( 'Location: '.$location );
+		die;
+	}?>

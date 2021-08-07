@@ -1,0 +1,140 @@
+body, html {
+	height: 100%;
+	width: 100%;
+}
+td {
+	vertical-align: top;
+}
+.btn_link {
+	display: block;
+	height: 60px;
+}
+.fleft{
+	float: left;	
+}
+.fright{
+	float: right;	
+}
+.fcenter{
+	margin-right: auto !important;
+	margin-left: auto !important;
+	float:none;	
+}
+.clear {
+	clear: both;
+}
+
+
+.app_tittle{
+	font-family: 'Lobster', cursive;
+	font-size: 32px;
+	color: #808080;
+	text-align: center;
+	padding-top: 10px;
+}
+.body {
+	padding: 5%;
+
+}
+.margin_top_5px {
+	margin-top: 5px;
+}
+.pure-button {
+	padding-top: 8px !important;
+	padding-right: 12px !important;
+	padding-bottom: 8px !important;
+	padding-left: 12px !important;
+	font-weight: bold;
+	color: #666;
+}
+.pure-button-1{
+	color: #333;
+	background-color: #FFF;
+	border-color: #CCC;	
+}
+.pure-button-1:hover{
+	color: #333;
+	background-color: #E6E6E6;
+	border-color: #ADADAD;	
+}
+.pure-button-2{
+	color: #FFF;
+	background-color: #428BCA;
+	border-color: #357EBD;	
+}
+.pure-button-2:hover{
+	color: #FFF;
+	background-color: #3071A9;
+	border-color: #285E8E;	
+}
+.pure-button-3{
+	color: #FFF;
+	background-color: #5CB85C;
+	border-color: #4CAE4C;	
+}
+.pure-button-3:hover{
+	color: #FFF;
+	background-color: #449D44;
+	border-color: #398439;	
+}
+.pure-button-4{
+	color: #FFF;
+background-color: #C1272D;
+border-color: #D43F3A;	
+}
+.pure-button-4:hover{
+	color: #FFF;
+background-color: #C9302C;
+border-color: #AC2925;	
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #3C763D;
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+}
+.alert-info {
+    color: #31708F;
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+}
+.alert-warning {
+    color: #8A6D3B;
+    background-color: #FCF8E3;
+    border-color: #FAEBCC;
+}
+.alert-danger {
+    color: #A94442;
+    background-color: #F2DEDE;
+    border-color: #EBCCD1;
+}
+.pure-form .pure-input-1 {
+    width: auto !important;
+}
+.titulos {
+	display: block;
+	width: 100%;
+	margin-bottom: 0.7em;
+	color: #333;
+	border-bottom: 1px solid #E5E5E5;
+	white-space: normal;
+	text-align: center;
+	outline: 0px none;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	padding-top: 0.3em;
+	padding-right: 0px;
+	padding-bottom: 0.3em;
+	padding-left: 0px;
+}
+.boxcode{
+	width: 180px;	
+}

@@ -1,0 +1,167 @@
+body {
+   min-height: 100%;
+   margin: 0px;
+   width: 100%;
+   height: 100%;
+}
+*{
+   box-sizing: border-box;
+}
+.chat {
+  padding: 0px;
+  width: 100%; 
+  height: 100%;
+}
+.chat .body{
+	height: 100%;
+	padding-bottom:60px;
+}
+.chat .body ul {
+	height: 100%;
+    list-style: none;
+    margin-top: 0px;
+	margin-bottom: 0px;
+	overflow: auto; 
+ }
+.chat .body ul li {
+    margin-bottom: 10px;
+    line-height: 24px; 
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+.chat .body ul {
+	list-style: none;
+	background: #e5e5e5;
+	margin: 0;
+	padding: 0 0 50px 0;
+ }
+.chat .body ul li {
+    padding: 0.5rem;
+    overflow: hidden;
+    display: flex;
+  }
+.chat .body ul .avatar {
+    width: 40px; 
+    position: relative;
+}
+.chat .body ul .avatar img {
+    display: block;
+    width: 100%;
+}
+
+
+.chat .body ul .other .avatar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 5px solid white;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.chat .body ul .self {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.chat .body ul .self .messages {
+    order: 1;
+    border-bottom-right-radius: 0; 
+}
+.chat .body ul .self .avatar {
+    order: 2;
+}
+.chat .body ul .self .avatar:after {
+     content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid white;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+
+.messages {
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(black, 0.2);
+}
+.messages p {
+    font-size: 0.8rem;
+    margin: 0 0 0.2rem 0;
+}
+.messages time {
+    font-size: 0.7rem;
+    color: #ccc;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+.chat .footer{
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	display: block;
+	height: 60px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-top: 1px solid #EBEBEB;
+	background-color: #F2F2F2;
+ }
+.chat .footer input[type="text"] {
+    border: 1px solid #ced3db;
+    height: 40px; 
+    box-sizing: border-box;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 0px 10px;
+    font-size: 18px;
+    width: 80%;
+    font-weight: normal;
+    outline: none;
+    float:left;
+}
+.chat .footer input[type="image"] {
+    width: 45px;
+    padding-left:10px;
+}
+
+
+

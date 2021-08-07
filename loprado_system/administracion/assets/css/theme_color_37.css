@@ -1,0 +1,123 @@
+/* Color caracteristico del tema */
+.navbar-inverse,
+.navbar-inverse .navbar-nav > .open > a,
+#wrap,
+#left,
+.head,
+.user-media,
+.sidebar-left-mini .user-wrapper,
+body:not(.sidebar-left-mini) #menu .nav-header,
+.sidebar-left-mini #menu>li>a .link-title,
+#footer,
+.box header{
+	background-color: #4F7FB7 !important;
+}
+.logo_empresa .texto h1{
+	color: #fff !important;
+}
+.navbar-inverse{
+	border: none !important;
+}
+
+/* Color seleccion del tema */
+#menu>li:hover>a, 
+#menu>li:focus>a,
+#menu>li a:hover {
+	background-color: #2E4B6B !important;
+	color: #fff !important;
+}
+/* Color submenu del tema */
+#menu>li ul {
+	background: #fff !important;
+}
+#menu>li ul li a{
+	color: #333 !important;
+}
+
+/* Color de las fuentes del tema */
+.head .main-bar h3,
+.user-media .media-body h5.media-heading,
+body:not(.sidebar-left-mini) #menu .nav-header,
+.sidebar-left-mini .user-media-toggleHover,
+#menu > li > a,
+#footer,
+.box header {
+    color: #fff;
+    text-shadow: none !important;
+}
+
+/* Color de de los separadores de las secciones */
+#menu .nav-divider,
+.outer {
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+.inner {
+    border: none !important;
+}
+#menu > li > a,
+body:not(.sidebar-left-mini) #menu .nav-header {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);	
+}
+.head{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);	
+}
+
+/* Otros */
+#top > .navbar {
+	border-top: none !important;
+}
+#footer {
+	background-image: none !important;
+}
+.table {
+    margin-bottom: 0px !important;
+}
+.container_box {
+    top: 10px !important;
+}
+
+
+/* Modificacion de las tablas */
+.box {
+    border: none !important;
+    border-bottom: 1px solid #EFEFEF !important;
+}
+.box header {
+    background-image: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    -webkit-border-radius: 8px 8px 0px 0px;
+    -moz-border-radius: 8px 8px 0px 0px;
+	border-radius: 8px 8px 0px 0px;
+}
+.box header .icons {
+    padding: 10px 15px;
+    border-right: none !important;
+    box-shadow: none !important;
+}
+.table-bordered > thead > tr > th, 
+.table-bordered > tbody > tr > th, 
+.table-bordered > tfoot > tr > th, 
+.table-bordered > thead > tr > td, 
+.table-bordered > tbody > tr > td, 
+.table-bordered > tfoot > tr > td{
+	border: none !important;
+}
+.table-bordered > thead > tr {
+	 border-bottom: 1px solid #EFEFEF !important;
+}
+
+
+/* tema neo */
+#menu .active{
+	background-color: #fff !important;
+	border-radius: 200px 0px 0px 200px;
+	-moz-border-radius: 200px 0px 0px 200px;
+	-webkit-border-radius: 200px 0px 0px 200px;
+	margin-left:10px;
+	color: #444;
+}

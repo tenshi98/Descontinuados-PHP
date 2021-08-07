@@ -1,0 +1,140 @@
+<?php
+/*******************************************************************************************************************/
+/*                                              Bloque de seguridad                                                */
+/*******************************************************************************************************************/
+if( ! defined('XMBCXRXSKGC')) {
+    die('No tienes acceso a esta carpeta o archivo.');
+}
+/*******************************************************************************************************************/
+/*                                        Se traspasan los datos a variables                                       */
+/*******************************************************************************************************************/
+
+	//Traspaso de valores input a variables
+	if ( !empty($_POST['idRobo']) )        $idRobo         = $_POST['idRobo'];
+	if ( !empty($_POST['idCliente']) )     $idCliente      = $_POST['idCliente'];
+	if ( !empty($_POST['idTipoAlerta']) )  $idTipoAlerta   = $_POST['idTipoAlerta'];
+	if ( !empty($_POST['idVehiculo']) )    $idVehiculo     = $_POST['idVehiculo'];
+	if ( !empty($_POST['Fecha']) )         $Fecha          = $_POST['Fecha'];
+	if ( !empty($_POST['Hora']) )          $Hora           = $_POST['Hora'];
+	if ( !empty($_POST['Longitud']) )      $Longitud       = $_POST['Longitud'];
+	if ( !empty($_POST['Latitud']) )       $Latitud 	   = $_POST['Latitud'];
+	if ( !empty($_POST['Gsm']) )           $Gsm            = $_POST['Gsm'];
+	if ( !empty($_POST['desplegar']) )     $desplegar      = $_POST['desplegar'];
+	if ( !empty($_POST['vista']) )         $vista 	       = $_POST['vista'];
+	
+	
+/*******************************************************************************************************************/
+/*                                      Verificacion de los datos obligatorios                                     */
+/*******************************************************************************************************************/
+
+	//limpio y separo los datos de la cadena de comprobacion
+	$form_obligatorios = str_replace(' ', '', $form_obligatorios);
+	$piezas = explode(",", $form_obligatorios);
+	//recorro los elementos
+	foreach ($piezas as $valor) {
+		//veo si existe el dato solicitado y genero el error
+		switch ($valor) {
+			case 'idRobo':        if(empty($idRobo)){        $error['idRobo']        = 'error/No ha ingresado el id del sistema';}break;
+			case 'idCliente':     if(empty($idCliente)){     $error['idCliente']     = 'error/No ha ingresado el idCliente del sistema';}break;
+			case 'idTipoAlerta':  if(empty($idTipoAlerta)){  $error['idTipoAlerta']  = 'error/No ha ingresado la imagen';}break;
+			case 'idVehiculo':    if(empty($idVehiculo)){    $error['idVehiculo']    = 'error/No ha ingresado el email';}break;
+			case 'Fecha':         if(empty($Fecha)){         $error['Fecha']         = 'error/No ha ingresado la razon social';}break;
+			case 'Hora':          if(empty($Hora)){          $error['Hora']          = 'error/No ha ingresado el Hora';}break;
+			case 'Longitud':      if(empty($Longitud)){      $error['Longitud']      = 'error/No ha ingresado la Longitud';}break;
+			case 'Latitud':       if(empty($Latitud)){       $error['Latitud']       = 'error/No ha ingresado el Latitud';}break;
+			case 'Gsm':           if(empty($Gsm)){           $error['Gsm']           = 'error/No ha ingresado el Gsm';}break;
+			case 'desplegar':     if(empty($desplegar)){     $error['desplegar']     = 'error/No ha ingresado la desplegar';}break;
+			case 'vista':         if(empty($vista)){         $error['vista']         = 'error/No ha ingresado el vista';}break;	
+			
+		}
+	}
+/*******************************************************************************************************************/
+/*                                            Se ejecutan las instrucciones                                        */
+/*******************************************************************************************************************/
+	//ejecuto segun la funcion
+	switch ($form_trabajo) {
+/*******************************************************************************************************************/		
+		case 'insert':
+
+			
+			// si no hay errores ejecuto el codigo	
+			if ( empty($error) ) {
+				
+				//filtros
+				if(isset($idCliente) && $idCliente != ''){           $a = "'".$idCliente."'" ;       }else{$a ="''";}
+				if(isset($idTipoAlerta) && $idTipoAlerta != ''){     $a .= ",'".$idTipoAlerta."'" ;  }else{$a .= ",''";}
+				if(isset($idVehiculo) && $idVehiculo != ''){         $a .= ",'".$idVehiculo."'" ;    }else{$a .= ",''";}
+				if(isset($Fecha) && $Fecha != ''){                   $a .= ",'".$Fecha."'" ;         }else{$a .= ",''";}
+				if(isset($Hora) && $Hora != ''){                     $a .= ",'".$Hora."'" ;          }else{$a .= ",''";}
+				if(isset($Longitud) && $Longitud != ''){             $a .= ",'".$Longitud."'" ;      }else{$a .= ",''";}
+				if(isset($Latitud) && $Latitud != ''){               $a .= ",'".$Latitud."'" ;       }else{$a .= ",''";}
+				if(isset($Gsm) && $Gsm != ''){                       $a .= ",'".$Gsm."'" ;           }else{$a .= ",''";}
+				if(isset($desplegar) && $desplegar != ''){           $a .= ",'".$desplegar."'" ;     }else{$a .= ",''";}
+				if(isset($vista) && $vista != ''){                   $a .= ",'".$vista."'" ;         }else{$a .= ",''";}
+				
+				
+				// inserto los datos de registro en la db
+				$query  = "INSERT INTO `robos_listado` (idCliente, idTipoAlerta, idVehiculo, Fecha, Hora, Longitud, Latitud, Gsm, desplegar, vista) VALUES ({$a} )";
+				$result = mysql_query($query, $dbConn);
+					
+				header( 'Location: '.$location.'&created=true' );
+				die;
+				
+			}
+	
+		break;
+/*******************************************************************************************************************/		
+		case 'update':	
+		
+			// si no hay errores ejecuto el codigo	
+			if ( empty($error) ) {
+				//Filtros
+				$a = "idRobo='".$idRobo."'" ;
+				if(isset($idCliente) && $idCliente != ''){        $a .= ",idCliente='".$idCliente."'" ;}
+				if(isset($idTipoAlerta) && $idTipoAlerta != ''){  $a .= ",idTipoAlerta='".$idTipoAlerta."'" ;}
+				if(isset($idVehiculo) && $idVehiculo != ''){      $a .= ",idVehiculo='".$idVehiculo."'" ;}
+				if(isset($Fecha) && $Fecha != ''){                $a .= ",Fecha='".$Fecha."'" ;}
+				if(isset($Hora) && $Hora != ''){                  $a .= ",Hora='".$Hora."'" ;}
+				if(isset($Longitud) && $Longitud != ''){          $a .= ",Longitud='".$Longitud."'" ;}
+				if(isset($Latitud) && $Latitud != ''){            $a .= ",Latitud='".$Latitud."'" ;}
+				if(isset($Gsm) && $Gsm != ''){                    $a .= ",Gsm='".$Gsm."'" ;}
+				if(isset($desplegar) && $desplegar != ''){        $a .= ",desplegar='".$desplegar."'" ;}
+				if(isset($vista) && $vista != ''){                $a .= ",vista='".$vista."'" ;}
+		
+				// inserto los datos de registro en la db
+				$query  = "UPDATE `robos_listado` SET ".$a." WHERE idRobo = '$idRobo'";
+				$result = mysql_query($query, $dbConn);
+				
+				header( 'Location: '.$location.'&edited=true' );
+				die;
+			}
+		
+	
+		break;	
+							
+/*******************************************************************************************************************/
+		case 'del':	
+
+			//se borran los permisos del usuario
+			$query  = "DELETE FROM `robos_listado` WHERE idRobo = {$_GET['del']}";
+			$result = mysql_query($query, $dbConn);	
+						
+			header( 'Location: '.$location.'&deleted=true' );
+			die;
+
+		break;		
+/*******************************************************************************************************************/
+		case 'del_robo':	
+
+			//Actualizo la vista de las alarmas
+			$query  = "UPDATE `robos_listado` SET vista=1 WHERE idRobo = '{$_GET['id']}'";
+			$result = mysql_query($query, $dbConn);
+
+			header( 'Location: '.$location );
+			die;
+
+		break;		
+						
+/*******************************************************************************************************************/
+	}
+?>

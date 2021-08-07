@@ -1,0 +1,4 @@
+AuthUserFile /var/www/juntossomosmas/preguntas/.htpasswd
+AuthName "Necesita validarse"
+AuthType Basic
+require user admin

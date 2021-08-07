@@ -1,0 +1,283 @@
+//Mixins
+.rounded(@radius: 6px){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+.round(@radius_xx, @radius_xy, @radius_yy, @radius_yx){
+	-webkit-border-radius: @arguments;
+	-moz-border-radius: @arguments;
+	border-radius: @arguments;
+}
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+	box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+}
+.back(@img, @repeat:no-repeat, @left: left, @top: top, @color:transparent){
+	background: url('../img/@{img}') @repeat @left @top @color;
+}
+.gradientLinear(@color1, @color2){
+	background: @color1;
+	background: -moz-linear-gradient(top,  @color1 0%, @color2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2));
+	background: -webkit-linear-gradient(top,  @color1 0%,@color2 100%);
+	background: -o-linear-gradient(top,  @color1 0%,@color2 100%);
+	background: -ms-linear-gradient(top,  @color1 0%,@color2 100%);
+	background: linear-gradient(to bottom,  @color1 0%,@color2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color1', endColorstr='@color2',GradientType=0 );
+}
+
+/* FORMULARIOS */
+#comoLlegar{
+	width: 400px;
+	.step-1{
+		width: 93%;
+		label{
+			font-size: 12px;
+			&.dia_label{
+				margin-right: 15px;
+				display: inline-block;
+				width: 90px;
+			}
+		}
+		input.datepicker{
+			width: 90px;
+			margin-right: 10px;
+		}
+		.ind{
+			display: inline-block;
+			position: relative;
+			top:-3px;
+			span{
+				margin: 0;
+			}
+		}
+		.line{
+			margin: 0 0 8px;
+		}
+		.input.text{
+			position: relative;
+			.cp{
+				position: absolute;
+				left: 0;
+				line-height: 30px;
+				label{
+					width: 40px;
+					display: inline-block;
+				}
+			}
+			.w{
+				height: 30px;
+			}
+			input{
+				display: block;
+				margin-left: 20%;
+				width: 80%;
+			}
+		}
+		.invert{
+			display: inline-block;
+			background: url(../img/back_rev.png) repeat-x left center yellow;
+			color: black;
+			padding: 2px 35px 2px 6px;
+			text-decoration: none;
+			height: 18px;
+			line-height: 18px;
+			font-size: 12px;
+			vertical-align: top;
+			float: right;
+			position: relative;
+			.rounded();
+			.ico{
+				position: absolute;
+				right: 5px;
+				top: 2px;
+			}
+		}
+		.preferencias{
+			background: #ffc;
+			padding: 5px 0;
+			.rounded();
+			//width: 60%;
+			//float: left;
+		}
+		.sel_pref{
+			width: 44%;
+			float: left;
+			margin-left: 10px;
+			margin-right: 10px;
+			select{
+				width: 100%;
+			}
+		}
+		select{
+			vertical-align: top;
+		}
+		.sel_id_2{
+			width: 70px;
+			display: inline-block;
+		}
+		.sel_temp{
+			margin-left: 10px;
+		}
+		.submit{
+			margin-top: 10px;
+		}
+	}
+}
+
+#conocerRecorridos{
+	width: 400px;
+	//left: 350px;
+	.text{
+		label{
+			width: 50%;
+			display: inline-block;
+		}
+		input[type="text"]{
+			width: 49%;
+		}
+	}
+	.step-2{
+		.recRes{
+			.tit{
+				padding-top: 12px;
+				margin-bottom: 10px;
+				display: block;
+			}
+			.numColor{
+				font-style: italic;
+			}
+			position: relative;
+			margin-left: 58px;
+			display: block;
+			ol{
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				li{
+					padding: 10px;
+					display: block;
+					background: #FCF7E4;
+					margin-bottom: 10px;
+					cursor: pointer;
+					.rounded();
+					&:hover, &.active{
+						background: #F7E8AE;
+					}
+					.arrow{
+						margin-right: 5px;
+					}
+					div{
+						font-size: 12px;
+						&.rec{
+							font-size: 12px;
+							margin-bottom: 5px;
+						}
+					}
+				}
+			}
+		}
+		.busColor{
+			position: absolute;
+			left: -58px;
+			top: 0;
+		}
+	}
+}
+
+#cuandoLlega{
+	width: 400px;
+	//left: 480px;
+	.line{
+		margin-bottom: 10px;
+	}
+	.step-1{
+		.submit{
+			.w{
+				width: 90%;
+				display: block;
+				margin: 0 5%;
+			}
+			.note{
+				text-align: right;
+				float: left;
+				width: 50%;
+				font-size: 11px;
+				line-height: 13px;
+				margin-right: 15px;
+				margin-top: 5px;
+			}
+		}
+		.input label{
+			display: inline-block;
+			width: 50%;
+		}
+	}
+	.step-2{
+		p{
+			margin: 0;
+			font-size: 12px;
+		}
+	}
+	.loader{
+		position: absolute;
+		right: 12px;
+		top: 12px;
+		margin: 0;
+	}
+}
+
+#encuentraParadas{
+	width: 400px;
+	//left: 185px;
+	.step-1{
+		input[type="text"]{
+			display: block;
+			width: 100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			margin: 5px 0 0;
+		}
+	}
+	.parRes{
+		max-height: 150px;
+		height: 150px;
+		width: 100%;
+		overflow: auto;
+		display: block;
+		ol{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: block;
+			width: 100%;
+			height: auto;
+			li{
+				display: block;
+				background: #FCF7E4;
+				padding: 5px;
+				margin-bottom: 10px;
+				cursor: pointer;
+				.rounded();
+				.li{
+					position: relative;
+					margin-left: 35px;
+					.parada{
+						position: absolute;
+						left: -35px;
+						top: 0;
+					}
+				}
+				&:hover, .active{
+					background: #F7E8AE;
+				}
+			}
+		}
+	}
+	.submit{
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,3 @@
+SPE_PublicKey.1pz  --> La clave encriptada publica de acceso a PagoEfectivo
+PRU_PrivateKey.1pz --> La clave encriptada privada de acceso al comercio para enviar respuesta desde PagoEfectivo, 
+generalmente el nombre es COD_SERVICIO_PrivateKey.1pz
