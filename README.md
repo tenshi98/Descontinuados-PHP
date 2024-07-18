@@ -1,13 +1,13 @@
 # Descontinuados-PHP
 Antiguos proyectos a los que tuve que hacer mantenimiento o hacer funcionar.
 
-### Uso 🚀
+## Uso 🚀
 Revisar cada proyecto y copiar lo que encuentren util
 
 ## Licencia 📄
 Este proyecto está bajo la Licencia GPL-3.0 license - ve el archivo [LICENSE](LICENSE) para detalles
 
-### Contacto 📖
+## Contacto 📖
 Puedes contactarte conmigo a traves de cualquier de los siguientes canales:
 - [Github](https://github.com/tenshi98)
 - [Linkedin](https://www.linkedin.com/in/victor-reyes-galvez/)
