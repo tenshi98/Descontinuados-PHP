@@ -11,6 +11,7 @@ Este proyecto está bajo la Licencia GPL-3.0 license - ve el archivo [LICENSE](L
 Puedes contactarte conmigo a traves de cualquier de los siguientes canales:
 - [Github](https://github.com/tenshi98)
 - [Linkedin](https://www.linkedin.com/in/victor-reyes-galvez/)
+- [Portafolio](https://tenshi98.github.io/portafolio/)
 - [Mi Web](https://web.digitalcreations.cl/)
 
 ## Contribuciones 🎁
